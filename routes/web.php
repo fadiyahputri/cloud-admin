@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
-Route::get('/guru', [Cloud::class, 'guru']);
+Route::get('/guru', [Cloud::class, 'index']);
 
 Route::get('/matpel', [Cloud::class, 'matpel']);
 

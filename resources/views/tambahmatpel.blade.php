@@ -166,7 +166,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{url('/')}}">
+            <a class="nav-link" href="{{url('/guru')}}">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Guru</span>
             </a>

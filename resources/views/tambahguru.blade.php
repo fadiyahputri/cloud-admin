@@ -166,7 +166,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{url('/')}}" style="background-color: #4b49ac;">
+            <a class="nav-link" href="{{url('/guru')}}" style="background-color: #4b49ac;">
               <i style="color: white;" class="icon-head menu-icon"></i>
               <span style="color: white;" class="menu-title">Guru</span>
             </a>
