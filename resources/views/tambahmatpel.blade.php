@@ -206,19 +206,19 @@
                     </p>
                     <form class="forms-sample">
                       <div class="form-group">
-                        <label for="exampleInputUsername1">id Buku</label>
+                        <label for="exampleInputUsername1">Id Buku</label>
                         <input type="text" class="form-control" id="exampleInputUsername1" placeholder="id buku">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">nama Buku</label>
+                        <label for="exampleInputEmail1">Nama Buku</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nama Buku">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">jenis buku</label>
+                        <label for="exampleInputPassword1">Jenis Buku</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="jenis buku">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputConfirmPassword1">halaman buku</label>
+                        <label for="exampleInputConfirmPassword1">Halaman Buku</label>
                         <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="halaman buku">
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>

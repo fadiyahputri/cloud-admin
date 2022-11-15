@@ -257,15 +257,15 @@
             <div class="card" >
                 <div class="card-body">
                   <h4 class="card-title">Data matpel</h4>
-                  <a href="tambahmatpel.html"><input class="tambah" type="button" value="tambah"></input></a>
+                  <a href="{{url('/tambahmatpel')}}"><input class="tambah" type="button" value="tambah"></input></a>
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>id buku</th>
+                          <th>Id Buku</th>
                           <th>Nama Buku</th>
                           <th>Jenis Buku</th>
-                          <th>halaman buku</th>
+                          <th>Halaman Buku</th>
                           <th>Operation</th>
                         </tr>
                       </thead>

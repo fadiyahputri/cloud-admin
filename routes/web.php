@@ -25,3 +25,7 @@ Route::get('/matpel', [Cloud::class, 'matpel']);
 Route::get('/cloud', [Cloud::class, 'cloud']);
 
 Route::get('/login', [Cloud::class, 'login']);
+
+Route::get('/tambahguru', [Cloud::class, 'tambahguru']);
+
+Route::get('/tambahmatpel', [Cloud::class, 'tambahmatpel']);

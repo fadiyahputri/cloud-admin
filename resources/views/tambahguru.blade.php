@@ -199,17 +199,17 @@
 
             <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">tambah guru</h4>
+                  <h4 class="card-title">Tambah Guru</h4>
                   <p class="card-description">
                    
                   </p>
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputUsername1">nama</label>
+                      <label for="exampleInputUsername1">Nama</label>
                       <input type="text" class="form-control" id="exampleInputUsername1" placeholder="nama">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">username</label>
+                      <label for="exampleInputEmail1">Username</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="username">
                     </div>
                     <div class="form-group">

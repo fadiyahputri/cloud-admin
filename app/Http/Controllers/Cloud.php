@@ -25,4 +25,14 @@ class Cloud extends Controller
     public function login() {
         return view ('login');
     }
+
+    public function tambahguru() {
+        return view ('tambahguru');
+    }
+
+    public function tambahmatpel() {
+        return view ('tambahmatpel');
+    }
+
+
 }

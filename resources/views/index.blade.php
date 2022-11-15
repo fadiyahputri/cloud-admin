@@ -199,7 +199,7 @@
             <div gg class="card" >
                 <div class="card-body">
                   <h4 class="card-title">Data guru</h4>
-                  <a href="tambahguru.html"><input class="tambah" type="button" value="tambah"></input></a>
+                  <a href="{{url('/tambahguru')}}"><input class="tambah" type="button" value="tambah"></input></a>
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
