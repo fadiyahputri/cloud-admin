@@ -203,19 +203,20 @@
                   <p class="card-description">
                    
                   </p>
-                  <form class="forms-sample" method="post" action="/tambahguru/store">
+                  <form class="forms-sample" method="post" action="/guru/{{$guru->id}}">
+                    @method('put')
                     @csrf
                     <div class="form-group">
                       <label for="exampleInputUsername1">Nama</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nama" name="nama">
+                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nama" name="nama" value="{{$guru->nama}}">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Username</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" name="username">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" name="username" value="{{$guru->username}}">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" value="{{$guru->password}}">
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>

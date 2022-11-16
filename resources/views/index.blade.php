@@ -204,6 +204,7 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
+                          <th>No</th>
                           <th>Name</th>
                           <th>Username</th>
                           <th>Password</th>
@@ -211,68 +212,32 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <!-- <tr>
                           <td> </td>
                           <td> </td>
                           <td class="text-danger"> </td>
                           <td><button type="button" class="btn btn-primary">Edit</button>
                               <button type="button" class="btn btn-danger">Hapus</button>
                           </td>
-                        </tr>
+                        </tr> -->
+                        @php
+                          $no = 1
+                        @endphp
+                        @foreach($guru as $g)
                         <tr>
-                          <td> </td>
-                          <td> </td>
-                          <td class="text-danger"> </td>
+                          <td>{{$no++}}</td>
+                          <td>{{$g->nama}}</td>
+                          <td>{{$g->username}}</td>
+                          <td>{{$g->password}}</td>
                           <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
+                              <div class="btn-group" role="group">
+                              <a href="/guru/{{$g->id}}/editguru"><button class="btn btn-primary me-2">Edit</button></a> 
+                              <a href="/delete/{{$g->id}}">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                              </a>
                           </td>
                         </tr>
-                        <tr>
-                          <td> </td>
-                          <td> </td>
-                          <td class="text-danger"> </td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>  
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> </td>
-                          <td> </td>
-                          <td class="text-success"> </i></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td> </td>
-                          <td class="text-success"> </i></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td> </td>
-                          <td class="text-success"> </i></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td> </td>
-                          <td class="text-success"> </i></td>
-                          <td>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
-                          </td>
-                        </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
