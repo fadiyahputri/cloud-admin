@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Cloud;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/guru', [Cloud::class, 'index']);
+
 
 Route::get('/matpel', [Cloud::class, 'matpel']);
 
@@ -28,4 +29,15 @@ Route::get('/login', [Cloud::class, 'login']);
 
 Route::get('/tambahguru', [Cloud::class, 'tambahguru']);
 
+Route::get('/guru', [GuruController::class, 'index']);
+
+Route::post('/tambahguru/store',[GuruController::class, 'store']);
+
+Route::get('/guru/{id}/editguru', [GuruController::class, 'edit']);
+
+Route::put('/guru/{id}', [GuruController::class, 'update']);
+
+Route::get('/delete/{id}', [GuruController::class, 'destroy']);
+
 Route::get('/tambahmatpel', [Cloud::class, 'tambahmatpel']);
+
