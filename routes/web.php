@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Cloud;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 
@@ -15,29 +16,35 @@ use App\Http\Controllers\GuruController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+
+
+
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::group(['middleware' => ['auth','admin:admin,user']], function(){
+    Route::get('/', [GuruController::class, 'index']);
+
+    Route::get('/tambahguru', [Cloud::class, 'tambahguru']);
+
+    Route::get('/guru', [GuruController::class, 'index']);
+    
+    Route::get('/matpel', [Cloud::class, 'matpel']);
+
+    Route::get('/cloud', [Cloud::class, 'cloud']);
+    
 });
 
 
 
-Route::get('/matpel', [Cloud::class, 'matpel']);
 
-Route::get('/cloud', [Cloud::class, 'cloud']);
 
-Route::get('/login', [Cloud::class, 'login']);
+Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 
-Route::get('/tambahguru', [Cloud::class, 'tambahguru']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/guru', [GuruController::class, 'index']);
+
 
 Route::post('/tambahguru/store',[GuruController::class, 'store']);
 
-Route::get('/guru/{id}/editguru', [GuruController::class, 'edit']);
-
-Route::put('/guru/{id}', [GuruController::class, 'update']);
-
-Route::get('/delete/{id}', [GuruController::class, 'destroy']);
-
-Route::get('/tambahmatpel', [Cloud::class, 'tambahmatpel']);
 
