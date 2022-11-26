@@ -18,8 +18,16 @@ class Cloud extends Controller
         return view ('dashboard/matpel');
     }
     
-    public function cloud() {
-        return view ('cloud/cloud');
+    public function cloudDashboard() {
+        return view ('cloud/cloudDasboard');
+    }
+
+    public function cloud(){
+        return view('cloud/cloud');
+    }
+
+    public function folder(){
+        return view('cloud/folder');
     }
 
     public function login() {

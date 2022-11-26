@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,10 +21,22 @@
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('assets/images/logo tb1.png')}}" />
+  @vite('resources/css/app.css')
+  {{-- font --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  {{-- font awesome --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  {{-- iconify --}}
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+  {{-- css --}}
+  <link rel="stylesheet" href="@yield('css')">
+  <script src="assets/js/jquery.js"></script>
+
 </head>
 <body>
   @yield('content')
-
   <!-- plugins:js -->
   <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->

@@ -21,8 +21,6 @@ class LoginController extends Controller
 
 
     public function postlogin (Request $request){
-        
-
         $request->validate([
             'username' => 'required',
             'password' => 'required',
@@ -31,7 +29,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if($user->level == 'user'){
-                return redirect()->intended('/cloud');
+                return redirect()->intended('/clod');
             }else if($user->level == 'admin'){
                 return redirect()->intended('/');
             }

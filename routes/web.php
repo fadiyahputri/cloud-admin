@@ -4,6 +4,9 @@ use App\Http\Controllers\Cloud;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
+use Illuminate\Support\Facades\Auth;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +21,6 @@ use App\Http\Controllers\GuruController;
 
 
 
-
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::group(['middleware' => ['auth','admin:admin,user']], function(){
@@ -31,12 +32,17 @@ Route::group(['middleware' => ['auth','admin:admin,user']], function(){
     
     Route::get('/matpel', [Cloud::class, 'matpel']);
 
-    Route::get('/cloud', [Cloud::class, 'cloud']);
+    Route::get('/cloud', [Cloud::class, 'cloudDashboard']);
+    
+    
+
     
 });
 
 
+Route::get('/clod', [Cloud::class, 'cloud']);
 
+Route::get('/folder', [Cloud::class, 'folder']);
 
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');

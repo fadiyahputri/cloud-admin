@@ -1,6 +1,5 @@
 @extends('default')
 @section('content')
-<p>Welcome <b>{{Auth::user()->name}}</b></p>
 <div class="container-scroller">
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -8,7 +7,7 @@
       <a class="navbar-brand brand-logo mr-5" href="{{url('/')}}"><img src="{{asset('assets/images/logo tb1.png')}}" class="mr-2" alt="logo"/></a>
       <a class="navbar-brand brand-logo-mini" href="{{url('/')}}"><img src="{{asset('assets/images/logo tb1.png')}}" alt="logo"/></a>
     </div>
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <div  class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
         <span class="icon-menu"></span>
       </button>
@@ -27,21 +26,19 @@
       <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-            <img src="assets/images/logoAdmin.png" alt="profile"/>
+            <img src="images/faces/face28.jpg" alt="profile"/>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             <a class="dropdown-item">
               <i class="ti-settings text-primary"></i>
               Settings
             </a>
-            <a href="{{route('logout')}}" class="dropdown-item">
+            <a class="dropdown-item">
               <i class="ti-power-off text-primary"></i>
               Logout
-              
             </a>
           </div>
         </li>
-
       </ul>
       <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
         <span class="icon-menu"></span>
@@ -138,7 +135,7 @@
             <p class="text-gray mb-0 ">Call Sarah Graves</p>
           </div>
         </div>
-        <!-- To do section tab ends -->
+
       </div>
     </div>
     <!-- partial -->
@@ -146,19 +143,18 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/guru')}}">
+          <a class="nav-link" href="{{url('/')}}">
             <i class="icon-head menu-icon"></i>
             <span class="menu-title">Guru</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" data-toggle="collapse">
           <a class="nav-link" href="{{url('/matpel')}}">
             <i class="icon-book menu-icon"></i>
             <span class="menu-title">Matpel</span>
-            
           </a>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item">
           <a class="nav-link" href="{{url('/cloud')}}">
             <i class="icon-cloud menu-icon"></i>
             <span class="menu-title">Cloud</span>
@@ -170,60 +166,13 @@
             <span class="menu-title">logout</span>
           </a>
         </li>
-        
-      </ul>
     </nav>
     <!-- partial -->
     <div class="main-panel">
       <div class="content-wrapper">
-          <div gg class="card" >
-              <div class="card-body">
-                <h4 class="card-title">Data guru</h4>
-                <a href="{{url('/tambahguru')}}"><input class="tambah" type="button" value="tambah"></input></a>
-                <div class="table-responsive">
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Operation</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <!-- <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td class="text-danger"> </td>
-                        <td><button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Hapus</button>
-                        </td>
-                      </tr> -->
-                      @php
-                        $no = 1
-                      @endphp
-                      @foreach($guru as $g)
-                      <tr>
-                        <td>{{$no++}}</td>
-                        <td>{{$g->name}}</td>
-                        <td>{{$g->username}}</td>
-                        <td>{{$g->password}}</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                            <a href="/guru/{{$g->id}}/editguru"><button class="btn btn-primary me-2">Edit</button></a> 
-                            <a href="/delete/{{$g->id}}">
-                              <button type="submit" class="btn btn-danger bg-red-600">Delete</button>
-                            </a>
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          
+
+
+
       </div>
       <!-- content-wrapper ends -->
       <!-- partial:partials/_footer.html -->
