@@ -1,6 +1,6 @@
 @extends('default')
 @section('css')
-css/cssCloud/cloud.css
+css/cssCloud/cloudfolder.css
 @endsection
 @section('content')
 
@@ -15,14 +15,14 @@ css/cssCloud/cloud.css
         {{-- content side bar --}}
         <div class="page-wrapper chiller-theme toggled">
             <div class="pageWrapper2" >
-                <a id="dashboard" href="#dashboard">
+                <a id="dashboard" href="{{url('/clod')}}">
                     <iconify-icon class="dashboardLogo" icon="mdi:file-document-multiple" width="21" height="21"></iconify-icon>
                     <p class="dashboardText">Dashboard</p>
                  </a>
                     <nav class="sidebar-wrapper ">   
                         <ul>
                             <li class="sidebar-dropdown">   
-                              <a id="nav"  class="folderLogo" href="#"><iconify-icon   icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon>
+                              <a id="nav"  class="folderLogo" href="#nav"><iconify-icon class="iconFolder" icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon>
                               <span class="folderText">Folder</span><iconify-icon id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
                               <div class="sidebar-submenu">
                                 <ul >
@@ -86,98 +86,49 @@ css/cssCloud/cloud.css
         {{-- navbar end --}}
         {{-- file --}}
         <div class="file">
+        <p class="fileLocation">File Folder 1/Word</p>
             {{-- sort by --}}
             <div class="sortBy">
-                <a href="#word"  class="recWord">
+                <a href=""  class="recWord">
                     <div class="wordContent">
                         <img src="assets/imgcloud/logoword.png" class="wordLogo" alt="logo word">                   
                         <div class="groupWordText">
                             <p class="wordText1">Word</p>
-                            <p class="wordText2">20 files</p>
+                            <p class="wordText2"></p>
                         </div>
                     </div>
                 </a>
                 <a href="#excel"  class="recExcel">
                     <div class="excelContent">
-                        <img src="assets/imgcloud/logoexcel.png" class="excelLogo" alt="logo excel">                   
+                        <img src="assets/imgcloud/logoword.png" class="excelLogo" alt="logo excel">                   
                         <div class="groupExcelText">
-                            <p class="excelText1">Excel</p>
-                            <p class="excelText2">20 files</p>
+                            <p class="excelText1">Word</p>
+                            <p class="excelText2"></p>
                         </div>
                     </div>
                 </a>
                 <a href="#ppt"  class="recPpt">
                     <div class="pptContent">
-                        <img src="assets/imgcloud/logoppt.png" class="pptLogo" alt="logo ppt">                   
+                        <img src="assets/imgcloud/logoword.png" class="pptLogo" alt="logo ppt">                   
                         <div class="groupPptText">
-                            <p class="pptText1">PowerPoint</p>
-                            <p class="pptText2">20 files</p>
+                            <p class="pptText1">Word</p>
+                            <p class="pptText2"></p>
                         </div>
                     </div>
                 </a>
                 <a href="#pdf"  class="recPdf">
                     <div class="pdfContent">
-                        <img src="assets/imgcloud/logopdf.png" class="pdfLogo" alt="logo pdf">                   
+                        <img src="assets/imgcloud/logoword.png" class="pdfLogo" alt="logo pdf">                   
                         <div class="groupPdfText">
-                            <p class="pdfText1">PDF</p>
-                            <p class="pdfText2">20 files</p>
+                            <p class="pdfText1">Word</p>
+                            <p class="pdfText2"></p>
                         </div>
                     </div>
                 </a>
                 </div>
                 {{-- end sort --}}
-                {{-- last update --}}
-                <div class="lastUpload">
-                    <div class="flex items-center">
-                        <p class="textLastUpload">Last Upload</p>
-                    <a href="" class="seeMore">
-                        <p class="seeMoreText">see more</p>
-                        <iconify-icon class="seeMoreIcon" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon>
-                    </a> 
-                    </div>
-                    <div id="last-update">
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="https://stackoverflow.com/questions/5404839/how-do-i-refresh-a-page-using-javascript" >
-                            <div class="box-last">
-                                <img src="assets/imgcloud/logoword.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Jadwal X PPLG</p>
-                                    <p class="fileText2">18/12/2022 08:06</p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <a href="" class="titik3"><iconify-icon id="something" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
-                        </div>
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="https://stackoverflow.com/questions/5404839/how-do-i-refresh-a-page-using-javascript" >
-                            <div class="box-last">
-                                <img src="assets/imgcloud/logoword.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Jadwal X PPLG</p>
-                                    <p class="fileText2">18/12/2022 08:06</p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <a href="" class="titik3"><iconify-icon id="something" style="z-index: 20" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
-                        </div>
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="https://stackoverflow.com/questions/5404839/how-do-i-refresh-a-page-using-javascript" >
-                            <div class="box-last">
-                                <img src="assets/imgcloud/logoword.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Jadwal X PPLG</p>
-                                    <p class="fileText2">18/12/2022 08:06</p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <a href="" class="titik3"><iconify-icon id="something" style="z-index: 20" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
-                        </div>
-                    </div>
-                </div>
-                {{-- end last update --}}
+               
+                
             </div>
            
         </div>

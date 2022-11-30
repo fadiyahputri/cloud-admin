@@ -42,6 +42,8 @@ Route::get('/clod', [Cloud::class, 'cloud']);
 
 Route::get('/folder', [Cloud::class, 'folder']);
 
+Route::get('/file', [Cloud::class, 'file']);
+
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 

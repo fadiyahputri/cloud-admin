@@ -1,42 +1,38 @@
-@extends('default')
-@section('content')
-<div class="container-scroller">
-  <div class="container-fluid page-body-wrapper full-page-wrapper">
-    <div class="content-wrapper d-flex align-items-center auth px-0">
-      <div class="row w-100 mx-0">
-        <div class="col-lg-4 mx-auto">
-          <div class="auth-form-light text-left pt-4 pb-5 pl-4 pr-4 px-sm-5">
-            <div class="brand-logo d-flex justify-content-center">
-              <img src="{{asset('assets/images/logo tb1.png')}}" alt="logo">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Cloud</title>
+    <link rel="stylesheet" href="css/cssCloud/login.css">
+</head>
+<body>
+    <div class="content">
+        <!-- bagian kiri -->
+        <form action="{{route('postlogin')}}" class="left-side" method="POST" class="pt-3">
+            {{ csrf_field() }}
+            <div class="text-login">
+                <img src="assets/imgcloud/logo-tb.png" alt="logo-starbhak" class="img-logo">
+                <h4>Login</h4>
+                <hr>
             </div>
-            <h4>Admin Area</h4>
-            <h6 class="font-weight-light">Log In here</h6>
-            <form action="{{route('postlogin')}}" method="POST" class="pt-3">
-              {{ csrf_field() }}
-              <div class="form-group">
-                <input type="text" name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
-              </div>
-              <div class="form-group">
-                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-              </div>
-              <div class="mt-3">
-                <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
-              </div>
-              <!-- <div class="my-2 d-flex justify-content-between align-items-center">
-                <div class="form-check"> -->
-                  
-                </div>
                 
-              </div>
-              
-            </form>
-          </div>
-        </div>
-      </div>
+                <div class="input-userpw">
+                    <div class="input-user">
+                        <label>Username</label>
+                        <input type="text"  name="username" id="exampleInputEmail1" placeholder="Username">
+                        <!-- <p>Username salah</p> -->
+                    </div>
+                    
+                    <div class="input-pw">
+                        <label>Password</label>
+                        <input type="text" name="password" id="exampleInputPassword1" placeholder="Password">
+                        <!-- <p>Password salah</p> -->
+                        <button type="submit">Login</button>
+                    </div>
+                </div>
+        </form>
     </div>
-    <!-- content-wrapper ends -->
-  </div>
-  <!-- page-body-wrapper ends -->
-</div>
-<!-- container-scroller -->
-@endsection
+</body>
+</html>

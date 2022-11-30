@@ -30,6 +30,10 @@ class Cloud extends Controller
         return view('cloud/folder');
     }
 
+    public function file(){
+        return view('cloud/file');
+    }
+
     public function login() {
         return view ('dashboard/pengguna/login');
     }
