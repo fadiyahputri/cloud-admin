@@ -36,7 +36,7 @@ css/cssCloud/cloud.css
                     <div id="add">
                         <div class="flex items-center justify-center text-white" style="margin-left: 2%;font-weight: bold">
                             <iconify-icon icon="ic:twotone-plus" width="20" height="29"></iconify-icon>
-                            <p style="font-size: 15px;">Baru</p>
+                            <a href="/clod/folder/create"><button>Tambah Folder</button></a>
                         </div>
                     </div>
             </div>
@@ -119,9 +119,7 @@ css/cssCloud/cloud.css
                         </div>
                     </div>
                 </a>
-                    
-                    
-                    
+
                    
                 </div>
                 {{-- end sort --}}

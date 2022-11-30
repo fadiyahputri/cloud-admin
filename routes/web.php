@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Cloud;
-use App\Http\Controllers\LoginController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GuruController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FolderController;
 
 
 
@@ -32,11 +34,7 @@ Route::group(['middleware' => ['auth','admin:admin,user']], function(){
     
     Route::get('/matpel', [Cloud::class, 'matpel']);
 
-    Route::get('/cloud', [Cloud::class, 'cloudDashboard']);
-    
-    
-
-    
+    Route::get('/cloud', [Cloud::class, 'cloudDashboard']);    
 });
 
 
@@ -49,8 +47,17 @@ Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogi
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-
 Route::post('/tambahguru/store',[GuruController::class, 'store']);
+
+// UNTUK FILE
+Route::get('/folder',[FileController::class, 'index']);
+Route::get('/folder/file/create',[FileController::class, 'create']);
+Route::post('/folder/file/store',[FileController::class, 'store']);
+Route::get('/folder/file/delete/{id}',[FileController::class,'destroy']);
+
+// UNTUK FOLDER
+Route::get('/clod', [FolderController::class, 'index']);
+Route::get('/clod/folder/create', [FolderController::class, 'create']);
+Route::post('/clod/folder/store', [FolderController::class, 'store']);
 
 

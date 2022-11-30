@@ -581,3 +581,186 @@
 #add:hover{
 	cursor: pointer;
 }
+
+/* BAGIAN FILE */
+
+.pembungkus-table{
+	margin-top: 20px;
+	width: 100%;
+}
+
+.pembungkus-table .table-file{
+	width: 69vw;
+}
+
+.pembungkus-table .table-file tr{
+	background-color: white;
+	box-shadow: #0000;
+}
+
+.table-file td{
+	padding-top: 1px;
+}
+
+.file{
+	width: 69vw;
+	display: flex;
+	margin-top: 10px;
+	background-color: white;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.file .nama-file{
+	width: 50%;
+	font-weight: bold;
+}
+
+.file .timestamp{
+	width: 30%;
+}
+
+.file .tipe-file{
+	width: 20%;
+}
+
+.file .kumpulan-action{
+width: 10%;
+}
+
+/* ---------------------MENAMBAHKAN FILE---------------------- */
+#blur-filter{
+	background-color: rgba(240, 227, 227, 0.5);
+	backdrop-filter: blur(2px);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+}
+
+#inputsection{
+	background-color: white;
+	display: flex;
+	border-radius: 20px;
+	height: 60%;
+	width: 40%;
+	top: 0;
+	left: 0;
+	margin-left: 30%;
+	margin-top: 10%;
+	box-shadow: #1e2229;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#inputsection h1{
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+.dropfile-subtitle{
+	margin-bottom: 50px;
+}
+
+.button-section-input{
+	display: flex;
+	margin-top: 50px;
+	align-items: center;
+}
+
+.button-section-input button{
+  	width: 100px;
+	font-weight: bold;
+ 	height: 40px;
+ 	font-size: 15px;
+  	border-radius: 10px;
+  	color: #ffff;
+  	cursor: pointer;
+  	border: 0px;
+  	box-shadow: 2px 5px 5px #dcdcea;
+}
+
+.button-section-input #btn-cancel-input{
+	background-color: #980303;
+	margin-right: 60px;
+}
+
+.button-section-input #btn-submit-input{
+	background-color: #006400;
+	margin-left: 60px;
+}
+
+/* .drag-area{
+	border: 2px dashed #6C7383;
+	background-color: #F4F4F4;
+	height: 60%;
+	width: 70%;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 15px;
+} */
+
+/* .drag-area img{
+	height: 20%;
+	margin-bottom: 10px;
+}
+
+.drag-area h2{
+	font-weight: bold;
+	color: #6C7383;
+	font-size: 17px;
+}
+.drag-area p{
+	font-weight: bold;
+	color: #6C7383;
+	font-size: 14px;
+} */
+
+/* custom input file */
+.upload-btn-wrapper {
+	position: relative;
+	/* overflow: hidden; */
+	display: inline-block;
+  }
+  
+  .btn {
+	border: 2px solid gray;
+	color: gray;
+	background-color: white;
+	padding: 8px 20px;
+	border-radius: 8px;
+	font-size: 20px;
+	font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+	font-size: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+  }
+
+/* .btn-simpan{
+	width: 100px;
+	font-weight: bold;
+ 	height: 40px;
+ 	font-size: 15px;
+  	border-radius: 10px;
+  	color: #ffff;
+  	cursor: pointer;
+  	border: 0px;
+  	box-shadow: 2px 5px 5px #dcdcea;
+	background-color: #006400;
+}
+
+.input-folder{
+	width: 200px;
+	background-color: #525965;
+} */
