@@ -9,13 +9,7 @@ class LoginController extends Controller
 {
 
     public function index(){
-        if($user = Auth::user()){
-                if($user->level == 'user'){
-                    return redirect()->intended('/cloud');
-                }else if($user->level =- 'admin'){
-                    return redirect()->intended('/');
-                }
-            }
+
             return view('pengguna.login');
         }
 

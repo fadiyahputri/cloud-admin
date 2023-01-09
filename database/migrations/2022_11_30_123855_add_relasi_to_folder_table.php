@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('folder', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('cloud_id')->unsigned();
-            $table->string('nama_folder');
-            $table->timestamps();
+        Schema::table('folder', function (Blueprint $table) {
+            $table->foreign('cloud_id')->references('id')->on('cloud');
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('folder');
+        Schema::table('folder', function (Blueprint $table) {
+            //
+        });
     }
 };

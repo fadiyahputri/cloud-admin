@@ -9,5 +9,13 @@ class Folder extends Model
 {
     use HasFactory;
     protected $table = "folder";
-    protected $guarded = [];
+    protected $guarded = ['id'];
+
+    public function cloud(){ 
+        return $this->belongsTo(Cloud::class);
+        }
+
+    public function file(){
+        return $this->hasMany(File::class);
+    }
 }

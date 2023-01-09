@@ -32,7 +32,9 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   {{-- css --}}
   <link rel="stylesheet" href="@yield('css')">
+  @yield('foldercss')
   <script src="assets/js/jquery.js"></script>
+  @yield('jquery')
 
 </head>
 <body>

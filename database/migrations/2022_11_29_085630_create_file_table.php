@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('file', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('folder_id')->unsigned();
             $table->string('file');
             $table->string('tipe_file');
             $table->timestamps();
+
+
+            $table->foreign('folder_id')->references('id')->on('folder');
         });
     }
 

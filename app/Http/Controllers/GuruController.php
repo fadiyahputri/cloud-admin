@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cloud;
 use App\Models\Guru;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class GuruController extends Controller
@@ -27,7 +29,15 @@ class GuruController extends Controller
             'name'=>$request->name,
             'username'=>$request->username,
             'level'=>$request->level,
+
             'password'=>Hash::make( $request->password)
+        ]);
+        $data = DB::table('users')->orderBy('id', 'DESC')->limit(1)->get()->pluck('id')->first();
+        
+        
+        Cloud::create([
+            'user_id'=>$data,
+            'folder_name'=>$request->name,
         ]);
         return redirect('/guru');
     }

@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cloud;
 use App\Models\File;
+use App\Models\Folder;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $file = File::all();
 
-        $dokumenFile = File::select('tipe_file')->get();
-        return view('cloud.folder', compact(['file']));
     }
 
     public function createFolder()
@@ -25,13 +26,15 @@ class FileController extends Controller
         
     }
     
-    public function create()
-    {
-        return view('cloud.tambahfile');
+    public function create($id)
+    {   
+        return view('cloud.tambahfile',['id'=>$id]);
     }
 
     public function store(Request $request)
     {
+
+       
         $this -> validate($request, 
             [
                 'file' => 'required | mimes: pdf,ppt,pptx,doc,docx,xls,xlsx,pdf',
@@ -39,18 +42,24 @@ class FileController extends Controller
         );
         
             $dokumen = $request -> file('file');
-           
+            $folder_id = $request->id;
             $namaDokumen = $request->file('file')->getClientOriginalName();
             $tipe_file = $dokumen -> getClientOriginalExtension();
-            $dokumen->move('foldercloud-1/', $namaDokumen);
+            $fol = Folder::with('cloud')->where('id',$request->id)->get();
+            foreach ($fol as $fols) {
+                $filname = $fols->cloud->folder_name;
+                $folname = $fols->nama_folder;
+            }
+            $dokumen->move('foldercloud/'.$filname."/". $folname.'/',$namaDokumen);
 
 
             $data = new File();
             $data->file = $namaDokumen;
             $data->tipe_file = $tipe_file;
+            $data->folder_id = $folder_id;
             $data->save();
 
-            return redirect('/folder');
+            return redirect()->route('folder',$folder_id);
     }
 
     public function edit($id)

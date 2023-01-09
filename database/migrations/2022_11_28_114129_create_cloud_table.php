@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('folder', function (Blueprint $table) {
+        Schema::create('cloud', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cloud_id')->unsigned();
-            $table->string('nama_folder');
+            $table->foreignId('user_id');
+            $table->string('folder_name')->unique();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
+           
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('folder');
+        Schema::dropIfExists('cloud');
     }
 };

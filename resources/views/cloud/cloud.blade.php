@@ -19,15 +19,20 @@ css/cssCloud/cloud.css
                     <iconify-icon class="dashboardLogo" icon="mdi:file-document-multiple" width="21" height="21"></iconify-icon>
                     <p class="dashboardText">Dashboard</p>
                  </a>
+                   
                     <nav class="sidebar-wrapper ">   
                         <ul>
                             <li class="sidebar-dropdown">   
                               <a id="nav"  class="folderLogo" href="#"><iconify-icon   icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon>
                               <span class="folderText">Folder</span><iconify-icon id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
                               <div class="sidebar-submenu">
-                                <ul >
-                                  <li><a href="{{url('/folder')}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p >Folder 1 </p></a></li>
-                                  <li><a href="#"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>Folder 2    </p></a></li>
+                                <ul>
+                                    @foreach ($datafolder as $itemfolder)
+                                    <li>
+                                        <a href="{{ route('folder', ['id'=> $itemfolder->id]) }}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
+                                    </li>
+                                    
+                                     @endforeach                            
                                 </ul>
                               </div>
                             </li>   
@@ -97,6 +102,7 @@ css/cssCloud/cloud.css
                         </div>
                     </div>
                 </a>
+               
                 <a href="#excel"  class="recExcel">
                     <div class="excelContent">
                         <img src="assets/imgcloud/logoexcel.png" class="excelLogo" alt="logo excel">                   
@@ -177,6 +183,7 @@ css/cssCloud/cloud.css
                         </div>
                     </div>
                 </div>
+                
                 {{-- end last update --}}
             </div>
            

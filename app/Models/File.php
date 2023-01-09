@@ -10,4 +10,9 @@ class File extends Model
     use HasFactory;
     protected $table = "file";
     protected $guarded = [];
+
+    public function folder(){ 
+        return $this->belongsTo(Folder::class);
+        }
 }
+

@@ -1,6 +1,9 @@
 @extends('default')
-@section('css')
-css/cssCloud/cloudfolder.css
+@section('foldercss')
+<link rel="stylesheet" href="{{ URL::asset('css/cssCloud/cloudfolder.css') }}">
+@endsection
+@section('jquery')
+<script src="{{ URL::asset('assets/js/jquery.js') }}"></script>
 @endsection
 @section('content')
 
@@ -9,7 +12,7 @@ css/cssCloud/cloudfolder.css
     <div id="containerSideBar">
     <div id="sidebar">
         <div class="logo">
-            <img class="logoStarbhak" src="assets/imgcloud/logotb.png" alt="logo starbhak">
+            <img class="logoStarbhak" src="{{URL::asset('assets/imgcloud/logotb.png')}}" alt="logo starbhak">
             <p class="logoText">SMK Taruna Bhakti</p>
         </div>
         {{-- content side bar --}}
@@ -26,8 +29,11 @@ css/cssCloud/cloudfolder.css
                               <span class="folderText">Folder</span><iconify-icon id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
                               <div class="sidebar-submenu">
                                 <ul >
-                                  <li><a href="{{url('/folder')}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p >Folder 1 </p></a></li>
-                                  <li><a href="#"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>Folder 2    </p></a></li>
+                                    @foreach ($datafolder as $itemfolder)
+                                    <li>
+                                        <a href="{{route('folder', $itemfolder->id)}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
+                                    </li>
+                                     @endforeach  
                                 </ul>
                               </div>
                             </li>   
@@ -38,14 +44,13 @@ css/cssCloud/cloudfolder.css
                         <div id="add">  
                             <div class="btnAdd">
                                 <iconify-icon icon="ic:twotone-plus" width="20" height="29"></iconify-icon>
-                               <a href="/clod/folder/create"><p class="addText">Baru</p></a>
+                                
+                               <a href="{{route('createfolder',$ids)}}"><p class="addText">Baru</p></a>
                             </div>
                         </div>
                     </div>
-            </div>
-            
+              </div>
         </div>
-       
     </div>
 </div>
     {{-- side bar end --}}
@@ -62,7 +67,7 @@ css/cssCloud/cloudfolder.css
                     <ul>
                         <li>
                           <a class="profileDropDown" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="assets/images/logoAdmin2.png" class="logoadmin" alt="profile"/>
+                            <img src="{{URL::asset('assets/images/logoAdmin2.png')}}" class="logoadmin" alt="profile"/>
                           
                           </a>
                           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -86,12 +91,14 @@ css/cssCloud/cloudfolder.css
         {{-- navbar end --}}
         {{-- file --}}
         <div class="file">
-        <p class="fileLocation">File Folder 1</p>
+        <p class="fileLocation">File @foreach ($datafolder2 as $item){{$item->nama_folder}}
+            
+        @endforeach</p>
             {{-- sort by --}}
             <div class="sortBy">
                 <a href="{{url('/file')}}"  class="recWord">
                     <div class="wordContent">
-                        <img src="assets/imgcloud/logoword.png" class="wordLogo" alt="logo word">                   
+                        <img src="{{URL::asset('assets/imgcloud/logoword.png')}}" class="wordLogo" alt="logo word">                   
                         <div class="groupWordText">
                             <p class="wordText1">Word</p>
                             <p class="wordText2">20 files</p>
@@ -100,7 +107,7 @@ css/cssCloud/cloudfolder.css
                 </a>
                 <a href="{{url('/file')}}"  class="recExcel">
                     <div class="excelContent">
-                        <img src="assets/imgcloud/logoexcel.png" class="excelLogo" alt="logo excel">                   
+                        <img src="{{URL::asset('assets/imgcloud/logoexcel.png')}}" class="excelLogo" alt="logo excel">                   
                         <div class="groupExcelText">
                             <p class="excelText1">Excel</p>
                             <p class="excelText2">20 files</p>
@@ -109,7 +116,7 @@ css/cssCloud/cloudfolder.css
                 </a>
                 <a href="{{url('/file')}}"  class="recPpt">
                     <div class="pptContent">
-                        <img src="assets/imgcloud/logoppt.png" class="pptLogo" alt="logo ppt">                   
+                        <img src="{{URL::asset('assets/imgcloud/logoppt.png')}}" class="pptLogo" alt="logo ppt">                   
                         <div class="groupPptText">
                             <p class="pptText1">PowerPoint</p>
                             <p class="pptText2">20 files</p>
@@ -118,7 +125,7 @@ css/cssCloud/cloudfolder.css
                 </a>
                 <a href="{{url('/file')}}"  class="recPdf">
                     <div class="pdfContent">
-                        <img src="assets/imgcloud/logopdf.png" class="pdfLogo" alt="logo pdf">                   
+                        <img src="{{URL::asset('assets/imgcloud/logopdf.png')}}" class="pdfLogo" alt="logo pdf">                   
                         <div class="groupPdfText">
                             <p class="pdfText1">PDF</p>
                             <p class="pdfText2">20 files</p>
@@ -127,22 +134,20 @@ css/cssCloud/cloudfolder.css
                 </a>
                 </div>
                 {{-- end sort --}}
-                @foreach($file as $f)
+                @foreach ($file as $file)
                 <div class="recFolder">
                     <div class="contentFolder">
-                        <div class="nama-file">{{$f->file}}</div>
-                        <div class="timestamp">{{$f->tipe_file}}</div>
-                        <div class="tipe-file">{{ \Carbon\Carbon::parse($f->created_at)->diffForHumans() }}</div>
+                        <div class="nama-file">{{$file->file}}</div>
+                        <div class="timestamp">{{$file->tipe_file}}</div>
+                        <div class="tipe-file">{{ \Carbon\Carbon::parse($file->created_at)->diffForHumans()}}</div>
                         <div class="kumpulan-action">
-                            <a href="{{ asset('foldercloud-1/'. $f->file ) }}" target="_blank" rel="noopener noreferrer"><button class="btn-informasi"><i class="fa-sharp fa-solid fa-circle-info"></i></button></a>    
-                            <!-- <a href="/file/{{$f->id}}/editfile"><button class="btn btn-primary me-2"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button></a>  -->
-                            <a href="/folder/file/delete/{{$f->id}}"><button type="submit" class="btn-delete"><i class="fa-sharp fa-solid fa-trash"></i></button></a>
+                            <a href="{{ URL::asset('foldercloud/'.$file->folder->cloud->folder_name.'/'.$file->folder->nama_folder.'/'. $file->file ) }}" target="_blank" rel="noopener noreferrer"><button class="btn-informasi"><i class="fa-sharp fa-solid fa-circle-info"></i></button></a>    
+                            <a href="/file/{{$file->id}}/editfile"><button class="btn btn-primary me-2"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button></a> 
+                            <a href="/folder/file/delete/{{$file->id}}"><button type="submit" class="btn-delete"><i class="fa-sharp fa-solid fa-trash"></i></button></a>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
                 @endforeach
-                
             </div>
            
         </div>

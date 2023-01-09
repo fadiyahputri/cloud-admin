@@ -7,6 +7,7 @@ css/cssCloud/cloud.css
 <form action="/folder/file/store" method="POST" enctype="multipart/form-data">
 @csrf
 <input type="file" name="file">
+<input type="text" value="{{$id}}" name="id" id="" style="display: none">
 <button type="submit" name="submit">SIMPAN</button>
 </form>
 @endsection
