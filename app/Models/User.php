@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function RelationToCloud(){ 
         return $this->hasOne('App\Models\Cloud');
         }
+    
+    public function matpel(){
+        return $this->hasMany(Matpel::class);
+    }
 }

@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\CloudController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\CloudController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FolderController;
+use App\Http\Controllers\MatpelController;
 
 
 
@@ -49,7 +50,20 @@ Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogi
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+//UNTUK DATA GURU
+
 Route::post('/tambahguru/store',[GuruController::class, 'store']);
+Route::get('/editguru/{id}', [GuruController::class, 'edit']);
+Route::put('/editguru/update/{id}', [GuruController::class, 'update']);
+Route::get('/guru/delete/{id}',[GuruController::class,'destroy']);
+
+//UNTUK DATA MATPEL
+
+Route::get('/tambahmatpel', [MatpelController::class, 'create']);
+Route::post('/tambahmatpel/store',[MatpelController::class, 'store']);
+Route::get('/editmatpel/{id}', [MatpelController::class, 'edit']);
+Route::put('/editmatpel/update/{id}', [MatpelController::class, 'update']);
+Route::get('/matpel/delete/{id}',[MatpelController::class,'destroy']);
 
 // UNTUK FILE
 

@@ -11,9 +11,14 @@ use Illuminate\Support\Facades\Hash;
 
 class GuruController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $guru = User::all();
+        if($request->has('search')){
+            $guru = User::where('name','LIKE','%' .$request->search.'%')->paginate(5);
+        }else{
+            $guru = User::paginate(5);
+        }
+        $guru = User::paginate(5);
         return view('dashboard/index', compact(['guru']));
     }
 
@@ -49,7 +54,15 @@ class GuruController extends Controller
 
     public function update($id, Request $request){
         $guru = User::find($id);
-        $guru -> update($request -> except(['_token','submit']));
+        // $guru -> update($request -> except(['_token','submit']));
+
+        $data = [
+            'name' => $request['name'],
+            'username' => $request['username'],
+            'password'=>Hash::make( $request->password)
+        ];
+
+        $guru->update($data);
         return redirect('/guru');
     }
 

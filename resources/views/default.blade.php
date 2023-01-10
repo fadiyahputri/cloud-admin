@@ -32,6 +32,9 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   {{-- css --}}
   <link rel="stylesheet" href="@yield('css')">
+  <link rel="stylesheet" href="@yield('dashcss')">
+  {{-- iconscout --}}
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   @yield('foldercss')
   <script src="assets/js/jquery.js"></script>
   @yield('jquery')
