@@ -19,7 +19,6 @@ css/cssCloud/cloud.css
                     <iconify-icon class="dashboardLogo" icon="mdi:file-document-multiple" width="21" height="21"></iconify-icon>
                     <p class="dashboardText">Dashboard</p>
                  </a>
-                   
                     <nav class="sidebar-wrapper ">   
                         <ul>
                             <li class="sidebar-dropdown">   
@@ -31,22 +30,38 @@ css/cssCloud/cloud.css
                                     <li>
                                         <a href="{{ route('folder', ['id'=> $itemfolder->id]) }}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
                                     </li>
-                                    
                                      @endforeach                            
                                 </ul>
                               </div>
                             </li>   
                         </ul>        
                     </nav>
-                    <div class="groupAdd">
-                        <div class="line"></div>
-                        <div id="add">  
-                            <div class="btnAdd">
+                            <div class="dropup-center dropup" id="add">
+                                <button type="button" data-bs-toggle="dropdown" aria-expanded="false" id="addDropup">
+                                    <iconify-icon icon="material-symbols:add" style="color: white;"></iconify-icon>
+                                  Baru
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#fileBaru">
+                                        <button type="button">
+                                            <iconify-icon icon="mdi:file-document-add-outline" style="margin-right: 8%"></iconify-icon>
+                                            File baru
+                                        </button>
+                                    </a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#folderBaru">
+                                        <button type="button">
+                                            <iconify-icon icon="mdi:folder-add-outline" style="margin-right: 8%"></iconify-icon>
+                                            Folder baru
+                                        </button>    
+                                    </a></li>
+                                  
+                                </ul>
+                              </div>
+                              
+                            {{-- <div class="btnAdd">
                                 <iconify-icon icon="ic:twotone-plus" width="20" height="29"></iconify-icon>
                                <a href="/clod/folder/create"><p class="addText">Baru</p></a>
-                            </div>
-                        </div>
-                    </div>
+                            </div> --}}
             </div>
             
         </div>
@@ -54,7 +69,60 @@ css/cssCloud/cloud.css
     </div>
 </div>
     {{-- side bar end --}}
-    {{-- conten --}}
+
+    <!-- Modal -->
+<div class="modal fade" id="folderBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">Folder baru</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/clod/folder/store" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                    <input type="text" name="nama_folder" class="nama-folder" placeholder="nama folder">
+                    <input style="display: none;" name="name" type="text" value="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn-modal" style="color: #006fb4;">Simpan</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="fileBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">File baru</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/folder/file/store" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body d-flex justify-center">
+                <div class="dragAndDrop">
+                    <iconify-icon icon="material-symbols:folder-open-rounded" style="color: #169fcf; margin-top: 5%" width="100" height="100"></iconify-icon>
+                    <p class="drag-text">Drop disini</p>
+                    <p style="font-size: 17px; margin-bottom: 1%;">atau</p>
+                    {{-- <label for="file">Pilih file</label> --}}
+                    <input id="demo1" class="pilih-file" type="file" multiple placeholder="Select Files" name="file" id="file" style="margin-left: 11%"/>
+                    <input type="text" value="" name="id" id="" style="display: none">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal2" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" name="submit" class="btn-modal2" style="color: #006fb4;">Simpan</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{-- end modal --}}
+
+    {{-- content --}}
     <div class="navbarReal">
         {{-- nav --}}
         <div>
@@ -68,7 +136,6 @@ css/cssCloud/cloud.css
                         <li>
                           <a class="profileDropDown" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="assets/images/logoAdmin2.png" class="logoadmin" alt="profile"/>
-                          
                           </a>
                           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             <a class="dropdown-item">
@@ -89,6 +156,7 @@ css/cssCloud/cloud.css
             </div>
         </div>
         {{-- navbar end --}}
+
         {{-- file --}}
         <div class="file">
             {{-- sort by --}}
@@ -190,41 +258,6 @@ css/cssCloud/cloud.css
         </div>
     </div>
     
-    <script>
-        jQuery(function ($) {
-            $(".sidebar-dropdown > a").click(function() {
-                $(".sidebar-submenu").slideUp(300);
-                if ($(this).parent().hasClass("active")) {
-                    $(".sidebar-dropdown").removeClass("active");
-                    $(this).parent().removeClass("active");
-                    $('#nav').css('border', 'none');
-                    $('#arrow1').css('display', 'block');
-                    $('#arrow2').css('display', 'none');
-                    
-                    
-                } else {
-                    $(".sidebar-dropdown").removeClass("active");
-                    $(this).next(".sidebar-submenu").slideDown(300);
-                    $(this).parent().addClass("active");
-                    $('#nav').css('border', '1px solid #c0c0c0');
-                    $('#arrow1').css('display', 'none');
-                    $('#arrow2').css('display', 'block');
-                    
-                }
-            });
-        
-            $("#close-sidebar").click(function() {
-                $(".page-wrapper").removeClass("toggled");
-            });
-        
-            $("#show-sidebar").click(function() {
-                $(".page-wrapper").addClass("toggled");
-            });
-        });
-
-        $('#something').click(function() {
-    location.reload();
-});
-      </script>
+    
 </div>
 @endsection

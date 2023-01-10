@@ -17,19 +17,18 @@
                 <h4>Login</h4>
                 <hr>
             </div>
-                
                 <div class="input-userpw">
                     <div class="input-user">
-                        <label>Username</label>
-                        <input type="text"  name="username" id="exampleInputEmail1" placeholder="Username">
-                        <!-- <p>Username salah</p> -->
-                    </div>
-                    
-                    <div class="input-pw">
-                        <label>Password</label>
-                        <input type="text" name="password" id="exampleInputPassword1" placeholder="Password">
+                        <input type="text"  name="username" id="exampleInputEmail1" class="form__input" autocomplete="off" placeholder=" " >
+                        <label for="username" class="form__label">username</label>
                         <!-- <p>Password salah</p> -->
-                        <button type="submit">Login</button>
+                    </div>
+                    <div class="input-pw">
+                        <input type="password"  name="password" id="exampleInputPassword1" class="form__input" autocomplete="off" placeholder=" ">
+                        <label for="password" class="form__label">password</label>
+                        <!-- <p>Username salah</p> -->
+                        <button type="submit" class="btn-login">Login</button>
+                        
                     </div>
                 </div>
         </form>
