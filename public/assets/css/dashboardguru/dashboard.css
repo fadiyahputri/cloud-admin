@@ -483,7 +483,7 @@ body.dark .table-activity table{
     text-align: center;
     padding: 8px;
     font-size: 15px;
-    background-color: var(--table);
+    background-color: var(--primary-color);
     color: var(--table-font);
   }
 

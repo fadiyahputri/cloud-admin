@@ -18,18 +18,18 @@
         {{-- content side bar --}}
         <div class="page-wrapper chiller-theme toggled">
             <div class="pageWrapper2" >
-                <a id="dashboard" href="{{url('/clod')}}">
+                <a style="background-color:#169FCF;color: white" id="dashboard" href="{{url('/clod')}}">
                     <iconify-icon class="dashboardLogo" icon="mdi:file-document-multiple" width="21" height="21"></iconify-icon>
                     <p class="dashboardText">Dashboard</p>
                  </a>
-                    <nav class="sidebar-wrapper ">
+                    <nav class="sidebar-wrapper ">   
                         <ul>
-                            <li class="sidebar-dropdown">   
-                              <a id="nav"  class="folderLogo" href="#nav"><iconify-icon class="iconFolder" icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon>
-                              <span class="folderText">Folder</span><iconify-icon id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
+                            <li  class="sidebar-dropdown">   
+                              <a style="background-color: white;" id="nav"  class="folderLogo" href="#nav"><iconify-icon style="color: #6C7383;" class="iconFolder" icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon>
+                              <span style="color: #6C7383;" class="folderText">Folder</span><iconify-icon style="color: #6C7383;" id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon  id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
                               <div class="sidebar-submenu">
-                                <ul >
-                                    @foreach ($datafolder as $itemfolder)
+                                <ul>
+                                  @foreach ($datafolder as $itemfolder)
                                     <li>
                                         <a href="{{route('folder', $itemfolder->id)}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
                                     </li>
@@ -45,12 +45,7 @@
                           Baru
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#fileBaru">
-                                <button type="button">
-                                    <iconify-icon icon="mdi:file-document-add-outline" style="margin-right: 8%"></iconify-icon>
-                                    File baru
-                                </button>
-                            </a></li>
+                          
                             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#folderBaru">
                                 <button type="button">
                                     <iconify-icon icon="mdi:folder-add-outline" style="margin-right: 8%"></iconify-icon>
@@ -60,8 +55,10 @@
                           
                         </ul>
                     </div>
-              </div>
+            </div>
+            
         </div>
+       
     </div>
 </div>
     {{-- side bar end --}}
@@ -101,56 +98,31 @@
         </div>
         {{-- navbar end --}}
         {{-- file --}}
-        <div class="file">
-        <p class="fileLocation">File @foreach ($datafolder2 as $item){{$item->nama_folder}}
-            
-        @endforeach</p>
+        <div class="file" style="align-content: center;justify-content: center">
+        <p class="fileLocation">File Folder </p>
             {{-- sort by --}}
-            <div class="sortBy">
-                <a href="{{route('file', ['tipe' => 'docx','id'=>$ids])}}"  class="recWord">
+            <div class="row sortBy">
+                @foreach ($file as $file)
+                <a href="" style="width: 23%" class="recWord">
                     <div class="wordContent">
-                        <img src="{{URL::asset('assets/imgcloud/logoword.png')}}" class="wordLogo" alt="logo word">                   
-                        <div class="groupWordText">
-                            <p class="wordText1">Word</p>
-                            <p class="wordText2">20 files</p>
+                        <img src="{{URL::asset('assets/imgcloud/'.$file->tipe_file.'.png')}}" class="wordLogo" alt="logo word">                   
+                        <div style="width: 100%;" class="groupWordText">
+                            <p style="font-size: 1rem;font-weight: 600;padding: 0;width: 120%;" class="wordText1">{{ Str::limit($file->file, 10) }}</p>
+                            <p class="wordText2">{{$file->created_at}}</p>
                         </div>
                     </div>
                 </a>
-                <a href="{{route('file', ['tipe' => 'xlsx','id'=>$ids])}}"  class="recExcel">
-                    <div class="excelContent">
-                        <img src="{{URL::asset('assets/imgcloud/logoexcel.png')}}" class="excelLogo" alt="logo excel">                   
-                        <div class="groupExcelText">
-                            <p class="excelText1">Excel</p>
-                            <p class="excelText2">20 files</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{route('file', ['tipe' => 'pptx','id'=>$ids])}}"  class="recPpt">
-                    <div class="pptContent">
-                        <img src="{{URL::asset('assets/imgcloud/logoppt.png')}}" class="pptLogo" alt="logo ppt">                   
-                        <div class="groupPptText">
-                            <p class="pptText1">PowerPoint</p>
-                            <p class="pptText2">20 files</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{route('file', ['tipe' => 'pdf','id'=>$ids])}}"  class="recPdf">
-                    <div class="pdfContent">
-                        <img src="{{URL::asset('assets/imgcloud/logopdf.png')}}" class="pdfLogo" alt="logo pdf">                   
-                        <div class="groupPdfText">
-                            <p class="pdfText1">PDF</p>
-                            <p class="pdfText2">20 files</p>
-                        </div>
-                    </div>
-                </a>
+                @endforeach
+               
                 </div>
                 {{-- end sort --}}
-           
+               
+                
             </div>
            
         </div>
     </div>
-      <!-- Modal -->
+          <!-- Modal -->
     {{-- folder --}}
 <div class="modal fade" id="folderBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -176,36 +148,30 @@
 
   {{-- file --}}
 <div class="modal fade" id="fileBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-l">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <div class="modal-header d-flex flex-column" style="width: 100%;justify-content: center;align-content: center">
-          <div style="display: flex;flex-direction: column;justify-content: center;align-content: center;width: 100%">
-            <h1 class="modal-title fs-5 fw-semibold d-flex justify-center text-center fs-4" id="exampleModalLabel">Upload your files</h1>
-          <p class="d-flex justify-center text-center">File should be Word, Excel, PowerPoint, PDF</p>
-          </div>
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">File baru</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="/folder/file/store" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="modal-body d-flex flex-column justify-center;" style="padding-right: 5%;padding-left: 5%">
+            <div class="modal-body d-flex justify-center;" style="padding-right: 5%;padding-left: 5%">
                     {{-- <label for="file">Pilih file</label> --}}
-                            <div class="file-input-wrapper" style="width: 100%; height: 40vh;display: flex;justify-content: center; align-content: center; flex-direction: column;border: 1px dashed rgb(138, 138, 138);border-radius: 13px">
+                            <div class="file-input-wrapper" style="width: 120%; height: 50vh;display: flex;justify-content: center; align-content: center; flex-direction: column;border: 1px dashed rgb(138, 138, 138);border-radius: 13px">
                                 
                                 <button style="background-color: white;width: 100%;height: 100%;color: #006fb4;" class="btn-file-input">
-                                    <iconify-icon icon="ic:round-cloud-upload" style="color: #006fb4;" width="80" height="80"></iconify-icon>
-                                    <p style="font-size: 17px; color: rgb(71, 71, 71); font-weight: 500">Drag Or Click</p>
+                                    <iconify-icon icon="ic:round-cloud-upload" style="color: #006fb4;" width="120" height="120"></iconify-icon>
+                                    <p style="font-size: 20px; color: rgb(71, 71, 71); font-weight: 500">Drag Or Click</p>
 
                                  
                                 </button> 
-                                
-                                <input style="" id="image" class="pilih-file" type="file"  multiple="multiple" placeholder="Select Files" name="file" style="margin-left: 11%"/>
-                                <input style="display: none" type="text" name="id" value="{{$ids}}">
+                                <span id="img_text"></span>  
+                                <input style="" id="image" class="pilih-file" type="file" multiple placeholder="Select Files" name="file" id="file" style="margin-left: 11%"/>
+                    
                                 
                             </div>
-                            <div class="hasil-file" style="width: 100%; height: 8vh; background-color: #D7E9FF; padding: 1% 3%; display: flex; align-items: center; border-radius: 10px; margin-top: 3%;">
-                                <span style="width: 90%" id="img_text"></span> 
-                                <iconify-icon class="kwt-file__delete" id="btn-x" icon="ic:baseline-close" style="color: red;position: absolute;left: 85%;" width="30" height="30"></iconify-icon>
-                            </div>
-                             
+                      
                             
                                               
             </div>
@@ -218,11 +184,8 @@
     </div>
   </div>
   {{-- end modal --}}
-    
     <script>
-
-    
-
+       
       </script>
 </div>
 @endsection

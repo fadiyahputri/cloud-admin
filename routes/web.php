@@ -43,7 +43,6 @@ Route::get('/clod', [CloudController::class, 'cloud']);
 
 
 
-Route::get('/file', [CloudController::class, 'file']);
 
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
@@ -66,7 +65,7 @@ Route::put('/editmatpel/update/{id}', [MatpelController::class, 'update']);
 Route::get('/matpel/delete/{id}',[MatpelController::class,'destroy']);
 
 // UNTUK FILE
-
+Route::get('/folder/file/{id}/{tipe}',[FileController::class, 'index'])->name('file');
 Route::get('/folder/file/create/{id}',[FileController::class, 'create'])->name('createfolder');
 Route::post('/folder/file/store',[FileController::class, 'store']);
 Route::get('/folder/file/delete/{id}',[FileController::class,'destroy']);
@@ -76,4 +75,4 @@ Route::get('/folder/{id}',[FolderController::class, 'index'])->name('folder');
 Route::get('/clod/folder/create', [FolderController::class, 'create']);
 Route::post('/clod/folder/store', [FolderController::class, 'store']);
 
-
+Route::get('/files/{tipe}',[CloudController::class, 'file'])->name('files');

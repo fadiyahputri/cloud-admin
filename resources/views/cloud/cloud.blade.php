@@ -42,12 +42,7 @@ css/cssCloud/cloud.css
                                   Baru
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#fileBaru">
-                                        <button type="button">
-                                            <iconify-icon icon="mdi:file-document-add-outline" style="margin-right: 8%"></iconify-icon>
-                                            File baru
-                                        </button>
-                                    </a></li>
+                                   
                                     <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#folderBaru">
                                         <button type="button">
                                             <iconify-icon icon="mdi:folder-add-outline" style="margin-right: 8%"></iconify-icon>
@@ -57,11 +52,6 @@ css/cssCloud/cloud.css
                                   
                                 </ul>
                               </div>
-                              
-                            {{-- <div class="btnAdd">
-                                <iconify-icon icon="ic:twotone-plus" width="20" height="29"></iconify-icon>
-                               <a href="/clod/folder/create"><p class="addText">Baru</p></a>
-                            </div> --}}
             </div>
             
         </div>
@@ -71,6 +61,7 @@ css/cssCloud/cloud.css
     {{-- side bar end --}}
 
     <!-- Modal -->
+    {{-- folder --}}
 <div class="modal fade" id="folderBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -82,7 +73,9 @@ css/cssCloud/cloud.css
             @csrf
             <div class="modal-body">
                     <input type="text" name="nama_folder" class="nama-folder" placeholder="nama folder">
-                    <input style="display: none;" name="name" type="text" value="">
+                    <input style="display: none;" name="name" type="text" value="@foreach ($data2 as $item)
+                        {{$item->id}}
+                    @endforeach">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn-modal" data-bs-dismiss="modal">Batal</button>
@@ -93,6 +86,7 @@ css/cssCloud/cloud.css
     </div>
   </div>
 
+  {{-- file --}}
 <div class="modal fade" id="fileBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -161,7 +155,7 @@ css/cssCloud/cloud.css
         <div class="file">
             {{-- sort by --}}
             <div class="sortBy">
-                <a href="#word"  class="recWord">
+               <a href="{{route('files', ['tipe' => 'docx'])}}"  class="recWord">"
                     <div class="wordContent">
                         <img src="assets/imgcloud/logoword.png" class="wordLogo" alt="logo word">                   
                         <div class="groupWordText">
@@ -171,16 +165,16 @@ css/cssCloud/cloud.css
                     </div>
                 </a>
                
-                <a href="#excel"  class="recExcel">
+                <a href="{{route('files', ['tipe' => 'xlsx'])}}"  class="recExcel">
                     <div class="excelContent">
-                        <img src="assets/imgcloud/logoexcel.png" class="excelLogo" alt="logo excel">                   
+                        <img src="assets/imgcloud/xlsx.png" class="excelLogo" alt="logo excel">                   
                         <div class="groupExcelText">
                             <p class="excelText1">Excel</p>
                             <p class="excelText2">20 files</p>
                         </div>
                     </div>
                 </a>
-                <a href="#ppt"  class="recPpt">
+                <a href="{{route('files', ['tipe' => 'pptx'])}}"  class="recPpt">
                     <div class="pptContent">
                         <img src="assets/imgcloud/logoppt.png" class="pptLogo" alt="logo ppt">                   
                         <div class="groupPptText">
@@ -189,7 +183,7 @@ css/cssCloud/cloud.css
                         </div>
                     </div>
                 </a>
-                <a href="#pdf"  class="recPdf">
+                <a href="{{route('files', ['tipe' => 'pdf'])}}"  class="recPdf">
                     <div class="pdfContent">
                         <img src="assets/imgcloud/logopdf.png" class="pdfLogo" alt="logo pdf">                   
                         <div class="groupPdfText">

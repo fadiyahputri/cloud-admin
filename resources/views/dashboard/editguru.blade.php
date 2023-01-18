@@ -1,5 +1,5 @@
 @extends('default')
-@section('dashcss')
+@section('css')
 /assets/css/dashboardguru/dashboard.css
 @endsection
 @section('content')
@@ -19,10 +19,10 @@
               <i class="uil uil-books"></i>
               <span class="link-name">Matpel</span>
           </a></li>
-          <li><a href="/cloud">
+          {{-- <li><a href="/cloud">
               <i class="uil uil-cloud"></i>
               <span class="link-name">Cloud</span>
-          </a></li>
+          </a></li> --}}
       </ul>
       
       <ul class="logout-mode">
@@ -31,7 +31,7 @@
               <span class="link-name" id="nama_user">{{Auth::user()->name}}</span>
               <a href="#">
                   <i class="uil uil-signout"></i>
-                  <span class="link-name">Logout</span>
+                  <span class="link-name">Log out</span>
               </a>
           </a></li>
       </ul>

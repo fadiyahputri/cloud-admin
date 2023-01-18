@@ -8,12 +8,29 @@ use App\Models\Folder;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class FileController extends Controller
 {
-    public function index($id)
+    public function index($id,$tipe)
     {
+        $loggedin_username = Auth::user()->id;
+        $dataus = User::with('RelationToCloud:id,user_id,folder_name')->get()->where('id',$loggedin_username);
+        foreach ($dataus as $datauser) {
+          $datausers =  $datauser->RelationToCloud->id;
+          $datacloud = Cloud::with('RelationToFolder:id,cloud_id,nama_folder')->get()->where('id', $datausers); 
+          foreach ($datacloud as $itemcloud) {
+            $item = $itemcloud->id;
+          $folder =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get();
+          }
+        
+        };
+        
+        $file = File::where('folder_id',$id)->where('tipe_file',$tipe)->get();
+        $fols = Folder::where('id',$id)->get();
+       
 
+        return view('cloud/file',['datafolder'=>$folder,'file'=>$file,'folder'=>$fols,'tipe'=>$tipe,'ids'=>$id]);
     }
 
     public function createFolder()
@@ -40,6 +57,7 @@ class FileController extends Controller
                 'file' => 'required | mimes: pdf,ppt,pptx,doc,docx,xls,xlsx,pdf',
             ]
         );
+      
         
             $dokumen = $request -> file('file');
             $folder_id = $request->id;

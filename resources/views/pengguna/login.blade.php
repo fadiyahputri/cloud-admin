@@ -20,12 +20,12 @@
                 <div class="input-userpw">
                     <div class="input-user">
                         <input type="text"  name="username" id="exampleInputEmail1" class="form__input" autocomplete="off" placeholder=" " >
-                        <label for="username" class="form__label">username</label>
+                        <label for="username" class="form__label">Username</label>
                         <!-- <p>Password salah</p> -->
                     </div>
                     <div class="input-pw">
                         <input type="password"  name="password" id="exampleInputPassword1" class="form__input" autocomplete="off" placeholder=" ">
-                        <label for="password" class="form__label">password</label>
+                        <label for="password" class="form__label">Password</label>
                         <!-- <p>Username salah</p> -->
                         <button type="submit" class="btn-login">Login</button>
                         
