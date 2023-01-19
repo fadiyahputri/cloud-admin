@@ -44,7 +44,7 @@ class GuruController extends Controller
             'user_id'=>$data,
             'folder_name'=>$request->name,
         ]);
-        return redirect('/guru');
+        return redirect('/guru')->with('success','Data Guru Berhasil Ditambahkan');
     }
 
     public function edit($id){
@@ -63,12 +63,12 @@ class GuruController extends Controller
         ];
 
         $guru->update($data);
-        return redirect('/guru');
+        return redirect('/guru')->with('success2','Data Guru Berhasil Diupdate');
     }
 
     public function destroy($id){
         $guru = User::find($id);
         $guru -> delete(); 
-        return redirect('/guru');
+        return redirect('/guru')->with('success','Data Guru Berhasil Dihapus');
     }
 }

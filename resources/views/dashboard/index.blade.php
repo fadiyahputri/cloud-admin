@@ -113,6 +113,16 @@ sidebarToggle.addEventListener("click", () => {
         localStorage.setItem("status", "open");
     }
 })
-
+</script>
+<script>
+    @if (Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+    @endif
+    @if (Session::has('success2'))
+        toastr.success("{{ Session::get('success2') }}")
+    @endif
+    @if (Session::has('success3'))
+        toastr.success("{{ Session::get('success3') }}")
+    @endif
 </script>
 @endsection

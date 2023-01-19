@@ -54,7 +54,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/tambahguru/store',[GuruController::class, 'store']);
 Route::get('/editguru/{id}', [GuruController::class, 'edit']);
 Route::put('/editguru/update/{id}', [GuruController::class, 'update']);
-Route::get('/guru/delete/{id}',[GuruController::class,'destroy']);
+Route::get('/delete/{id}',[GuruController::class,'destroy']);
 
 //UNTUK DATA MATPEL
 
