@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
@@ -12,7 +11,7 @@ body {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: url('../../assets/imgcloud/gelombanggg1.png');
+    background-image: url('../../assets/imgcloud/gelombang 1.png');
 }
 
 .content {
@@ -44,14 +43,13 @@ body {
 }
 
 .input-userpw {
+    display: flex;
+    flex-direction: column;
     margin-left: 10%;
 }
 
 .input-user,
 .input-pw {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
     position: relative;
     margin-top: 15%;
 
@@ -110,7 +108,7 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    width: 35ch;
+    width: 78%;
     height: 0.5vh;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
@@ -151,29 +149,258 @@ p {
     font-weight: 500;
 }
 
-@media only screen(min-width: 358px) and (max-width: 854px) {
+#exampleInputPassword1 {
+    width: 71.5%;
+    padding: 1.25rem 3.10rem 1.25rem 1.25rem; 
+}
+
+.eye {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    top: 1%;
+    right: 13.1%;
+    background-color: rgb(252, 252, 252);
+    width: 10%;
+    height: 41%;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 399px) {
     body {
         background-image: url('../../assets/imgcloud/gelombang-removebg-preview.png');
     }
 
     .content {
-        height: 70vw;
+        width: 76%;
+        height: 120vw;
         background-image: none;
         display: flex;
         justify-content: center;
     }
 
     .form__input {
-        width: 30ch;
+        width: 57%;
+    }
+
+    #exampleInputPassword1 {
+        width: 48%;
     }
 
     .img-logo {
-        width: 22%;
+        width: 17%;
+    }
+
+    .form__label {
+        font-size: 0.80rem;
+    }
+
+    .form__input:focus ~ .form__label,
+    .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+    font-size: 0.75rem;
     }
 
     button {
-        width: 41ch;
-        margin-top: 28%;
+        margin-top: 25%;
+        width: 72%;
+    }
+
+    .input-userpw {
+        margin-left: 23%;
+    }
+
+    .input-pw {
+        margin-top: 24%;
+    }
+
+    .eye {
+        right: 33%;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    hr {
+        width: 9vh;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 599px) {
+    body {
+        background-image: url('../../assets/imgcloud/gelombang-removebg-preview.png');
+    }
+
+    .content {
+        width: 76%;
+        height: 85vw;
+        background-image: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form__input {
+        width: 57%;
+    }
+
+    #exampleInputPassword1 {
+        width: 49%;
+    }
+
+    .img-logo {
+        width: 17%;
+    }
+
+    .form__label {
+        font-size: 0.90rem;
+    }
+
+    .form__input:focus ~ .form__label,
+    .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+    font-size: 0.75rem;
+    }
+
+    button {
+        margin-top: 16%;
+        width: 67%;
+    }
+
+    .input-userpw {
+        margin-left: 23%;
+    }
+
+    .input-pw {
+        margin-top: 17%;
+    }
+
+    .eye {
+        right: 33%;
+    }
+
+    hr {
+        width: 11vh;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 799px) {
+    body {
+        background-image: url('../../assets/imgcloud/gelombang-removebg-preview.png');
+    }
+
+    .content {
+        width: 70%;
+        height: 73vw;
+        background-image: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form__input {
+        width: 71%;
+    }
+
+    #exampleInputPassword1 {
+        width: 64%;
+    }
+
+    .img-logo {
+        width: 18%;
+    }
+
+    button {
+        width: 81%;
+    }
+
+    .input-userpw {
+        margin-left: 18%;
+    }
+
+    .input-user,
+    .input-pw {
+        margin-top: 15%;
+    }
+
+    .eye {
+        right: 19%;
+    }
+
+    hr {
+        width: 11vh;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+    body {
+        background-image: url('../../assets/imgcloud/gelombang 3.png');
+    }
+
+    .content {
+        width: 78%;
+        height: 61vw;
+        background-image: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form__input {
+        width: 82%;
+    }
+
+    #exampleInputPassword1 {
+        width: 76%;
+    }
+
+    .img-logo {
+        width: 19%;
+    }
+
+    button {
+        width: 90%;
+    }
+
+    .input-userpw {
+        margin-left: 5%;
+    }
+
+    .input-user,
+    .input-pw {
+        margin-top: 15%;
+    }
+
+    .eye {
+        right: 9%;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+    body {
+        background-image: url('../../assets/imgcloud/gelombang 3.png');
+    }
+
+    .content {
+        width: 62%;
+        height: 50vw;
+        background-image: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form__input {
+        width: 92%;
+    }
+
+    #exampleInputPassword1 {
+        width: 86%;
+    }
+
+    .img-logo {
+        width: 19%;
+    }
+
+    button {
+        width: 100%;
     }
 
     .input-userpw {
@@ -182,34 +409,41 @@ p {
 
     .input-user,
     .input-pw {
-        margin: auto;
-        margin-top: 12%;
-        margin-left: 11%;
+        margin-top: 14%;
+    }
+
+    .eye {
+        right: 0%;
     }
 }
 
-@media only screen and (min-width: 855px) and (max-width: 1074px) {
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
     body {
-        background-image: url('../../assets/imgcloud/gelombanggg5.png');
+        background-image: url('../../assets/imgcloud/gelombang 2.png');
     }
 
     .content {
-        height: 60vw;
+        width: 59%;
+        height: 42vw;
         background-image: none;
         display: flex;
         justify-content: center;
     }
 
-    .form__input {
-        width: 45ch;
+    .img-logo {
+        width: 19%;
     }
 
-    .img-logo {
-        width: 22%;
+    .form__input {
+        width: 92%;
+    }
+
+    #exampleInputPassword1 {
+        width: 86%;
     }
 
     button {
-        width: 59ch;
+        width: 100%;
         margin-top: 13%;
     }
 
@@ -219,43 +453,10 @@ p {
 
     .input-user,
     .input-pw {
-        margin: auto;
         margin-top: 14%;
     }
-}
 
-@media only screen and (min-width: 1075px) and (max-width: 1500px) {
-    body {
-        background-image: url('../../assets/imgcloud/gelombanggg3.png');
-    }
-
-    .content {
-        height: 43vw;
-        background-image: none;
-        display: flex;
-        justify-content: center;
-    }
-
-    .img-logo {
-        width: 17%;
-    }
-
-    .form__input {
-        width: 58ch;
-    }
-
-    button {
-        width: 75ch;
-        margin-top: 11%;
-    }
-
-    .input-userpw {
-        margin-left: 0%;
-    }
-
-    .input-user,
-    .input-pw {
-        margin: auto;
-        margin-top: 11%;
+    .eye {
+        right: 0%;
     }
 }
