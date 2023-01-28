@@ -140,6 +140,63 @@ p {
     border-radius: 0.3rem;
 }
 
+#mess{
+    display: none;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 15.5%;
+    top: 15px;
+    
+
+}
+
+#seru{
+   
+    border: 2px solid;
+    border-radius: 50%;
+ 
+}
+
+.message{
+
+    width: 300px;
+    height: 30px;
+    background-color: #e74c3c;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: #fceae8;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    opacity: 90%;
+    display: none;
+    
+    
+}
+.message:hover{
+    cursor: default;
+}
+
+.boxEr{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 90.8%;
+    bottom: 65%;
+    background-color: #e74c3c;
+    transform: rotate(45deg);
+    
+}
+
+
+
 .form__input:focus ~ .form__label,
 .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
     top: -0.6rem;
@@ -226,6 +283,10 @@ p {
     hr {
         width: 9vh;
     }
+       #seru{
+        right: 33.5%;
+    }
+    
 }
 
 @media only screen and (min-width: 400px) and (max-width: 599px) {
@@ -329,6 +390,7 @@ p {
     hr {
         width: 11vh;
     }
+    
 }
 
 @media only screen and (min-width: 800px) and (max-width: 999px) {
@@ -372,6 +434,7 @@ p {
     .eye {
         right: 9%;
     }
+    
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1199px) {
@@ -415,6 +478,7 @@ p {
     .eye {
         right: 0%;
     }
+ 
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -458,5 +522,13 @@ p {
 
     .eye {
         right: 0%;
+    }
+    #seru {
+        right: 2.5%;
+        border: 1.5px solid;
+    }
+
+    #mess{
+        right: 3%;
     }
 }

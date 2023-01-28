@@ -29,7 +29,7 @@ class FileController extends Controller
         $file = File::where('folder_id',$id)->where('tipe_file',$tipe)->get();
         $fols = Folder::where('id',$id)->get();
        
-
+        
         return view('cloud/file',['datafolder'=>$folder,'file'=>$file,'folder'=>$fols,'tipe'=>$tipe,'ids'=>$id]);
     }
 

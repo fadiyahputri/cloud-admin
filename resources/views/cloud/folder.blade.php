@@ -2,9 +2,14 @@
 @section('foldercss')
 <link rel="stylesheet" href="{{ URL::asset('css/cssCloud/cloudfolder.css') }}">
 @endsection
-@section('jquery')
 
+@section('dropdown')
+{{asset('assets/jsblade/dropFile.js')}}
 @endsection
+@section('sidebar')
+{{asset('assets/jsblade/sidebar.js')}}
+@endsection
+
 @section('content')
 
 <div id="container">
@@ -112,7 +117,7 @@
                         <img src="{{URL::asset('assets/imgcloud/logoword.png')}}" class="wordLogo" alt="logo word">                   
                         <div class="groupWordText">
                             <p class="wordText1">Word</p>
-                            <p class="wordText2">20 files</p>
+                            <p class="wordText2">{{$docx}} files</p>
                         </div>
                     </div>
                 </a>
@@ -121,7 +126,7 @@
                         <img src="{{URL::asset('assets/imgcloud/logoexcel.png')}}" class="excelLogo" alt="logo excel">                   
                         <div class="groupExcelText">
                             <p class="excelText1">Excel</p>
-                            <p class="excelText2">20 files</p>
+                            <p class="excelText2">{{$xlsx}} files</p>
                         </div>
                     </div>
                 </a>
@@ -130,7 +135,7 @@
                         <img src="{{URL::asset('assets/imgcloud/logoppt.png')}}" class="pptLogo" alt="logo ppt">                   
                         <div class="groupPptText">
                             <p class="pptText1">PowerPoint</p>
-                            <p class="pptText2">20 files</p>
+                            <p class="pptText2">{{$pptx}} files</p>
                         </div>
                     </div>
                 </a>
@@ -139,7 +144,7 @@
                         <img src="{{URL::asset('assets/imgcloud/logopdf.png')}}" class="pdfLogo" alt="logo pdf">                   
                         <div class="groupPdfText">
                             <p class="pdfText1">PDF</p>
-                            <p class="pdfText2">20 files</p>
+                            <p class="pdfText2">{{$pdf}} files</p>
                         </div>
                     </div>
                 </a>
@@ -203,7 +208,7 @@
                             </div>
                             <div class="hasil-file" style="width: 100%; height: 8vh; background-color: #D7E9FF; padding: 1% 3%; display: flex; align-items: center; border-radius: 10px; margin-top: 3%;">
                                 <span style="width: 90%" id="img_text"></span> 
-                                <iconify-icon class="kwt-file__delete" id="btn-x" icon="ic:baseline-close" style="color: red;position: absolute;left: 85%;" width="30" height="30"></iconify-icon>
+                                <iconify-icon class="kwt-file_delete" id="btn-x" icon="ic:baseline-close" style="color: red;position: absolute;left: 85%;" width="30" height="30"></iconify-icon>
                             </div>
                              
                             

@@ -37,12 +37,19 @@ class CloudController extends Controller
           foreach ($datacloud as $itemcloud) {
             $item = $itemcloud->id;
           $folder =  Folder::where('cloud_id', $item)->get();
+          $las =  Folder::select('id')->where('cloud_id', $item)->get();
+          $last = File::with('folder')->whereIn('folder_id', $las)->orderBy('created_at', 'DESC')->limit(3)->get();
+          $pdf = File::with('folder')->whereIn('folder_id', $las)->where('tipe_file','pdf')->get()->count();
+          $docx = File::with('folder')->whereIn('folder_id', $las)->where('tipe_file','docx')->get()->count();
+          $pptx = File::with('folder')->whereIn('folder_id', $las)->where('tipe_file','pptx')->get()->count();
+          $xlsx = File::with('folder')->whereIn('folder_id', $las)->where('tipe_file','xlsx')->get()->count();
+          
           }
           
         }; 
          
         
-        return view('cloud/cloud',['datafolder'=>$folder,'data2'=>$datacloud]);
+        return view('cloud/cloud',['datafolder'=>$folder,'data2'=>$datacloud,'last' => $last,'pdf'=>$pdf,'docx'=>$docx,'pptx'=>$pptx,'xlsx'=>$xlsx]);
     }
 
     public function folder(){
@@ -59,8 +66,9 @@ class CloudController extends Controller
             $item = $itemcloud->id;
           $folder =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get();
           $folders =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get()->pluck('id');
-          $file =DB::table('file')->whereIn('folder_id', $folders)->where('tipe_file',$tipe)->get();;
-
+         
+          $file = File::with('folder')->whereIn('folder_id', $folders)->where('tipe_file',$tipe)->get();
+          
           }
         }
         return view('cloud/files',['datafolder'=>$folder,'file'=>$file]);

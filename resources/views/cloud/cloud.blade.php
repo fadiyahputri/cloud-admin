@@ -2,6 +2,12 @@
 @section('css')
 css/cssCloud/cloud.css
 @endsection
+@section('dropdown')
+{{asset('assets/jsblade/dropFile.js')}}
+@endsection
+@section('sidebar')
+{{asset('assets/jsblade/sidebar.js')}}
+@endsection
 @section('content')
 
 <div id="container">
@@ -160,7 +166,7 @@ css/cssCloud/cloud.css
                         <img src="assets/imgcloud/logoword.png" class="wordLogo" alt="logo word">                   
                         <div class="groupWordText">
                             <p class="wordText1">Word</p>
-                            <p class="wordText2">20 files</p>
+                            <p class="wordText2">{{$docx}} files</p>
                         </div>
                     </div>
                 </a>
@@ -170,7 +176,7 @@ css/cssCloud/cloud.css
                         <img src="assets/imgcloud/xlsx.png" class="excelLogo" alt="logo excel">                   
                         <div class="groupExcelText">
                             <p class="excelText1">Excel</p>
-                            <p class="excelText2">20 files</p>
+                            <p class="excelText2">{{$xlsx}} files</p>
                         </div>
                     </div>
                 </a>
@@ -179,7 +185,7 @@ css/cssCloud/cloud.css
                         <img src="assets/imgcloud/logoppt.png" class="pptLogo" alt="logo ppt">                   
                         <div class="groupPptText">
                             <p class="pptText1">PowerPoint</p>
-                            <p class="pptText2">20 files</p>
+                            <p class="pptText2">{{$pptx}} files</p>
                         </div>
                     </div>
                 </a>
@@ -188,7 +194,7 @@ css/cssCloud/cloud.css
                         <img src="assets/imgcloud/logopdf.png" class="pdfLogo" alt="logo pdf">                   
                         <div class="groupPdfText">
                             <p class="pdfText1">PDF</p>
-                            <p class="pdfText2">20 files</p>
+                            <p class="pdfText2">{{$pdf}} files</p>
                         </div>
                     </div>
                 </a>
@@ -204,45 +210,21 @@ css/cssCloud/cloud.css
                     </a> 
                     </div>
                     <div id="last-update">
+                        @foreach ($last as $last)
                         <div  class="lastUploadFile">
-                            <a class="sentuh" href="https://stackoverflow.com/questions/5404839/how-do-i-refresh-a-page-using-javascript" >
+                            <a class="sentuh" href="{{ URL::asset('foldercloud/'.  $last->folder->cloud->folder_name.'/'.$last->folder->nama_folder.'/'. $last  ->file ) }}" target="_blank">
                             <div class="box-last">
-                                <img src="assets/imgcloud/logoword.png" class="logoFile" alt="logo file">                   
+                                <img src="assets/imgcloud/{{$last->tipe_file}}.png" class="logoFile" alt="logo file">                   
                                  <div class="fileText">
-                                    <p class="fileText1">Jadwal X PPLG</p>
-                                    <p class="fileText2">18/12/2022 08:06</p>
+                                    <p class="fileText1">{{$last->file}}</p>
+                                    <p class="fileText2">{{$last->created_at}}</p>
                                 </div>
                                 
                             </div>
                             </a>
                             <a href="" class="titik3"><iconify-icon id="something" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
                         </div>
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="https://stackoverflow.com/questions/5404839/how-do-i-refresh-a-page-using-javascript" >
-                            <div class="box-last">
-                                <img src="assets/imgcloud/logoword.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Jadwal X PPLG</p>
-                                    <p class="fileText2">18/12/2022 08:06</p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <a href="" class="titik3"><iconify-icon id="something" style="z-index: 20" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
-                        </div>
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="https://stackoverflow.com/questions/5404839/how-do-i-refresh-a-page-using-javascript" >
-                            <div class="box-last">
-                                <img src="assets/imgcloud/logoword.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Jadwal X PPLG</p>
-                                    <p class="fileText2">18/12/2022 08:06</p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <a href="" class="titik3"><iconify-icon id="something" style="z-index: 20" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 

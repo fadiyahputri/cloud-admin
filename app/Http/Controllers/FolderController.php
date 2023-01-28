@@ -28,12 +28,18 @@ class FolderController extends Controller
             $item = $itemcloud->id;
           $folder =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get();
           $folder2 =  Folder::select('nama_folder','id')->where('id', $id)->get();
+          $folder3 =  Folder::select('id')->where('cloud_id', $item)->get();  
+          $pdf = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','pdf')->get()->count();
+          $docx = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','docx')->get()->count();
+          $pptx = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','pptx')->get()->count();
+          $xlsx = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','xlsx')->get()->count();
+
           }
         
         };
         $file = ModelsFile::with('folder')->where('folder_id',$id)->get();
        
-        return view('cloud.folder', ['datafolder'=>$folder,'ids'=>$id,'datafolder2'=>$folder2,'file'=> $file]);
+        return view('cloud.folder', ['datafolder'=>$folder,'ids'=>$id,'datafolder2'=>$folder2,'file'=> $file,'pdf'=>$pdf,'docx'=>$docx,'pptx'=>$pptx,'xlsx'=>$xlsx]);
     }
 
     public function create()

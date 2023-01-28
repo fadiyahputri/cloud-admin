@@ -2,6 +2,12 @@
 @section('foldercss')
 <link rel="stylesheet" href="{{ URL::asset('css/cssCloud/cloudfolder.css') }}">
 @endsection
+@section('dropdown')
+{{asset('assets/jsblade/dropFile.js')}}
+@endsection
+@section('sidebar')
+{{asset('assets/jsblade/sidebar.js')}}
+@endsection
 
 @section('content')
 
@@ -108,7 +114,7 @@
             {{-- sort by --}}
             <div class="row sortBy">
                 @foreach ($file as $file)
-                <a href="{{ URL::asset('foldercloud/'.  $file->folder->cloud->folder_name.'/'.$file->folder->nama_folder.'/'. $file->file ) }}" style="width: 23%"  class="recWord">
+                <a href="{{ URL::asset('foldercloud/'.  $file->folder->cloud->folder_name.'/'.$file->folder->nama_folder.'/'. $file->file ) }}" style="width: 23%" target="_blank"  class="recWord">
                     <div class="wordContent">
                         <img src="{{URL::asset('assets/imgcloud/'.$file->tipe_file.'.png')}}" class="wordLogo" alt="logo word">                   
                         <div style="width: 100%;" class="groupWordText">

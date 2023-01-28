@@ -28,7 +28,7 @@ class LoginController extends Controller
                 return redirect()->intended('/');
             }
         }else{
-            return redirect('/login');
+            return back()->with('message', 'Username atau password salah')->with('display','flex');
         }
     }
     
