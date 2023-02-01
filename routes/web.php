@@ -8,8 +8,7 @@ use App\Http\Controllers\CloudController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FolderController;
 use App\Http\Controllers\MatpelController;
-
-
+use App\Http\Controllers\TarunaBhaktiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +75,26 @@ Route::get('/clod/folder/create', [FolderController::class, 'create']);
 Route::post('/clod/folder/store', [FolderController::class, 'store']);
 
 Route::get('/files/{tipe}',[CloudController::class, 'file'])->name('files');
+
+// UNTUK WEB SEKOLAH START
+route::get('/SmkTarunaBhakti',[TarunaBhaktiController::class, 'landingpage'])->name('landingpage');
+route::get('/ppdb',[TarunaBhaktiController::class, 'ppdb'])->name('ppdb');
+route::get('/GuruTarunaBhakti',[TarunaBhaktiController::class, 'guru'])->name('guru');
+
+    //profil
+route::get('/sejarah',[TarunaBhaktiController::class, 'sejarah'])->name('sejarah');
+route::get('/identitassekolah',[TarunaBhaktiController::class, 'identitassekolah'])->name('identitassekolah');
+route::get('/visimisi',[TarunaBhaktiController::class, 'visimisi'])->name('visimisi');
+route::get('/tujuan',[TarunaBhaktiController::class, 'tujuan'])->name('tujuan');
+
+
+   //kesiswaan
+route::get('/datapoinpelanggaran',[TarunaBhaktiController::class, 'pelanggaran'])->name('datapelanggran');   
+route::get('/marssmktarunabhakti',[TarunaBhaktiController::class, 'mars'])->name('mars');   
+route::get('/hymnesmktarunabhakti',[TarunaBhaktiController::class, 'hymne'])->name('hymne');   
+route::get('/pancaprasetyasiswa',[TarunaBhaktiController::class, 'pancaprasetyasiswa'])->name('pancaprasetyasiswa'); 
+
+  //kurikulum
+route::get('/sistempembelajaran',[TarunaBhaktiController::class, 'sistempembelajaran'])->name('sistempembelajaran');    
+
+// UNTUK WEB SEKOLAH END
