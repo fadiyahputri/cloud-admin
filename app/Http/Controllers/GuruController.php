@@ -44,7 +44,15 @@ class GuruController extends Controller
             'user_id'=>$data,
             'folder_name'=>$request->name,
         ]);
-        return redirect('/guru')->with('success','Data Guru Berhasil Ditambahkan');
+        Guru::create([
+            'nama' => $request->name,
+            'nip'=> $request->nip,
+            'matpel' => $request->matpel,
+            'jenis_kelamin'=> $request->jenis_kelamin,
+            'alamat' => $request->alamat,
+            'user_id'=> $data
+        ]);
+        return redirect('/dataguru')->with('success','Data Guru Berhasil Ditambahkan');
     }
 
     public function edit($id){

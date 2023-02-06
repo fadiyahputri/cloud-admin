@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
@@ -37,9 +38,13 @@ Route::group(['middleware' => ['auth','admin:admin,user']], function(){
     Route::get('/cloud', [CloudController::class, 'cloudDashboard']);    
 });
 
+Route::get('/cloud', [CloudController::class, 'cloudDashboard']);   
 
 Route::get('/clod', [CloudController::class, 'cloud']);
 
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/dataguru', [AdminController::class, 'guru']);
+Route::get('/landing', [AdminController::class, 'landing']);
 
 
 

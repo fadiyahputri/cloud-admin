@@ -25,7 +25,7 @@ class LoginController extends Controller
             if($user->level == 'user'){
                 return redirect()->intended('/clod');
             }else if($user->level == 'admin'){
-                return redirect()->intended('/');
+                return redirect()->intended('/admin');
             }
         }else{
             return back()->with('message', 'Username atau password salah')->with('display','flex');

@@ -29,5 +29,13 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make(12345)
         ]
     );
+    DB::table('guru')->insert([
+        'nama' => 'kemal',
+        'nip'=> '123213',
+        'matpel' => 'admin',
+        'jenis_kelamin'=> 'laki-laki',
+        'alamat' => 'sumur bandung',
+        'user_id'=> 1
+    ]);
     }
 }
