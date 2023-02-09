@@ -23,7 +23,7 @@
             <span class="tittle2">dashboard</span>
                 <span id="welcome">welcome, <span id="welcome">admin</span></span>
                 <div class="line"></div>
-                <iconify-icon icon="tabler:logout" class="logout" style="color: white;" width="30" height="30"></iconify-icon>
+                <a class="logout"  href="/logout"><iconify-icon icon="tabler:logout" style="color: white;" width="30" height="30"></iconify-icon></a>
         </nav>
         <div id="menu">
             <div id="sidebar">
@@ -86,16 +86,18 @@
                             <th>Tanggal Dibuat</th>
                             <th>action</th>
                         </tr>
+                        @php
+                            $no = 1;
+                        @endphp
                         @foreach ($guru as $g)
                         <tr>
-                            <td>1</td>
+                            <td>{{$no++}}</td>
                             <td>{{$g->nama}}</td>
                             <td>{{$g->user->username}}</td>
                             <td>{{$g->matpel}}</td>
-                            <td>{{$g->created_at}}</td>
-                            <td></td>
+                            <td>{{ \Carbon\Carbon::parse($g->created_at)->format('M, d Y')}}</td>
                             <td>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#detailguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}">
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#detailguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-gambar='{{$g->gambar}}'  data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}">
                                     <iconify-icon class="icon-action"  icon="ph:info-fill" style="color: white;" width="20" height="20"></iconify-icon>
                                 </button>
                                 <button data-bs-toggle="modal" data-bs-target="#editguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}" data-password="{{$g->user->password}}" data-id="{{$g->id}}" data-userid="{{$g->user->id}}">
@@ -107,7 +109,7 @@
                             </td>
                         </tr>
                         @endforeach
-                   
+                   {{-- date('D-M-Y', strtotime($g->created_at))  --}}
                     </table>
                 </div>
             </div>
@@ -277,6 +279,7 @@ bars.forEach(bar => {
         var jenis_kelamin = button.data('jenis_kelamin')
         var alamat = button.data('alamat')
         var username = button.data('username')
+        var gambar = button.data('gambar')
 
         var modal = $(this)
         modal.find('#inptnama').text(nama)
@@ -285,9 +288,19 @@ bars.forEach(bar => {
         modal.find('#inptgender').text(jenis_kelamin)
         modal.find('#inptalamat').text(alamat)
         modal.find('#inptusername').text(username)
+        if(gambar.length > 0 && gambar.val != ''){
+            modal.find('#inptgambar').attr("src",'/assets/images/profile-picture/gambar_guru/'+gambar)     
+        }else{
+            if(jenis_kelamin=="Laki-laki"){
+                modal.find('#inptgambar').attr("src",'/assets/images/profile-picture/gambar_guru/default-boy.jpg')
+            }else{
+                modal.find('#inptgambar').attr("src",'/assets/images/profile-picture/gambar_guru/default-women.jpg')
+            }   
+        }
+        
         }) 
 
-                $('#editguru').on('show.bs.modal',function(event){
+        $('#editguru').on('show.bs.modal',function(event){
         var button = $(event.relatedTarget)
         var nama = button.data('nama')
         var nip = button.data('nip')
@@ -298,6 +311,7 @@ bars.forEach(bar => {
         var password = button.data('password')
         var id = button.data('id')
         var userid = button.data('userid')
+        var gambar = button.data('gambar')
 
         var modal = $(this)
         modal.find('#name').val(nama)
@@ -309,6 +323,7 @@ bars.forEach(bar => {
         modal.find('#password').val(password)
         modal.find('#id').val(id)
         modal.find('#userid').val(userid)
+        modal.find('#gambar').val(gambar)
         }) 
     </script>
     {{-- end modal --}}

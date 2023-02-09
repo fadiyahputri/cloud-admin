@@ -6,13 +6,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="" id="identitas-akun">
+            <form action="" id="identitas-akun" enctype="multipart/form-data">
                 <table style="border-top: none;">
                     <tr>
-                        <td style="width: 5%" class="detail"><label class="form-label">nama</label></td>
+                        <center><img style="width: 150px;border-radius:50%;margin-bottom:20px;" src="" alt="" id="inptgambar"></center>
+                    </tr>
+                    <tr>
+                        <td style="width: 5%" class="detail"><label class="form-label">Nama</label></td>
                         <td style="width: 0.5%" class="detail">:</td>
-                        <td id="inptnama"  class="detail underline"></td>
-                        
+                        <td id="inptnama"  class="detail"></td>
                     </tr>
                     <tr>
                         <td style="width: 5%" class="detail"><label class="form-label" style="text-transform: uppercase;">nip</label></td>

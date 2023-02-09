@@ -114,7 +114,7 @@
                                 <td>{{$g->nama}}</td>
                                 <td>{{$g->user->username}}</td>
                                 <td>{{$g->matpel}}</td>
-                                <td>{{$g->created_at}}</td>
+                                <td>{{ \Carbon\Carbon::parse($g->created_at)->format('M, d Y')}}</td>
                             </tr>
                             @endforeach  
                         </table>

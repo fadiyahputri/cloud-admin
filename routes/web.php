@@ -42,12 +42,14 @@ Route::get('/cloud', [CloudController::class, 'cloudDashboard']);
 
 Route::get('/clod', [CloudController::class, 'cloud']);
 
+//login api
+
+Route::get('/auth/google/redirect', [LoginController::class, 'googleredirect'])->name('googleredirect');
+Route::get('/auth/google/callback', [LoginController::class, 'googlecallaback'])->name('googlecallaback');
+
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dataguru', [AdminController::class, 'guru']);
 Route::get('/landing', [AdminController::class, 'landing']);
-
-
-
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 
@@ -101,5 +103,5 @@ route::get('/pancaprasetyasiswa',[TarunaBhaktiController::class, 'pancaprasetyas
 
   //kurikulum
 route::get('/sistempembelajaran',[TarunaBhaktiController::class, 'sistempembelajaran'])->name('sistempembelajaran');    
-
+  
 // UNTUK WEB SEKOLAH END

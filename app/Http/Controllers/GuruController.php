@@ -44,14 +44,42 @@ class GuruController extends Controller
             'user_id'=>$data,
             'folder_name'=>$request->name,
         ]);
-        Guru::create([
-            'nama' => $request->name,
-            'nip'=> $request->nip,
-            'matpel' => $request->matpel,
-            'jenis_kelamin'=> $request->jenis_kelamin,
-            'alamat' => $request->alamat,
-            'user_id'=> $data
-        ]);
+
+        //STORE GURU
+
+        $this -> validate($request, 
+            [
+                'image' => 'mimes:jpeg,jpg,png',
+            ]
+        );
+        if($request->hasfile('gambar')){
+            $nm = $request->gambar;
+            $namaFile = $nm->getClientOriginalName();
+            $nm->move(public_path().'/assets/images/profile-picture/gambar_guru/', $namaFile);
+
+            Guru::create([
+                'gambar' => $namaFile,
+                'nama' => $request->name,
+                'nip'=> $request->nip,
+                'matpel' => $request->matpel,
+                'jenis_kelamin'=> $request->jenis_kelamin,
+                'alamat' => $request->alamat,
+                'user_id'=> $data
+            ]);
+
+        }
+        else
+        {
+            Guru::create([
+                'nama' => $request->name,
+                'nip'=> $request->nip,
+                'matpel' => $request->matpel,
+                'jenis_kelamin'=> $request->jenis_kelamin,
+                'alamat' => $request->alamat,
+                'user_id'=> $data
+            ]);
+        }
+        
         return redirect('/dataguru')->with('success','Data Guru Berhasil Ditambahkan');
     }
 
@@ -63,6 +91,8 @@ class GuruController extends Controller
     public function update($id, Request $request){
         $guru = User::find($id);
         // $guru -> update($request -> except(['_token','submit']));
+        $pfguru = Guru::find($id);
+        $gambarAwal = $pfguru->gambar;
 
         $data = [
             'name' => $request['name'],
@@ -70,13 +100,36 @@ class GuruController extends Controller
             'password'=>Hash::make( $request->password)
         ];
 
+        $data = [
+            'gambar' => $gambarAwal,
+            'nama' => $request->name,
+            'nip'=> $request->nip,
+            'matpel' => $request->matpel,
+            'jenis_kelamin'=> $request->jenis_kelamin,
+            'alamat' => $request->alamat,
+            'user_id'=> $data
+        ];
+        
+        if($request->hasfile('gambar')){
+        $request->gambar->move(public_path().'/assets/images/profile-picture/gambar_guru/', $gambarAwal);
+        }
+
         $guru->update($data);
-        return redirect('/guru')->with('success2','Data Guru Berhasil Diupdate');
+        $pfguru->update($data);
+
+        return redirect('/dataguru')->with('success2','Data Guru Berhasil Diupdate');
     }
 
     public function destroy($id){
         $guru = User::find($id);
+        
+        $file = public_path('/assets/images/profile-picture/gambar_guru/').$hapus->gambar;
+        if (file_exists($file)){
+            @unlink($file);
+        }
         $guru -> delete(); 
         return redirect('/guru')->with('success','Data Guru Berhasil Dihapus');
     }
+
+    
 }

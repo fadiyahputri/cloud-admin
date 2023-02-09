@@ -51,7 +51,7 @@
                         </div>
                         <div class="rec-input">
                             <label class="form-label">New password</label>
-                            <input name="password" type="text" id="password" class="inputan">
+                            <input name="password" type="password" id="password" class="inputan">
                             </div>
                         </form>
                     </div>

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             $table->id();
+            $table->string("gambar")->nullable();
             $table->string("nama");
             $table->string("nip");
             $table->string("matpel");
@@ -22,7 +23,6 @@ return new class extends Migration
             $table->string("alamat");
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
-
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

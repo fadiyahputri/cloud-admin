@@ -39,6 +39,11 @@
                 </div>
         </form>
     </div>
+    <a href="/auth/google/redirect"> 
+        <button class="google">
+            GOOGLE
+        </button>
+    </a>
     {{-- show pw --}}
     <script>
         var show ;

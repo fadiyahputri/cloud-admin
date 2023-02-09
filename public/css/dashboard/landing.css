@@ -11,6 +11,23 @@ body{
     overflow-y: scroll; overflow-x: hidden;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #2C3E50;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #202e3b;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
 nav{
     width: 100vw;
     height: 76px;
