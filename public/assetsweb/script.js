@@ -162,8 +162,6 @@ resume = () =>{
   myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
 }
 //PPDB SELESAI
-
-  
 //berita start
 
 let loadMoreBtn = document.querySelector('#load-more');
@@ -180,6 +178,52 @@ loadMoreBtn.onclick = () =>{
       loadMoreBtn.style.display = 'none';
    }
 }
-
 //berita end 
+//vidio start
+
+
+const glightbox = GLightbox({
+  selector: '.glightbox'
+});
+
+/**
+ * Gallery Slider
+ */
+new Swiper('.gallery-slider', {
+  speed: 400,
+  loop: true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  slidesPerView: 'auto',
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20
+    },
+    992: {
+      slidesPerView: 5,
+      spaceBetween: 20
+    }
+  }
+});
+  
+
+
+
 

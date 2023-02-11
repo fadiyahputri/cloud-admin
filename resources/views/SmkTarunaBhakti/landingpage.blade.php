@@ -1,16 +1,33 @@
-@extends('SmkTarunaBhakti.layouts.NavbarAndFooter')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title', 'Halaman Utama')
-    
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!--iconify-->
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+   <!-- Boxicons CDN Link -->
+   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 
-@section('link')
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-@endsection
+  <!-- Vendor CSS Files -->
+  <link href="assetsweb/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   
+   <!---page title-->
+   <title>SMK Taruna Bhakti | landing page</title>
 
-@section('style')
-<style type="text/css">
+
+
+  <!--css-->
+  <link rel="stylesheet" href="assetsweb/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+  <style type="text/css">
     .slick-dots li.slick-active button:before{
      color:#0d0d0d ;
     }
@@ -34,6 +51,9 @@
     .programcardpage-mobile{
        display: none;
     }
+    .slick-track{
+      width: 10vw;
+    }
 
     @media (max-width:450px){
   .programcardpage-mobile{
@@ -51,385 +71,524 @@
   }
 
 }
-</style>
-@endsection
-
-@section('webcontent')
-       <!--seputar smk-->
-   <div class="main-page">
-    <h1 style="text-align: center;">SMK TARUNA BHAKTI</h1>
-    <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">Lorem ipsum dolor sit amet consectetur
-       adipisicing elit. Esse quas possimus.</h4>
-    <div class="main-cards">
-       <div class="main-card1">
-          <img src="assetsweb/assets/Achievement _Outline.svg" alt="">
-          <h3>SEKOLAH BERAKREDITASI A</h3>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facilis deserunt nesciunt itaque
-             aspernatur. Tempore laudantium recusandae cum.</h5>
-       </div>
-       <div class="main-card2">
-          <img src="assetsweb/assets/Achievement _Flatline.svg" alt="">
-          <h3>SEKOLAH PUSAT KEUNGGULAN</h3>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ea beatae expedita corporis assumenda
-             sapiente animi recusandae cumque accusantium!</h5>
-       </div>
-       <div class="main-card3">
-          <img src="assetsweb/assets/Boss_Flatline.svg" alt="">
-          <h3>SEKOLAH BERBASIS IT</h3>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ea beatae expedita corporis assumenda
-             sapiente animi recusandae cumque accusantium!</h5>
-       </div>
-    </div>
- </div>
-
- <!--program keahlian-->
  
-    <div class="programs-page">
-       <h1 style="text-align: center;">PROGRAM KEAHLIAN</h1>
-       <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">Pembelajaran di SMK Taruna Bhakti
-          menggabungan antara teori dan praktek dengan orientasi pada kesiapan kerja lulusannya.</h4>
-    </div>
-    <div class="programcardpage">
-       <div class="program-card card1">
-          <h4>Pengembangan Perangkat Lunak & Gim</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/rpl.png" alt="">
-          <div class="ig-info">
-            <iconify-icon class="insta-icon" icon="mdi:instagram"
-            style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-         <span>
-            <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-            </iconify-icon>
-         </span>
-          </div>
-         
-       </div>
-       <div class="program-card card2">
-          <h4>Teknik Jaringan Komputer & Telekomunikasi</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/tkj.png" alt="">
-          <div class="ig-info">
-            <iconify-icon class="insta-icon" icon="mdi:instagram"
-            style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-         <span>
-            <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-            </iconify-icon>
-         </span>
-          </div>
-       </div>
-       <div class="program-card card3">
-          <h4>Teknik Elektronika & Industri</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/tei.png" alt="">
-          <div class="ig-info">
-            <iconify-icon class="insta-icon" icon="mdi:instagram"
-            style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-         <span>
-            <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-            </iconify-icon>
-         </span>
-          </div>
-       </div>
-       <div class="program-card card4">
-          <h4>Broadcasting & Perfilman</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/bc.png" alt="">
-          <div class="ig-info">
-            <iconify-icon class="insta-icon" icon="mdi:instagram"
-            style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-         <span>
-            <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-            </iconify-icon>
-         </span>
-          </div>
-       </div>
-       <div class="program-card card5">
-          <h4>Animasi</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/ani.png" alt="">
-          <div class="ig-info">
-            <iconify-icon class="insta-icon" icon="mdi:instagram"
-            style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-         <span>
-            <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-            </iconify-icon>
-         </span>
-          </div>
-       </div>
- </div>
-    <div class="programcardpage-mobile">
-       <div class="program-card-m card1-m" >
-          <h4>Pengembangan Perangkat Lunak & Gim</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/rpl.png" alt="">
-          <div style="position: relative; left: 33vw; bottom: 8vw;">
-             <iconify-icon class="insta-icon" icon="mdi:instagram"
-             style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-          <span>
-             <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-             </iconify-icon>
-          </span>
-          </div>
-     
-       </div>
-       <div class="program-card-m card2-m">
-          <h4>Teknik Jaringan Komputer & Telekomunikasi</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/tkj.png" alt="">
-          <div style="position: relative; left: 33vw; bottom: 8vw;">
-             <iconify-icon class="insta-icon" icon="mdi:instagram"
-             style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-          <span>
-             <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-             </iconify-icon>
-          </span>
-          </div>
-       </div>
-       <div class="program-card-m card3-m">
-          <h4>Teknik Elektronika & Industri</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/tei.png" alt="">
-          <div style="position: relative; left: 33vw; bottom: 8vw;">
-             <iconify-icon class="insta-icon" icon="mdi:instagram"
-             style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-          <span>
-             <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-             </iconify-icon>
-          </span>
-          </div>
-       </div>
-       <div class="program-card-m card4-m">
-          <h4>Broadcasting & Perfilman</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/bc.png" alt="">
-          <div style="position: relative; left: 33vw; bottom: 8vw;">
-             <iconify-icon class="insta-icon" icon="mdi:instagram"
-             style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-          <span>
-             <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-             </iconify-icon>
-          </span>
-          </div>
-       </div>
-       <div class="program-card-m card5-m">
-          <h4>Animasi</h4>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
-          <img src="assetsweb/assets/jurusan/ani.png" alt="">
-          <div style="position: relative; left: 33vw; bottom: 8vw;">
-             <iconify-icon class="insta-icon" icon="mdi:instagram"
-             style="font-size: 32px; margin-left: 8px;"></iconify-icon>
-          <span>
-             <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
-             </iconify-icon>
-          </span>
-          </div>
-       </div>
- </div>
+</style>
+</head>
+
+<body>
 
 
- <!--portal page-->
- <div class="portal-page">
-    <img src="assetsweb/assets/Online lesson _Monochromatic.svg" alt="">
-    <div class="portal-content">
-       <h1>PORTAL BELAJAR</h1>
-       <h4>Model pengembangan pembelajaran berbasis web yang dapat digunakan <br class="br-portal-page">
-          adalah model pengembangan web-based learning environment</h4>
-       <button>Buka Portal Belajar</button>
-    </div>
- </div>
 
- <!--berita tb-->
- <div class="berita">
+  <!--navbar-->
 
-    <div class="container">
+  <div class="nav-top">
+   <ul class="social-media">
+      <li><a href="#">
+            <iconify-icon icon="mdi:instagram" style="font-size: 2.5vh"></iconify-icon>
+         </a></li>
+      <li><a href="#">
+            <iconify-icon icon="ic:baseline-facebook" style="font-size: 2.5vh"></iconify-icon>
+         </a></li>
+      <li><a href="#">
+            <iconify-icon icon="mingcute:youtube-fill" style="font-size: 2.5vh"></iconify-icon>
+         </a></li>
+      <li><a href="#">
+            <iconify-icon icon="ic:baseline-tiktok" style="font-size: 2.5vh"></iconify-icon>
+         </a></li>
+   </ul>
+   <ul class="alamat">
+      <li><a href="">
+            <iconify-icon icon="material-symbols:location-on" style="font-size: 3vh; margin-right: 0.5vh;">
+            </iconify-icon> Jl. Pekapuran, RT.02/RW.06, Depok, Jawa Barat 16953
+         </a></li>
+      <li><a href="">
+            <iconify-icon icon="mdi:email" style="font-size: 3vh; margin-right: 0.5vh;"></iconify-icon>
+            taruna@smktarunabhakti.net
+         </a></li>
+      <li><a href="">
+            <iconify-icon icon="material-symbols:call-sharp" style="font-size: 3vh; margin-right: 0.5vh;">
+            </iconify-icon> (021) 8744810
+         </a></li>
+   </ul>
+</div>
+<nav>
+   <div class="navbar">
+     <i class='bx bx-menu'></i>
+     <a href="{{asset('/SmkTarunaBhakti')}}" class="logo-tb" >
+       <img src="assetsweb/assets/logo-removebg-preview.png" alt="">
+       <p class="j-logo">SMK Taruna Bhakti <br><span>Our quality asks to be different</span></p>
+    </a>
+     <div class="nav-links">
+       <div class="sidebar-logo">
+         <span class="logo-name">SMKTB</span>
+         <i class='bx bx-x' ></i>
+       </div>
+       <ul class="links">
+         <li>
+           <div class="c-nav">
+             <iconify-icon icon="fa6-solid:school-flag" class="Profil" ></iconify-icon>
+             <a class="textprofil">Profil</a>
+             <i class='bx bxs-chevron-down profil-arrow arrow'></i>
+           </div>
+        
+           <ul class="profil-sub-menu sub-menu">
+             <li><a class="ww" href="{{asset('/sejarah')}}">Sejarah</a></li>
+             <li><a  class="ww" href="{{asset('/identitassekolah')}}">Identitas Sekolah</a></li>
+             <li><a  class="ww" href="{{asset('/visimisi')}}">Visi dan Misi</a></li>
+             <li><a  class="ww" href="{{asset('/tujuan')}}">Tujuan SMK Taruna Bhakti</a></li>
+             <li class="more">
+               <span ><a class="ww" id="mutu">Mutu</a>
+               <i  class='bx bxs-chevron-right arrow mutu-arrow' id="arrow"></i>
+             </span>
+               <ul class="more-sub-menu">
+                 <li><a href="{{asset('/kebijakanmutu')}}">Kebijakan Mutu SMK Taruna Bhakti</a></li>
+                 <li><a href="{{asset('/analisisjabatan')}}">Analisi Jabatan Tenaga Kerja Pendidik (GURU)</a></li>
+                 <li><a href="{{asset('/analisisjabatanwakilhubungan')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Industri</a></li>
+                 <li><a href="{{asset('/analisisjabatanwakitlkurikulum')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Kurikulum</a></li>
+                 <li><a href="{{asset('/analisisjabatanwakilkelas')}}">Analisis Jabatan Wali Kelas</a></li>
+               </ul>
+             </li>
+             <li><a class="ww" href="{{asset('/hubunganindustri')}}">Hubungan Industri</a></li>
+           </ul>
+         </li>
+        
+         <li>
+           <div class="c-nav">
+             <iconify-icon icon="ion:school-sharp" class="Kesiswaan"></iconify-icon>
+             <a class="Kesiswaantext">Kesiswaan</a>
+             <i class='bx bxs-chevron-down Kesiswaan-arrow arrow'></i>
+         </div>
+   
+           <ul class="Kesiswaan-sub-menu sub-menu">
+             <li><a class="ww" href="{{asset('/datapoinpelanggaran')}}">Data Poin Pelanggaran dan Tata Tertib</a></li>
+             <li><a class="ww" href="{{asset('/marssmktarunabhakti')}}">Mars SMK Taruna Bhakti</a></li>
+             <li><a class="ww" href="{{asset('/hymnesmktarunabhakti')}}">Hymne SMK Taruna Bhakti</a></li>
+             <li><a class="ww" href="{{asset('/pancaprasetyasiswa')}}">Panca Prasetya Siswa SMK Taruna Bhakti</a></li>
+           </ul>
+         </li>
+         <li>
+           <div class="c-nav">
+             <iconify-icon icon="ic:baseline-library-books" class="kurikulum"></iconify-icon>
+             <a  class="textkurikulum">kurikulum</a>
+             <i class='bx bxs-chevron-down kurikulum-arrow arrow'></i>
+           </div>
+      
+         <ul class="htmlCss-sub-menu1 sub-menu1">
+           <li><a class="ww" href="{{asset('/GuruTarunaBhakti')}}">Guru SMK Taruna Bhakti</a></li>
+           <li><a  class="ww" href="{{asset('/strukturkurikulum')}}">Struktur Kurikulum SMK Taruna Bhakti</a></li>
+           <li><a  class="ww" href="{{asset('/sistempembelajaran')}}">Sistem Pembelajaran</a></li>
+           <li class="more">
+             <span ><a class="ww" id="Sertifikasi" >Sertifikasi Internasional</a>
+             <i  class='bx bxs-chevron-right arrow Sertifikasi-arrow' id="arrow"></i>
+           </span>
+             <ul class="more-sub-menu1">
+               <li><a href="{{asset('/SertifikasiBroadcasting')}}">Sertifikasi internasional Bidang Broadcasting</a></li>
+               <li><a href="{{asset('/SertifikasiNetworking')}}">Sertifikasi Internasional bidang Networking</a></li>
+               <li><a href="{{asset('/SertifikasiMultimedia')}}">Sertifikasi Internasional Bidang Multimedia</a></li>
+               <li><a href="{{asset('/SertifikasiProgramming')}}">Sertifikasi Internasional Bidang Programming</a></li>
+             </ul>
+           </li>
+         </ul>
+       </li>
+       
+         <li>
+           <div class="c-nav">
+             <iconify-icon icon="teenyicons:building-solid" class="Fasilitas"></iconify-icon>
+               <a class="Fasilitastext">Fasilitas</a>
+               <i class='bx bxs-chevron-down Fasilitas-arrow arrow'></i>
+           </div>
 
-       <h1> BERITA SEPUTAR <br> SMK TARUNA BHAKTI</h1>
+           <ul class="Kesiswaan-sub-menu1 sub-menu2">
+             <li><a class="ww" href="fasilitas.html   ">Sarana dan Prasarana Sekolah</a></li>
+             <li><a class="ww" href="#">Ruang Pembelajaran Umum</a></li>
+             <li><a class="ww" href="#">Ruang Pembelajaran Khusus</a></li>
+             <li><a class="ww" href="#">Fasilitas Pendukung</a></li>
+           </ul>
+         </li>
+       </ul>
+     </div>
+     <div class="s-ppdb">
+       
+       <div class="search-box" >
+         <i class='bx bx-search'></i>
+         <div class="input-box">
+           <input type="text" placeholder="Search...">
+         </div>
+       </div>
+       <a class="ppdb" href="{{asset('/ppdb')}}">PPDB</a>
+     </div>
 
-       <div class="box-container">
+   </div>
+ </nav>
 
-          <div class="box">
-             <div class="image">
-                <img src="https://smktarunabhakti.net/wp-content/uploads/2022/11/Kunjin-14-scaled-e1669461671990.jpg"
-                   alt="">
-             </div>
-             <div class="content">
-                <h3>KUNJUNGAN INDUSTRI (KUNJIN) SMK TARUNA BHAKTI – DEPOK </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded">
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img
-                   src="https://smktarunabhakti.net/wp-content/uploads/2022/11/SURAT-UNDANGAN-RAPAT-KEGIATAN-AKHIR-TAHUN-KELAS-XII-1.jpg"
-                   alt="">
-             </div>
-             <div class="content">
-                <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK [...]</h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded"
-                          >
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img src="https://smktarunabhakti.net/wp-content/uploads/2022/11/IMG_2057-scaled-e1669443986455.jpg"
-                   alt="">
-             </div>
-             <div class="content">
-                <h3>Peringatan Hari Guru Nasional Tahun 2022 </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded">
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img
-                   src="https://smktarunabhakti.net/wp-content/uploads/2022/11/Kunjungan-photo-bersama-3-e1667472691704.jpg"
-                   alt="">
-             </div>
-             <div class="content">
-                <h3>SMK Pusat Keunggulan (PK) Skema Pemadanan Dukungan </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded">
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img src="https://smktarunabhakti.net/wp-content/uploads/2022/11/IMG_1605-scaled.jpg" alt="">
-             </div>
-             <div class="content">
-                <h3>KEGIATAN PERTEMUAN ORANG TUA / WALI SISWA </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded">
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img src="https://smktarunabhakti.net/wp-content/uploads/2022/10/LDKS-2-e1666402586304.jpg" alt="">
-             </div>
-             <div class="content">
-                <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded"
+<div class="hero-img">
+   <div class="gambar"></div>
+</div>
+
+    <!--seputar smk-->
+    <div class="main-page">
+      <h1 style="text-align: center;">SMK TARUNA BHAKTI</h1>
+      <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">SMK Taruna Bhakti Depok merupakan sekolah IT terbaik di Depok</h4>
+      <div class="main-cards">
+         <div class="main-card1">
+            <img src="assetsweb/assets/Achievement _Outline.svg" alt="">
+            <h3>SEKOLAH BERAKREDITASI A</h3>
+            <h5>SMK Taruna Bhakti Depok merupakan sekolah dengan akreditasi A berdasarkan pada sertifikat  02.00/203/SK/BAN-SM/XII/2018.</h5>
+         </div>
+         <div class="main-card2">
+            <img src="assetsweb/assets/Achievement _Flatline.svg" alt="">
+            <h3>SEKOLAH PUSAT KEUNGGULAN</h3>
+            <h5>Sekolah yang bertujuan untuk menyiapkan lulusan yang terserap di industri & menjadi Entrepreneur yang unggul dalam menyongsong Era Revolusi 4.0.</h5>
+         </div>
+         <div class="main-card3">
+            <img src="assetsweb/assets/Boss_Flatline.svg" alt="">
+            <h3>SEKOLAH BERBASIS IT</h3>
+            <h5>SMK Taruna Bhakti merupakan sekolah yang memanfaatkan teknologi sebagai sarana pendidikannya baik bagi pelajar maupun pengajar.</h5>
+         </div>
+      </div>
+   </div>
+
+   <!--program keahlian-->
+   
+      <div class="programs-page">
+         <h1 style="text-align: center;">PROGRAM KEAHLIAN</h1>
+         <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">Pembelajaran di SMK Taruna Bhakti
+            menggabungan antara teori dan praktek dengan orientasi pada kesiapan kerja lulusannya.</h4>
+      </div>
+      <div class="programcardpage">
+         <div class="program-card card1">
+            <h4>Pengembangan Perangkat Lunak & Gim</h4>
+            <h5>Jurusan yang berfokus pada pengembangan software dan gim</h5>
+            <img src="assetsweb/assets/jurusan/rpl.png" alt="">
+            <div class="ig-info">
+              <iconify-icon class="insta-icon" icon="mdi:instagram"
+              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+           <span>
+              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              </iconify-icon>
+           </span>
+            </div>
+           
+         </div>
+         <div class="program-card card2">
+            <h4>Teknik Jaringan Komputer & Telekomunikasi</h4>
+            <h5>Jurusan dengan sarana praktik yang sesuai dengan standar industri.</h5>
+            <img src="assetsweb/assets/jurusan/tkj.png" alt="">
+            <div class="ig-info">
+              <iconify-icon class="insta-icon" icon="mdi:instagram"
+              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+           <span>
+              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              </iconify-icon>
+           </span>
+            </div>
+         </div>
+         <div class="program-card card3">
+            <h4>Teknik Elektronika & Industri</h4>
+            <h5>Jurusan dengan laboratoriam dan alat peraktik sangat lengkap.</h5>
+            <img src="assetsweb/assets/jurusan/tei.png" alt="">
+            <div class="ig-info">
+              <iconify-icon class="insta-icon" icon="mdi:instagram"
+              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+           <span>
+              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              </iconify-icon>
+           </span>
+            </div>
+         </div>
+         <div class="program-card card4">
+            <h4>Broadcasting & Perfilman</h4>
+            <h5>Jurusan yang mempelajari seni audio & visual dan banyak aspek lainnya. </h5>
+            <img src="assetsweb/assets/jurusan/bc.png" alt="">
+            <div class="ig-info">
+              <iconify-icon class="insta-icon" icon="mdi:instagram"
+              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+           <span>
+              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              </iconify-icon>
+           </span>
+            </div>
+         </div>
+         <div class="program-card card5">
+            <h4>Animasi</h4>
+            <h5>Program keahlian yang mempelajari penguasaan konten dibidang Multimedia</h5>
+            <img src="assetsweb/assets/jurusan/ani.png" alt="">
+            <div class="ig-info">
+              <iconify-icon class="insta-icon" icon="mdi:instagram"
+              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+           <span>
+              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              </iconify-icon>
+           </span>
+            </div>
+         </div>
+   </div>
+      <div class="programcardpage-mobile">
+         <div class="program-card-m card1-m" >
+            <h4>Pengembangan Perangkat Lunak & Gim</h4>
+            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
+            <img src="assetsweb/assets/jurusan/rpl.png" alt="">
+            <div style="position: relative; left: 33vw; bottom: 8vw;">
+               <iconify-icon class="insta-icon" icon="mdi:instagram"
+               style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+            <span>
+               <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+               </iconify-icon>
+            </span>
+            </div>
+       
+         </div>
+         <div class="program-card-m card2-m">
+            <h4>Teknik Jaringan Komputer & Telekomunikasi</h4>
+            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
+            <img src="assetsweb/assets/jurusan/tkj.png" alt="">
+            <div style="position: relative; left: 33vw; bottom: 8vw;">
+               <iconify-icon class="insta-icon" icon="mdi:instagram"
+               style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+            <span>
+               <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+               </iconify-icon>
+            </span>
+            </div>
+         </div>
+         <div class="program-card-m card3-m">
+            <h4>Teknik Elektronika & Industri</h4>
+            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
+            <img src="assetsweb/assets/jurusan/tei.png" alt="">
+            <div style="position: relative; left: 33vw; bottom: 8vw;">
+               <iconify-icon class="insta-icon" icon="mdi:instagram"
+               style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+            <span>
+               <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+               </iconify-icon>
+            </span>
+            </div>
+         </div>
+         <div class="program-card-m card4-m">
+            <h4>Broadcasting & Perfilman</h4>
+            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
+            <img src="assetsweb/assets/jurusan/bc.png" alt="">
+            <div style="position: relative; left: 33vw; bottom: 8vw;">
+               <iconify-icon class="insta-icon" icon="mdi:instagram"
+               style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+            <span>
+               <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+               </iconify-icon>
+            </span>
+            </div>
+         </div>
+         <div class="program-card-m card5-m">
+            <h4>Animasi</h4>
+            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
+            <img src="assetsweb/assets/jurusan/ani.png" alt="">
+            <div style="position: relative; left: 33vw; bottom: 8vw;">
+               <iconify-icon class="insta-icon" icon="mdi:instagram"
+               style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+            <span>
+               <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+               </iconify-icon>
+            </span>
+            </div>
+         </div>
+   </div>
+
+
+   <!--portal page-->
+   <div class="portal-page">
+      <img src="assetsweb/assets/Online lesson _Monochromatic.svg" alt="">
+      <div class="portal-content">
+         <h1>PORTAL BELAJAR</h1>
+         <h4>Model pengembangan pembelajaran berbasis web yang dapat digunakan <br class="br-portal-page">
+            adalah model pengembangan web-based learning environment</h4>
+         <button>Buka Portal Belajar</button>
+      </div>
+   </div>
+
+   <!--berita tb-->
+   <div class="berita">
+
+      <div class="container">
+
+         <h1> BERITA SEPUTAR <br> SMK TARUNA BHAKTI</h1>
+
+         <div class="box-container">
+
+            <div class="box">
+               <div class="image">
+                  <img src="https://smktarunabhakti.net/wp-content/uploads/2022/11/Kunjin-14-scaled-e1669461671990.jpg"
+                     alt="">
+               </div>
+               <div class="content">
+                  <h3>KUNJUNGAN INDUSTRI (KUNJIN) SMK TARUNA BHAKTI – DEPOK </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded">
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img
+                     src="https://smktarunabhakti.net/wp-content/uploads/2022/11/SURAT-UNDANGAN-RAPAT-KEGIATAN-AKHIR-TAHUN-KELAS-XII-1.jpg"
+                     alt="">
+               </div>
+               <div class="content">
+                  <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK [...]</h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded"
                             >
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img src="images/img-1.jpg" alt="">
-             </div>
-             <div class="content">
-                <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded"
-                            >
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img src="images/img-1.jpg" alt="">
-             </div>
-             <div class="content">
-                <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded">
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
-          <div class="box">
-             <div class="image">
-                <img src="images/img-1.jpg" alt="">
-             </div>
-             <div class="content">
-                <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
-                <div class="brt-bottom">
-                   <span> Januari 23, 2022 </span>
-                   <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
-                            icon="material-symbols:arrow-forward-ios-rounded">
-                         </iconify-icon></a></span>
-                </div>
-             </div>
-          </div>
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img src="https://smktarunabhakti.net/wp-content/uploads/2022/11/IMG_2057-scaled-e1669443986455.jpg"
+                     alt="">
+               </div>
+               <div class="content">
+                  <h3>Peringatan Hari Guru Nasional Tahun 2022 </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded">
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img
+                     src="https://smktarunabhakti.net/wp-content/uploads/2022/11/Kunjungan-photo-bersama-3-e1667472691704.jpg"
+                     alt="">
+               </div>
+               <div class="content">
+                  <h3>SMK Pusat Keunggulan (PK) Skema Pemadanan Dukungan </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded">
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img src="https://smktarunabhakti.net/wp-content/uploads/2022/11/IMG_1605-scaled.jpg" alt="">
+               </div>
+               <div class="content">
+                  <h3>KEGIATAN PERTEMUAN ORANG TUA / WALI SISWA </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded">
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img src="https://smktarunabhakti.net/wp-content/uploads/2022/10/LDKS-2-e1666402586304.jpg" alt="">
+               </div>
+               <div class="content">
+                  <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded"
+                              >
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img src="images/img-1.jpg" alt="">
+               </div>
+               <div class="content">
+                  <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded"
+                              >
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img src="images/img-1.jpg" alt="">
+               </div>
+               <div class="content">
+                  <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded"
+>
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            <div class="box">
+               <div class="image">
+                  <img src="images/img-1.jpg" alt="">
+               </div>
+               <div class="content">
+                  <h3>Undangan Rapat Orang Tua / Wali Siswa Kelas XI dan XII SMK Taruna </h3>
+                  <div class="brt-bottom">
+                     <span> Januari 23, 2022 </span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded">
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
 
 
-       </div>
+         </div>
 
-       <div id="load-more" class="load-more">
-          <p>Baca Lainnya</p> <iconify-icon icon="material-symbols:keyboard-arrow-down"></iconify-icon>
-       </div>
+         <div id="load-more" class="load-more">
+            <p>Baca Lainnya</p> <iconify-icon icon="material-symbols:keyboard-arrow-down"></iconify-icon>
+         </div>
 
-    </div>
+      </div>
 
- </div>
-
- <!-- vidio youtube -->
+   </div>
 
 
-  <!-- ======= Hero Section ======= -->
 <section id="vidio-peta">
- <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-   <h1 class="judul-vidio">VIDEO <span>SEPUTAR<br> 
-     SMK</span> TARUNA BHAKTI</h1>
-   <p class="mb-4 pb-0"> Kenali sekolah SMK Taruna Bhakti melalui Video kami</p>
-   <a href="https://www.youtube.com/watch?v=ybiBgVnj7x0" class="glightbox play-btn mb-4"></a>
-   <a href="https://www.youtube.com/@SMKTarunaBhaktiDepok" class="about-btn ">Lihat Lebih Banyak</a>
- </div>
- <div class="c-peta">
-    <div>
-       <iframe class="gambar-peta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.251094273804!2d106.86859072696863!3d-6.38590042606772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ebaff005f277%3A0x9fcd41028665eea8!2sSMK%20Taruna%20Bhakti%20Depok!5e0!3m2!1sid!2sid!4v1674792933526!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-       <!-- <img src="assets/jurusan/Screenshot 2023-01-05 202656.jpg" alt="gambar tidak ada" class="gambar-peta"> -->
-    </div>
-    <div class="c-peta-right">
-       <h1 class="judul-peta">Denah Smk Taruna <br> Bhakti</h1>
-       <a href="https://goo.gl/maps/A2XqttJkjji3WduU6"><button>Klik Disini</button></a>
-    </div>
- </div>
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <h1 class="judul-vidio ">VIDEO <span>SEPUTAR<br> 
+      SMK</span> TARUNA BHAKTI</h1>
+    <p class="mb-4 pb-0"> Kenali sekolah SMK Taruna Bhakti melalui Video kami</p>
+    <a href="https://www.youtube.com/watch?v=ybiBgVnj7x0" class="glightbox play-btn mb-4"></a>
+    <a href="https://www.youtube.com/@SMKTarunaBhaktiDepok" class="about-btn ">Lihat Lebih Banyak</a>
+  </div>
+  <div class="c-peta">
+     <div>
+        <iframe class="gambar-peta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.251094273804!2d106.86859072696863!3d-6.38590042606772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ebaff005f277%3A0x9fcd41028665eea8!2sSMK%20Taruna%20Bhakti%20Depok!5e0!3m2!1sid!2sid!4v1674792933526!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- <img src="assets/jurusan/Screenshot 2023-01-05 202656.jpg" alt="gambar tidak ada" class="gambar-peta"> -->
+     </div>
+     <div class="c-peta-right">
+        <h1 class="judul-peta">Denah Smk Taruna <br> Bhakti</h1>
+        <a href="https://goo.gl/maps/A2XqttJkjji3WduU6"><button>Klik Disini</button></a>
+     </div>
+  </div>
 </section><!-- End Hero Section -->
 
-
-
-
-
-
- <!-- PARTNER KOLABORASI -->
- <div class="judul-kolaborasi">
+  <!-- PARTNER KOLABORASI -->
+  <div class="judul-kolaborasi">
     <h1>PARTNER KOLABORASI</h1>
     <h4>lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem </h4>
  </div>
  <!-- partial:index.partial.html -->
- <div class="c-logo-slider">
+ <div class="c-logo-slider" style="margin-bottom: 7vw;">
     <div class="logo-slider">
         <div class="item"><a href="#"><img src="https://smks2kosgoropyk.com/wp-content/uploads/2021/04/SMK-Bisa-V1.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
         <div class="item"><a href="#"><img src="https://www.dicoding.com/blog/wp-content/uploads/2014/12/dicoding-header-logo.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
@@ -443,61 +602,164 @@
     </div>
 </div>
  <!-- partial -->
-@endsection
 
-@section('linkjs')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script>
-    $('.logo-slider').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        dots: true,
-        arrows:true,
-        infinite: true,
-        autoplay:true,
-        autoplaySpeed: 2000,
-        responsive: [
-{
-  breakpoint: 1024,
-  settings: {
-    slidesToShow: 3,
-    slidesToScroll: 2,
-    infinite: true,
-    arrows:false,
-    dots: true
+
+ <!-- footer -->
+ <footer class="footer-1">
+    <section class="container-footer card-footer">
+      <!-- TABLE FOOTER SATU -->
+      <div class="table-footer">
+        <div class="name-footer">
+          <iconify-icon icon="mdi:about" style="color: #001953; margin: 1vh 1vh 0 0;" width="22" height="22"></iconify-icon>
+          <p class="judul-footer">TENTANG</p>
+        </div>
+        <hr>
+        <div class="button-footer">
+          <button><a href=""><iconify-icon icon="dashicons:businessperson" style="color: white; margin-right: .2vw;" width="15" height="15"></iconify-icon>
+          Kepala Sekolah</a></button>
+          <button><a href=""><iconify-icon icon="material-symbols:push-pin" style="color: white; margin-right: .2vw;" width="15" height="15"></iconify-icon>
+          Visi dan Misi</a></button>
+          <button><a href=""><iconify-icon icon="material-symbols:history-edu" style="color: white; margin-right: .2vw;" width="15" height="15"></iconify-icon>
+          Sejarah</a></button>
+          <button><a href=""><iconify-icon icon="eos-icons:admin-outlined" style="color: white; margin-right: .2vw;" width="15" height="15"></iconify-icon>
+          Admin</a></button>
+        </div>
+      </div>
+    
+      <!-- TABLE FOOTER DUA -->
+      <div class="table-footer">
+        <div class="name-footer">
+          <p class="judul-footer">ARSIP</p>
+        </div>
+        <hr>
+        <div class="tahun">
+          <iconify-icon icon="ic:round-navigate-next" style="color: #4BBBFA; cursor: pointer;" width="25" height="25" rotate="180deg"></iconify-icon>
+          <h4>2022</h4>
+          <iconify-icon icon="ic:round-navigate-next" style="color: #4BBBFA; cursor: pointer;" width="25" height="25"></iconify-icon>
+        </div>
+  
+        <div class="kalender">
+          <div class="bulan">
+            <a href="">Jan</a>
+            <a href="">Feb</a>
+            <a href="">Mar</a>
+            <a href="">Apr</a>
+          </div>
+          <div class="bulan">
+            <a href="">Mai</a>
+            <a href="">Jun</a>
+            <a href="">Jul</a>
+            <a href="">Agu</a>
+          </div>
+          <div class="bulan">
+            <a href="">Sep</a>
+            <a href="">Okt</a>
+            <a href="">Nov</a>
+            <a href="">Des</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- TABLE FOOTER TIGA -->
+      <div class="table-footer">
+        <div class="name-footer">
+          <img src="assetsweb/assets/logo-footer.jpg" alt="">
+          <p class="judul-footer2">SMK TARUNA <br> BHAKTI DEPOK</p>
+        </div>
+  
+        <hr style="background-color: white; border: none; margin: 0;">
+  
+        <div class="info-footer">
+          <a href="https://www.google.com/maps/place/SMKS+TARUNA+BHAKTI+DEPOK/@-6.3835979,106.8677466,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69ebaff005f277:0x9fcd41028665eea8!8m2!3d-6.3836032!4d106.8699353" class="infoo-footer">Jl. Pekapuran, RT.02/RW.06, Curug, Cimanggis,  Depok 16953</a>
+          <a href="">08119892324</a>
+          <a href="taruna@smktarunabhakti.net"  class="infoo-footer">taruna@smktarunabhakti.net</a>
+        </div>
+  
+        <div class="akunsosial-footer">
+          <a href="https://www.instagram.com/starbhak.official/"><iconify-icon icon="mdi:instagram" style="color: #1E4A85; cursor: pointer;" width="20" height="20"></iconify-icon></a>
+          <a href="https://www.youtube.com/c/SMKTarunaBhaktiDepok"><iconify-icon icon="mdi:youtube" style="color: #1E4A85; cursor: pointer;" width="20" height="20"></iconify-icon></a>
+          <a href="https://www.facebook.com/smktarunabhaktidepok"><iconify-icon icon="mdi:facebook" style="color: #1E4A85; cursor: pointer;" width="20" height="20"></iconify-icon></a>
+          <a href="https://www.tiktok.com/@smktarunabhakti"><iconify-icon icon="ic:baseline-tiktok" style="color: #1E4A85;  cursor: pointer;" width="20" height="20"></iconify-icon></a>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <footer class="footer-2">
+    <p class="text-footer2">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, quis!
+    </p>
+    </footer>
+
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+ <script>
+      $('.logo-slider').slick({
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          dots: true,
+          arrows:true,
+          infinite: true,
+          autoplay:true,
+          autoplaySpeed: 2000,
+          responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 2,
+      infinite: true,
+      arrows:false,
+      dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 2,
+      arrows:false,
+      slidesToScroll: 1
+    }
   }
-},
-{
-  breakpoint: 600,
-  settings: {
-    slidesToShow: 2,
-    slidesToScroll: 2
-  }
-},
-{
-  breakpoint: 480,
-  settings: {
-    slidesToShow: 2,
-    arrows:false,
-    slidesToScroll: 1
-  }
-}
-// You can unslick at a given breakpoint now by adding:
-// settings: "unslick"
-// instead of a settings object
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
 ]
-    });
-    $('.programcardpage-mobile').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true,
-        arrows:false,
-        infinite: true,
-        // autoplay:true,
-        autoplaySpeed: 2000,
-    });
+      });
+      $('.programcardpage-mobile').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          arrows:false,
+          infinite: true,
+          // autoplay:true,
+          autoplaySpeed: 2000,
+      });
 
 
-</script>
-@endsection
+ </script>
+
+
+
+
+
+ 
+
+  <!-- Vendor JS Files -->
+
+
+  <script src="assetsweb/assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assetsweb/script.js"></script>
+
+</body>
+
+</html>

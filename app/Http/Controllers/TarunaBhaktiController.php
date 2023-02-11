@@ -12,6 +12,9 @@ class TarunaBhaktiController extends Controller
     public function ppdb(){
         return view('SmkTarunaBhakti.ppdb');
     }
+    public function berita(){
+        return view('SmkTarunaBhakti.berita');
+    }
    
 
     //profil
@@ -26,6 +29,24 @@ class TarunaBhaktiController extends Controller
     }
     public function tujuan(){
         return view('SmkTarunaBhakti.profil.tujuan');
+    }
+    public function hubunganindustri(){
+        return view('SmkTarunaBhakti.profil.hubunganindustri');
+    }
+    public function kebijakanmutu(){
+        return view('SmkTarunaBhakti.profil.Mutu.kebijakanmutu');
+    }
+    public function analisisjabatan(){
+        return view('SmkTarunaBhakti.profil.Mutu.analisisjabatan');
+    }
+    public function analisisjabatanwakilhubungan(){
+        return view('SmkTarunaBhakti.profil.Mutu.analisisjabatanwakilhubungan');
+    }
+    public function analisisjabatanwakitlkurikulum(){
+        return view('SmkTarunaBhakti.profil.Mutu.analisisjabatanwakitlkurikulum');
+    }
+    public function analisisjabatanwakilkelas(){
+        return view('SmkTarunaBhakti.profil.Mutu.analisisjabatanwakilkelas');
     }
 
     //kesiswaan
@@ -49,6 +70,22 @@ class TarunaBhaktiController extends Controller
 
     public function sistempembelajaran(){
         return view('SmkTarunaBhakti.kurikulum.sistempembelajaran');
+    }
+    public function strukturkurikulum(){
+        return view('SmkTarunaBhakti.kurikulum.strukturkurikulum');
+    }
+
+    public function SertifikasiBroadcasting(){
+        return view('SmkTarunaBhakti.kurikulum.Sertifikat.Broadcasting');
+    }
+    public function SertifikasiNetworking(){
+        return view('SmkTarunaBhakti.kurikulum.Sertifikat.Networking');
+    }
+    public function SertifikasiMultimedia(){
+        return view('SmkTarunaBhakti.kurikulum.Sertifikat.Multimedia');
+    }
+    public function SertifikasiProgramming(){
+        return view('SmkTarunaBhakti.kurikulum.Sertifikat.rpl');
     }
     
 }

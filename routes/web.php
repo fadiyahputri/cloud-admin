@@ -86,6 +86,7 @@ Route::get('/files/{tipe}',[CloudController::class, 'file'])->name('files');
 // UNTUK WEB SEKOLAH START
 route::get('/SmkTarunaBhakti',[TarunaBhaktiController::class, 'landingpage'])->name('landingpage');
 route::get('/ppdb',[TarunaBhaktiController::class, 'ppdb'])->name('ppdb');
+route::get('/berita',[TarunaBhaktiController::class, 'berita'])->name('berita');
 route::get('/GuruTarunaBhakti',[TarunaBhaktiController::class, 'guru'])->name('guru');
 
     //profil
@@ -93,6 +94,13 @@ route::get('/sejarah',[TarunaBhaktiController::class, 'sejarah'])->name('sejarah
 route::get('/identitassekolah',[TarunaBhaktiController::class, 'identitassekolah'])->name('identitassekolah');
 route::get('/visimisi',[TarunaBhaktiController::class, 'visimisi'])->name('visimisi');
 route::get('/tujuan',[TarunaBhaktiController::class, 'tujuan'])->name('tujuan');
+route::get('/hubunganindustri',[TarunaBhaktiController::class, 'hubunganindustri'])->name('hubunganindustri');
+
+route::get('/kebijakanmutu',[TarunaBhaktiController::class, 'kebijakanmutu'])->name('kebijakanmutu');
+route::get('/analisisjabatan',[TarunaBhaktiController::class, 'analisisjabatan'])->name('analisisjabatan');
+route::get('/analisisjabatanwakilhubungan',[TarunaBhaktiController::class, 'analisisjabatanwakilhubungan'])->name('analisisjabatanwakilhubungan');
+route::get('/analisisjabatanwakitlkurikulum',[TarunaBhaktiController::class, 'analisisjabatanwakitlkurikulum'])->name('analisisjabatanwakitlkurikulum');
+route::get('/analisisjabatanwakilkelas',[TarunaBhaktiController::class, 'analisisjabatanwakilkelas'])->name('analisisjabatanwakilkelas');
 
 
    //kesiswaan
@@ -103,5 +111,11 @@ route::get('/pancaprasetyasiswa',[TarunaBhaktiController::class, 'pancaprasetyas
 
   //kurikulum
 route::get('/sistempembelajaran',[TarunaBhaktiController::class, 'sistempembelajaran'])->name('sistempembelajaran');    
+route::get('/strukturkurikulum',[TarunaBhaktiController::class, 'strukturkurikulum'])->name('strukturkurikulum');  
+
+route::get('/SertifikasiBroadcasting',[TarunaBhaktiController::class, 'SertifikasiBroadcasting'])->name('SertifikasiBroadcasting');    
+route::get('/SertifikasiNetworking',[TarunaBhaktiController::class, 'SertifikasiNetworking'])->name('SertifikasiNetworking');    
+route::get('/SertifikasiMultimedia',[TarunaBhaktiController::class, 'SertifikasiMultimedia'])->name('SertifikasiMultimedia');    
+route::get('/SertifikasiProgramming',[TarunaBhaktiController::class, 'SertifikasiProgramming'])->name('SertifikasiProgramming');    
   
 // UNTUK WEB SEKOLAH END

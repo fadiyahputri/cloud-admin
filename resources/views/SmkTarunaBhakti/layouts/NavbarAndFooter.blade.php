@@ -7,24 +7,26 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <!--iconify-->
-   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+ <!--iconify-->
+ <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
-   <!--font-->
-   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+ <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
-   <!-- Boxicons CDN Link -->
-   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-   <!--css-->
-   <link rel="stylesheet" href="{{asset('assetsweb/style.css')}}">
 
+ <!--css-->
+ <link rel="stylesheet" href="assetsweb/style.css">
+ 
+   
+   
    <!---page title-->
    <title>SMK Taruna Bhakti | @yield('title')</title>
+   
+   @yield('link')
 
-    @yield('link')
-
-    @yield('style')
+  @yield('style')
 </head>
 
 <body style="perspective: 1px;">
@@ -64,10 +66,10 @@
    <nav>
       <div class="navbar">
         <i class='bx bx-menu'></i>
-        <div class="logo-tb" >
+        <a href="{{asset('/SmkTarunaBhakti')}}" class="logo-tb" >
           <img src="assetsweb/assets/logo-removebg-preview.png" alt="">
           <p class="j-logo">SMK Taruna Bhakti <br><span>Our quality asks to be different</span></p>
-       </div>
+       </a>
         <div class="nav-links">
           <div class="sidebar-logo">
             <span class="logo-name">SMKTB</span>
@@ -91,14 +93,14 @@
                   <i  class='bx bxs-chevron-right arrow mutu-arrow' id="arrow"></i>
                 </span>
                   <ul class="more-sub-menu">
-                    <li><a href="#">Kebijakan Mutu SMK Taruna Bhakti</a></li>
-                    <li><a href="#">Analisi Jabatan Tenaga Kerja Pendidik (GURU)</a></li>
-                    <li><a href="#">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Industri</a></li>
-                    <li><a href="#">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Kurikulum</a></li>
-                    <li><a href="#">Analisis Jabatan Wali Kelas</a></li>
+                    <li><a href="{{asset('/kebijakanmutu')}}">Kebijakan Mutu SMK Taruna Bhakti</a></li>
+                    <li><a href="{{asset('/analisisjabatan')}}">Analisi Jabatan Tenaga Kerja Pendidik (GURU)</a></li>
+                    <li><a href="{{asset('/analisisjabatanwakilhubungan')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Industri</a></li>
+                    <li><a href="{{asset('/analisisjabatanwakitlkurikulum')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Kurikulum</a></li>
+                    <li><a href="{{asset('/analisisjabatanwakilkelas')}}">Analisis Jabatan Wali Kelas</a></li>
                   </ul>
                 </li>
-                <li><a class="ww" href="#">Hubungan Industri</a></li>
+                <li><a class="ww" href="{{asset('/hubunganindustri')}}">Hubungan Industri</a></li>
               </ul>
             </li>
            
@@ -125,18 +127,17 @@
          
             <ul class="htmlCss-sub-menu1 sub-menu1">
               <li><a class="ww" href="{{asset('/GuruTarunaBhakti')}}">Guru SMK Taruna Bhakti</a></li>
-              <li><a  class="ww" href="#">Struktur Kurikulum SMK Taruna Bhakti</a></li>
-              <li><a  class="ww" href="#">Kompetensi Keahlian</a></li>
+              <li><a  class="ww" href="{{asset('/strukturkurikulum')}}">Struktur Kurikulum SMK Taruna Bhakti</a></li>
               <li><a  class="ww" href="{{asset('/sistempembelajaran')}}">Sistem Pembelajaran</a></li>
               <li class="more">
                 <span ><a class="ww" id="Sertifikasi" >Sertifikasi Internasional</a>
                 <i  class='bx bxs-chevron-right arrow Sertifikasi-arrow' id="arrow"></i>
               </span>
                 <ul class="more-sub-menu1">
-                  <li><a href="#">Sertifikasi internasional Bidang Broadcasting</a></li>
-                  <li><a href="#">Sertifikasi Internasional bidang Networking</a></li>
-                  <li><a href="#">Sertifikasi Internasional Bidang Multimedia</a></li>
-                  <li><a href="#">Sertifikasi Internasional Bidang Programming</a></li>
+                  <li><a href="{{asset('/SertifikasiBroadcasting')}}">Sertifikasi internasional Bidang Broadcasting</a></li>
+                  <li><a href="{{asset('/SertifikasiNetworking')}}">Sertifikasi Internasional bidang Networking</a></li>
+                  <li><a href="{{asset('/SertifikasiMultimedia')}}">Sertifikasi Internasional Bidang Multimedia</a></li>
+                  <li><a href="{{asset('/SertifikasiProgramming')}}">Sertifikasi Internasional Bidang Programming</a></li>
                 </ul>
               </li>
             </ul>
@@ -264,9 +265,9 @@
       </p>
       </footer>
 
-   
-   @yield('linkjs')
-   <script src="{{asset('assetsweb/script.js')}}"></script>
+      @yield('linkjs')
+
+      <script src="assetsweb/script.js"></script>
 </body>
 
 </html>
