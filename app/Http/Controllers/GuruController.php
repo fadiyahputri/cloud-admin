@@ -35,7 +35,7 @@ class GuruController extends Controller
             'username'=>$request->username,
             'level'=>$request->level,
 
-            'password'=>Hash::make( $request->password)
+            'password'=>$request->password
         ]);
         $data = DB::table('users')->orderBy('id', 'DESC')->limit(1)->get()->pluck('id')->first();
         
@@ -97,7 +97,7 @@ class GuruController extends Controller
         $data = [
             'name' => $request['name'],
             'username' => $request['username'],
-            'password'=>Hash::make( $request->password)
+            'password'=>$request->password
         ];
 
         $data = [
@@ -120,15 +120,13 @@ class GuruController extends Controller
         return redirect('/dataguru')->with('success2','Data Guru Berhasil Diupdate');
     }
 
-    public function destroy($id){
-        $guru = User::find($id);
+    public function destroy(Request $request){
+        $guru = guru::find($request->id);
+        $user = User::find($request->userid);
         
-        $file = public_path('/assets/images/profile-picture/gambar_guru/').$hapus->gambar;
-        if (file_exists($file)){
-            @unlink($file);
-        }
         $guru -> delete(); 
-        return redirect('/guru')->with('success','Data Guru Berhasil Dihapus');
+        $user -> delete(); 
+        return back()->with('success','Data Guru Berhasil Dihapus');
     }
 
     

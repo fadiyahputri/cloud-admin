@@ -103,16 +103,21 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroylast($id)
     {
-        $hapus = File::findorfail($id);
+        $hapus = File::with('folder')->where('id',$id)->get();
+        foreach ($hapus as $hapus) {
+           
+        
 
-        $file = public_path('foldercloud-1/').$hapus->file;
-        if (file_exists($file)){
+        $file = public_path('foldercloud/'.  $hapus->folder->cloud->folder_name.'/'.$hapus->folder->nama_folder.'/'. $hapus->file );
+        
+         if (file_exists($file)){
             @unlink($file);
-        }
+         }
 
-        $hapus->delete();
-        return redirect('/folder');
+         $hapus->delete();
+         return redirect('/clod');
+        }
     }
 }

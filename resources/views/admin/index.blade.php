@@ -19,53 +19,44 @@
 <body onload="muncul()">
     <div id="container">
         <nav>
-            
-            <div class="logo"></div>
-            <span class="tittle">starbhak</span>
-            <span class="tittle2">dashboard</span>
-                <span id="welcome">welcome, <span id="welcome">admin</span></span>
+            <div style="width: 30%; display: flex; align-items: center;">
+                <div class="logo"></div>
+                <span class="tittle">starbhak</span>
+                <span class="tittle2">dashboard</span>
+            </div>
+            <div style="width: 14%; display: flex; align-items: center;">
+                <span id="welcome">welcome, admin</span>
                 <div class="line"></div>
                 <a class="logout"  href="/logout"><iconify-icon icon="tabler:logout" style="color: white;" width="30" height="30"></iconify-icon></a>
-                
+            </div>
         </nav>
         <div id="menu">
             <div id="sidebar">
                 <ul>
                     <li >
-                        <a href="index.html">
-                        <div class="box-icon">
-                            <iconify-icon style="color: white;" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
-                        </div>
-                        <div style="width: 70%;">
-                            <p>Dashboard</p>
-                        </div>
+                        <a href="/admin">
+                          <iconify-icon class="box-icon active" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
+                          <p class="sec active">Dashboard</p>
                         </a>
                     </li>
                     <li >
                         <a href="/dataguru">
-                        <div class="box-icon" style="background-color: white;">
-                            <iconify-icon style="color: black;" icon="uil:users-alt" width="23" height="23"></iconify-icon>
-                        </div>
-                        <div style="width: 70%;">
+                          <iconify-icon class="box-icon" icon="uil:users-alt" width="23" height="23"></iconify-icon>
                             <p class="sec">Data Guru</p>
-                        </div>
                         </a>
                     </li>
                     <li >
                         <a href="/landing">
-                        <div class="box-icon" style="background-color: white;">
-                            <iconify-icon style="color: black;" icon="quill:paper" width="25" height="23"></iconify-icon>
-                        </div>
-                        <div style="width: 70%;">
+                          <iconify-icon class="box-icon" icon="quill:paper" width="23" height="23"></iconify-icon>
                             <p class="sec">Landing Page</p>
-                        </div>
                         </a>
                     </li>
                 </ul>
             </div>
             <div id="content">
-                <div id="hero" style="">
-                    <button style="width: 9%; height: 2.5vw; margin: 19% 0 0 4%; border-radius: 0.5rem; border: none; box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);"></button>
+                <div id="hero">
+                    
+                    <button style="width: 9%; height: 2.5vw; border-radius: 0.5rem; border: none; box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);"></button>
                 </div>
                 <div id="con-2">
                     <div id="table">
@@ -80,10 +71,11 @@
                                     Data guru
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-                                  <li><a class="dropdown-item" href="#">Data guru</a></li>
+                                  <li><a class="dropdown-item" href="#">Data Guru</a></li>
+                                  
                                 </ul>
                             </div>
-                            {{-- <!-- <div class="nav-data navbar navbar-expand-sm navbar-dark navbar-fixed ">
+                            <!-- <div class="nav-data navbar navbar-expand-sm navbar-dark navbar-fixed ">
                                 <ul style="width: 100%;"  class="navbar-nav ms-auto">
                                     <li style="padding: 0;width: 100%;" class="nav-item dropdown">
                                       <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,7 +87,7 @@
                                       </div>
                                     </li>
                                   </ul>
-                            </div> --> --}}
+                            </div> -->
                         </div>
                         <table>
                             <tr style="border-bottom: 1px solid #DFDFDF; border-top: #DFDFDF;">
@@ -114,9 +106,9 @@
                                 <td>{{$g->nama}}</td>
                                 <td>{{$g->user->username}}</td>
                                 <td>{{$g->matpel}}</td>
-                                <td>{{ \Carbon\Carbon::parse($g->created_at)->format('M, d Y')}}</td>
+                                <td>{{$g->created_at}}</td>
                             </tr>
-                            @endforeach  
+                            @endforeach 
                         </table>
                     </div>
                     <div id="con-right">
@@ -146,14 +138,14 @@
                                 </div>
                             </div> 
 
-                        <div id="status" style="display: flex; align-items: center; padding: 5% 9%;">
+                        <div id="status">
                             <div class="profile"></div>
                             <div style="margin-left: 3%;">
                                 <span class="admin">Admin</span>
                                 <div style="display: flex; align-items: center;">
                                     <div style="width: 0.6vw; height: 0.6vw; border-radius: 1rem; background-color: greenyellow; margin-right: 5%;"></div>
                                     <span style="font-weight: 500;">Online</span>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>

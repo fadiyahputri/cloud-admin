@@ -42,6 +42,15 @@ Route::get('/cloud', [CloudController::class, 'cloudDashboard']);
 
 Route::get('/clod', [CloudController::class, 'cloud']);
 
+Route::get('/clod/last/delete/{id}',[FileController::class,'destroylast'])->name('hpslast');
+
+Route::get('/clod/seemore', [CloudController::class, 'seemore']);
+
+
+// form landingpage
+Route::get('/tambahberita', [AdminController::class, 'addberita']);
+
+
 //login api
 
 Route::get('/auth/google/redirect', [LoginController::class, 'googleredirect'])->name('googleredirect');
@@ -60,7 +69,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/tambahguru/store',[GuruController::class, 'store']);
 Route::get('/editguru/{id}', [GuruController::class, 'edit']);
 Route::put('/editguru/update/{id}', [GuruController::class, 'update']);
-Route::get('/delete/{id}',[GuruController::class,'destroy']);
+Route::post('/hapusguru', [GuruController::class , 'destroy']);
 
 //UNTUK DATA MATPEL
 

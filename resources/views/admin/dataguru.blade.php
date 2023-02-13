@@ -18,52 +18,50 @@
 <body onload="muncul()">
     <div id="container">
         <nav>
-            <div class="logo"></div>
-            <span class="tittle">starbhak</span>
-            <span class="tittle2">dashboard</span>
-                <span id="welcome">welcome, <span id="welcome">admin</span></span>
+            <div style="width: 30%; display: flex; align-items: center;">
+                <div class="logo"></div>
+                <span class="tittle">starbhak</span>
+                <span class="tittle2">dashboard</span>
+            </div>
+            <div style="width: 14%; display: flex; align-items: center;">
+                <span id="welcome">welcome, admin</span>
                 <div class="line"></div>
                 <a class="logout"  href="/logout"><iconify-icon icon="tabler:logout" style="color: white;" width="30" height="30"></iconify-icon></a>
+            </div>
         </nav>
         <div id="menu">
             <div id="sidebar">
                 <ul>
                     <li >
-                        <a class="list-sidebar" href="/admin">
-                            <iconify-icon class="box-icon" style="color: black;" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
-                        <div style="width: 70%;">
-                            <p class="sec">Dashboard</p>
-                        </div>
+                        <a href="/admin">
+                          <iconify-icon class="box-icon" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
+                          <p class="sec">Dashboard</p>
                         </a>
                     </li>
                     <li >
-                        <a class="list-sidebar" href="/dataguru">
-                            <iconify-icon class="box-icon active" style="color: white;" icon="uil:users-alt" width="23" height="23"></iconify-icon>
-                        <div style="width: 70%;">
-                            <p>Data Guru</p>
-                        </div>
+                        <a href="/dataguru">
+                          <iconify-icon class="box-icon active" icon="uil:users-alt" width="23" height="23"></iconify-icon>
+                            <p class="sec active">Data Guru</p>
                         </a>
                     </li>
                     <li >
-                        <a class="list-sidebar" href="/landing">
-                            <iconify-icon class="box-icon" style="color: black;" icon="quill:paper" width="25" height="23"></iconify-icon>
-                        <div style="width: 70%;">
+                        <a href="/landing">
+                          <iconify-icon class="box-icon" icon="quill:paper" width="23" height="23"></iconify-icon>
                             <p class="sec">Landing Page</p>
-                        </div>
                         </a>
                     </li>
                 </ul>
             </div>
             <div id="content">
                 <div style="display: flex; align-items: center;">
-                    <iconify-icon style="color: white; background-color: #2C3E50; padding: 1rem; border-radius: 1rem;" icon="uil:users-alt" width="35" height="35"></iconify-icon>
-                    <p class="title" style="font-weight: 700; margin: 0; padding-left: 1%; font-size: 1.5rem;">data guru</p> 
+                    <iconify-icon class="icon-utama" icon="uil:users-alt" width="35" height="35"></iconify-icon>
+                    <p class="title-table">data guru</p> 
                 </div>
                 <hr style="margin: 0.8rem 0;">    
                 <span>Data akun guru beserta identitas guru. Tambah data untuk menambahkan akun guru dan edit untuk mengubah data.</span>   
 
                 
-                <div id="table">
+                <div id="table" style="width: 100%; margin-top: 2%;">
                     <div style="display: flex; justify-content: space-between;">
                         <p class="title">data guru</p>
                         <div style="display: flex;">
@@ -79,7 +77,7 @@
                     </div>
                     <table>
                         <tr style="border-bottom: 1px solid #DFDFDF; border-top: #DFDFDF;">
-                            <th style="width: 5%">#</th>
+                            <th>#</th>
                             <th>Nama Guru</th>
                             <th>Username</th>
                             <th>Mata Pelajaran</th>
@@ -87,29 +85,28 @@
                             <th>action</th>
                         </tr>
                         @php
-                            $no = 1;
-                        @endphp
-                        @foreach ($guru as $g)
-                        <tr>
-                            <td>{{$no++}}</td>
-                            <td>{{$g->nama}}</td>
-                            <td>{{$g->user->username}}</td>
-                            <td>{{$g->matpel}}</td>
-                            <td>{{ \Carbon\Carbon::parse($g->created_at)->format('M, d Y')}}</td>
-                            <td>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#detailguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-gambar='{{$g->gambar}}'  data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}">
-                                    <iconify-icon class="icon-action"  icon="ph:info-fill" style="color: white;" width="20" height="20"></iconify-icon>
-                                </button>
-                                <button data-bs-toggle="modal" data-bs-target="#editguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}" data-password="{{$g->user->password}}" data-id="{{$g->id}}" data-userid="{{$g->user->id}}">
-                                    <iconify-icon class="icon-action"  icon="material-symbols:edit-square-outline" style="color: white;" width="20" height="20"></iconify-icon>
-                                </button>
-                                <button class="btn-action">
-                                    <iconify-icon class="icon-action"  icon="ic:baseline-delete" style="color: white;" width="20" height="20"></iconify-icon>
-                                </button>
-                            </td>
-                        </tr>
-                        @endforeach
-                   {{-- date('D-M-Y', strtotime($g->created_at))  --}}
+                        $no = 1;
+                    @endphp
+                    @foreach ($guru as $g)
+                    <tr>
+                        <td>{{$no++}}</td>
+                        <td>{{$g->nama}}</td>
+                        <td>{{$g->user->username}}</td>
+                        <td>{{$g->matpel}}</td>
+                        <td>{{ \Carbon\Carbon::parse($g->created_at)->format('M, d Y')}}</td>
+                        <td>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#detailguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-gambar='{{$g->gambar}}'  data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}">
+                                <iconify-icon class="icon-action"  icon="ph:info-fill" style="color: white;" width="20" height="20"></iconify-icon>
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#editguru" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}" data-password="{{$g->user->password}}" data-id="{{$g->id}}" data-userid="{{$g->user->id}}">
+                                <iconify-icon class="icon-action"  icon="material-symbols:edit-square-outline" style="color: white;" width="20" height="20"></iconify-icon>
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#hapus" class="btn-action" data-nama='{{$g->nama}}' data-nip="{{$g->nip}}" data-matpel='{{$g->matpel}}' data-jenis_kelamin='{{$g->jenis_kelamin}}' data-alamat="{{$g->alamat}}" data-username="{{$g->user->username}}" data-password="{{$g->user->password}}" data-id="{{$g->id}}" data-userid="{{$g->user->id}}" class="btn-action">
+                                <iconify-icon class="icon-action"  icon="ic:baseline-delete" style="color: white;" width="20" height="20"></iconify-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    @endforeach
                     </table>
                 </div>
             </div>
@@ -128,6 +125,10 @@
     <!-- modal detail -->
     @include('admin/modalView')
     <!-- end modal detail -->
+
+    <!-- modal hapus -->
+    @include('admin/modalHapus')
+    <!-- end modal hapus -->
 {{-- end modal --}}
 
     <script>
@@ -324,6 +325,30 @@ bars.forEach(bar => {
         modal.find('#id').val(id)
         modal.find('#userid').val(userid)
         modal.find('#gambar').val(gambar)
+        }) 
+
+        $('#hapus').on('show.bs.modal',function(event){
+        var button = $(event.relatedTarget)
+        var nama = button.data('nama')
+        var nip = button.data('nip')
+        var matpel = button.data('matpel')
+        var jenis_kelamin = button.data('jenis_kelamin')
+        var alamat = button.data('alamat')
+        var username = button.data('username')
+        var password = button.data('password')
+        var id = button.data('id')
+        var userid = button.data('userid')
+
+        var modal = $(this)
+        modal.find('#name').val(nama)
+        modal.find('#nipedit').val(nip)
+        modal.find('#matpeledit').val(matpel)
+        modal.find('#gender').val(jenis_kelamin)
+        modal.find('#alamat').val(alamat)
+        modal.find('#username').val(username)
+        modal.find('#password').val(password)
+        modal.find('#id').val(id)
+        modal.find('#userid').val(userid)
         }) 
     </script>
     {{-- end modal --}}

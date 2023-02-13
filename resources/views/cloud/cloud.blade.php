@@ -204,7 +204,7 @@ css/cssCloud/cloud.css
                 <div class="lastUpload">
                     <div class="flex items-center">
                         <p class="textLastUpload">Last Upload</p>
-                    <a href="" class="seeMore">
+                    <a href="/clod/seemore" class="seeMore">
                         <p class="seeMoreText">see more</p>
                         <iconify-icon class="seeMoreIcon" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon>
                     </a> 
@@ -222,7 +222,12 @@ css/cssCloud/cloud.css
                                 
                             </div>
                             </a>
-                            <a href="" class="titik3"><iconify-icon id="something" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon></a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="{{route('hpslast',['id'=>$last])}}">Hapus File</a></li>
+                                  </ul>
+                            </div>
                         </div>
                         @endforeach
                     </div>

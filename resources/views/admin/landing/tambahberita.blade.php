@@ -15,6 +15,8 @@
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body onload="muncul()">
     <div id="container">
@@ -27,462 +29,241 @@
         <div style="width: 14%; display: flex; align-items: center;">
             <span id="welcome">welcome, admin</span>
             <div class="line"></div>
-            <a class="logout"  href="/logout"><iconify-icon icon="tabler:logout" style="color: white;" width="30" height="30"></iconify-icon></a>
+            <iconify-icon icon="tabler:logout" class="logout" style="color: white;" width="30" height="30"></iconify-icon>
         </div>
     </nav>
         <div id="menu">
             <div id="sidebar">
                 <ul>
                     <li >
-                        <a href="index.html">
-                          <iconify-icon class="box-icon" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
-                          <p class="sec">Dashboard</p>
+                        <a class="list-sidebar" href="index.html">
+                            <iconify-icon class="box-icon" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
+                        <div style="width: 70%;">
+                            <p class="sec">Dashboard</p>
+                        </div>
                         </a>
                     </li>
                     <li >
-                        <a href="data-guru.html">
-                          <iconify-icon class="box-icon" icon="uil:users-alt" width="23" height="23"></iconify-icon>
+                        <a class="list-sidebar" href="data-guru.html">
+                            <iconify-icon class="box-icon" icon="uil:users-alt" width="23" height="23"></iconify-icon>
+                        <div style="width: 70%;">
                             <p class="sec">Data Guru</p>
+                        </div>
                         </a>
                     </li>
                     <li >
-                        <a href="landingpage.html">
-                          <iconify-icon class="box-icon active" icon="quill:paper" width="23" height="23"></iconify-icon>
+                        <a class="list-sidebar" href="landingpage.html">
+                            <iconify-icon class="box-icon active" style="color: white;" icon="quill:paper" width="25" height="23"></iconify-icon>
+                        <div style="width: 70%;">
                             <p class="sec active">Landing Page</p>
+                        </div>
                         </a>
                     </li>
                 </ul>
             </div>
             <div id="content">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 4%;">
-                  <div style="display: flex; align-items: center; width: 50%;">
-                    <iconify-icon class="icon-utama" icon="quill:paper" width="35" height="35"></iconify-icon>
-                      <p class="title-table" style="padding-left: 2%;">Landing page</p> 
-                  </div>
-                    <a href="">
-                      <button class="btn-add">tambah record</button>
-                    </a>
-                </div>
-                <div class="container">
-      
-                    <ul id="filters" class="clearfix">
-                      <li><span class="filter active" data-filter=".app, .card, .icon, .logo, .web">All</span></li>
-                      <li><span class="filter" data-filter=".app">navigation</span></li>
-                      <li><span class="filter" data-filter=".card">bar</span></li>
-                      <li><span class="filter" data-filter=".icon">berita</span></li>
-                      <li><span class="filter" data-filter=".logo">video</span></li>
-                      <li><span class="filter" data-filter=".web">partner collaboration</span></li>
-                      <li><span class="filter" data-filter=".industri">hubungan industri</span></li>
-                    </ul>
-                
-                    <div id="portfoliolist">
-                
-                      <div class="portfolio logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          
-                          <div class="label">
-                            
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio industri" data-cat="industri">
-                        <div class="portfolio-wrapper">
-                          <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
-                          <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
-                            <div class="image-landingpage">
-                              <img src="" alt="">
-                            </div>
-                          </div>
-                          <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
-                              <span class="tittle-landingpage">kunjungan Industri</span>
-                              <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
-                            </div>
-                            <div style="height: 20vh; background: green;">
-                              <span class="description-landingpage">Lorem ipsum doloremque obcaecati quas modi earum.</span>
-                            </div>
-                            <div class="button-go" style="">
-                            <a href="tambahrecordberita.html" style="display: flex; justify-content: right;">
-                              <button class="btn-go">
-                                Go 
-                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
-                              </button>
-                            </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                          <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
-                          <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
-                            <div class="image-landingpage">
-                              <img src="" alt="">
-                            </div>
-                          </div>
-                          <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
-                              <span class="tittle-landingpage">kunjungan Industri</span>
-                              <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
-                            </div>
-                            <div style="height: 20vh; background: green;">
-                              <span class="description-landingpage">Lorem ipsum doloremque obcaecati quas modi earum.</span>
-                            </div>
-                            <div class="button-go" style="">
-                            <a href="tambahrecordberita.html" style="display: flex; justify-content: right;">
-                              <button class="btn-go">
-                                Go 
-                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
-                              </button>
-                            </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                          <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
-                          <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
-                            <div class="image-landingpage">
-                              <img src="" alt="">
-                            </div>
-                          </div>
-                          <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
-                              <span class="tittle-landingpage">kunjungan Industri</span>
-                              <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
-                            </div>
-                            <div style="height: 20vh; background: green;">
-                              <span class="description-landingpage">Lorem ipsum doloremque obcaecati quas modi earum.</span>
-                            </div>
-                            <div class="button-go" style="">
-                            <a href="tambahrecordberita.html" style="display: flex; justify-content: right;">
-                              <button class="btn-go">
-                                Go 
-                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
-                              </button>
-                            </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio app" data-cat="app">
-                        <div class="portfolio-wrapper">
-                          <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
-                          <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
-                            <div class="image-landingpage">
-                              <img src="" alt="">
-                            </div>
-                          </div>
-                          <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
-                              <span class="tittle-landingpage">kunjungan Industri</span>
-                              <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
-                            </div>
-                            <div style="height: 20vh; background: green;">
-                              <span class="description-landingpage">Lorem ipsum doloremque obcaecati quas modi earum.</span>
-                            </div>
-                            <div class="button-go" style="">
-                            <a href="tambahrecordberita.html" style="display: flex; justify-content: right;">
-                              <button class="btn-go">
-                                Go 
-                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
-                              </button>
-                            </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                          <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
-                          <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
-                            <div class="image-landingpage">
-                              <img src="" alt="">
-                            </div>
-                          </div>
-                          <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
-                              <span class="tittle-landingpage">kunjungan Industri</span>
-                              <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
-                            </div>
-                            <div style="height: 20vh; background: green;">
-                              <span class="description-landingpage">Lorem ipsum doloremque obcaecati quas modi earum.</span>
-                            </div>
-                            <div class="button-go" style="">
-                            <a href="tambahrecordberita.html" style="display: flex; justify-content: right;">
-                              <button class="btn-go">
-                                Go 
-                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
-                              </button>
-                            </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                          <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
-                          <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
-                            <div class="image-landingpage">
-                              <img src="" alt="">
-                            </div>
-                          </div>
-                          <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
-                              <span class="tittle-landingpage">kunjungan Industri</span>
-                              <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
-                            </div>
-                            <div style="height: 20vh; background: green;">
-                              <span class="description-landingpage">Lorem ipsum doloremque obcaecati quas modi earum.</span>
-                            </div>
-                            <div class="button-go" style="">
-                            <a href="tambahrecordberita.html" style="display: flex; justify-content: right;">
-                              <button class="btn-go">
-                                Go 
-                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
-                              </button>
-                            </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Color_icon_orange.svg/250px-Color_icon_orange.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">KittyPic</a>
-                              <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio app" data-cat="app">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Color_icon_pink.svg/250px-Color_icon_pink.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Graph Plotting</a>
-                              <span class="text-category">APP</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Color_icon_blue.svg/250px-Color_icon_blue.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">QR Quick Response</a>
-                              <span class="text-category">Business card</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Color_icon_orange.svg/250px-Color_icon_orange.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Mobi Sock</a>
-                              <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Color_icon_orange.svg/250px-Color_icon_orange.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Village Community Church</a>
-                              <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Domino's Pizza</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Color_icon_green.svg/250px-Color_icon_green.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Backend Admin</a>
-                              <span class="text-category">Web design</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Instagram</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Color_icon_green.svg/250px-Color_icon_green.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Student Guide</a>
-                              <span class="text-category">Web design</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Scoccer</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">3D Map</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio web" data-cat="web">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Color_icon_green.svg/250px-Color_icon_green.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Note</a>
-                              <span class="text-category">Web design</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Color_icon_orange.svg/250px-Color_icon_orange.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Native Designers</a>
-                              <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Color_icon_orange.svg/250px-Color_icon_orange.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Bookworm</a>
-                              <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Sandwich</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio card" data-cat="card">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Color_icon_blue.svg/250px-Color_icon_blue.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Reality</a>
-                              <span class="text-category">Business card</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio logo" data-cat="logo">
-                        <div class="portfolio-wrapper">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Color_icon_orange.svg/250px-Color_icon_orange.svg.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Speciallisterne</a>
-                              <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                
+                    <div style=" display: flex; align-items: center; margin-bottom: 1%;">
+                      <iconify-icon class="box-icon active" style="color: white;" icon="quill:paper" width="25" height="23"></iconify-icon>
+                        <p class="title-table">Landing page</p>
+                        <span style="font-weight: 700; padding-left: 1%; font-size: 1.5rem;"> >  </span> 
+                        <span class="title-table">tambah record</span>
+                        <span style="font-weight: 700; padding-left: 1%; font-size: 1.5rem;"> >  </span> 
+                        <span class="title-table">berita</span>
                     </div>
-                
-                  </div>
+                    <span class="text-child">Pastikan isi form dengan benar dan lengkap !</span>
+                    <div id="content-berita">
+                        <div style="display: flex;">
+                            <div class="left-side">
+                                <div class="rec-input">
+                                    <label class="form-label">judul berita</label>
+                                    <input type="text" id="nama" class="inputan">
+                                </div>
+                            </div>
+                            <div style="width: 0.1rem; height: 9.2vw; background-color: #D9D9D9;"></div>
+                            <div class="right-side">
+                                <div class="rec-input">
+                                    <label class="form-label">sub-judul video</label>
+                                    <input type="text" id="nama" class="inputan">
+                                </div>
+                                
+                                
+                            </div>
+                            
+                        </div>
+                        <div style="width: 100%; height: 0.1rem; background: #D9D9D9;"></div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 2rem;">
+                          <div class="paper">
+                            <div class="toolbar">
+                              <div class="head">
+                                <input type="text" placeholder="Filename" value="untitled" id="filename">
+                                <select onchange="fileHandle(this.value); this.selectedIndex=0">
+                                  <option value="" selected="" hidden="" disabled="">File</option>
+                                  <option value="new">New file</option>
+                                  <option value="txt">Save as txt</option>
+                                  <option value="pdf">Save as pdf</option>
+                                </select>
+                                <select onchange="formatDoc('formatBlock', this.value); this.selectedIndex=0;">
+                                  <option value="" selected="" hidden="" disabled="">Format</option>
+                                  <option value="h1">Heading 1</option>
+                                  <option value="h2">Heading 2</option>
+                                  <option value="h3">Heading 3</option>
+                                  <option value="h4">Heading 4</option>
+                                  <option value="h5">Heading 5</option>
+                                  <option value="h6">Heading 6</option>
+                                  <option value="p">Paragraph</option>
+                                </select>
+                                <select onchange="formatDoc('fontSize', this.value); this.selectedIndex=0;">
+                                  <option value="" selected="" hidden="" disabled="">Font size</option>
+                                  <option value="1">Extra small</option>
+                                  <option value="2">Small</option>
+                                  <option value="3">Regular</option>
+                                  <option value="4">Medium</option>
+                                  <option value="5">Large</option>
+                                  <option value="6">Extra Large</option>
+                                  <option value="7">Big</option>
+                                </select>
+                                <div class="color">
+                                  <span>Color</span>
+                                  <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
+                                </div>
+                                <div class="color">
+                                  <span>Background</span>
+                                  <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
+                                </div>
+                              </div>
+                              <div class="btn-toolbar">
+                                <button onclick="formatDoc('undo')"><i class='bx bx-undo' ></i></button>
+                                <button onclick="formatDoc('redo')"><i class='bx bx-redo' ></i></button>
+                                <button onclick="formatDoc('bold')"><i class='bx bx-bold'></i></button>
+                                <button onclick="formatDoc('underline')"><i class='bx bx-underline' ></i></button>
+                                <button onclick="formatDoc('italic')"><i class='bx bx-italic' ></i></button>
+                                <button onclick="formatDoc('strikeThrough')"><i class='bx bx-strikethrough' ></i></button>
+                                <button onclick="formatDoc('justifyLeft')"><i class='bx bx-align-left' ></i></button>
+                                <button onclick="formatDoc('justifyCenter')"><i class='bx bx-align-middle' ></i></button>
+                                <button onclick="formatDoc('justifyRight')"><i class='bx bx-align-right' ></i></button>
+                                <button onclick="formatDoc('justifyFull')"><i class='bx bx-align-justify' ></i></button>
+                                <button onclick="formatDoc('insertOrderedList')"><i class='bx bx-list-ol' ></i></button>
+                                <button onclick="formatDoc('insertUnorderedList')"><i class='bx bx-list-ul' ></i></button>
+                                <button onclick="addLink()"><i class='bx bx-link' ></i></button>
+                                <button onclick="formatDoc('unlink')"><i class='bx bx-unlink' ></i></button>
+                                <button id="show-code" data-active="false">&lt;/&gt;</button>
+                              </div>
+                            </div>
+                            <div id="isi-berita" contenteditable="true" spellcheck="false">
+                              Lorem, ipsum.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="btn-landingpage">
+                          <a href="landingpage.html">
+                            <button class="btn-form">
+                                cancel
+                                <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>
+                            </button>
+                          </a>
+                            <button class="btn-form">
+                                submit
+                                <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white; margin-left: 5%;" ></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+        function formatDoc(cmd, value=null) {
+            if(value) {
+                document.execCommand(cmd, false, value);
+            } else {
+                document.execCommand(cmd);
+            }
+        }
+        
+        function addLink() {
+            const url = prompt('Insert url');
+            formatDoc('createLink', url);
+        }
+        
+        
+        
+        
+        const content = document.getElementById('content');
+        
+        content.addEventListener('mouseenter', function () {
+            const a = content.querySelectorAll('a');
+            a.forEach(item=> {
+                item.addEventListener('mouseenter', function () {
+                    content.setAttribute('contenteditable', false);
+                    item.target = '_blank';
+                })
+                item.addEventListener('mouseleave', function () {
+                    content.setAttribute('contenteditable', true);
+                })
+            })
+        })
+        
+        
+        const showCode = document.getElementById('show-code');
+        let active = false;
+        
+        showCode.addEventListener('click', function () {
+            showCode.dataset.active = !active;
+            active = !active
+            if(active) {
+                content.textContent = content.innerHTML;
+                content.setAttribute('contenteditable', false);
+            } else {
+                content.innerHTML = content.textContent;
+                content.setAttribute('contenteditable', true);
+            }
+        })
+        
+        
+        
+        const filename = document.getElementById('filename');
+        
+        function fileHandle(value) {
+            if(value === 'new') {
+                content.innerHTML = '';
+                filename.value = 'untitled';
+            } else if(value === 'txt') {
+                const blob = new Blob([content.innerText])
+                const url = URL.createObjectURL(blob)
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `${filename.value}.txt`;
+                link.click();
+            } else if(value === 'pdf') {
+                html2pdf(content).save(filename.value);
+            }
+        }
+    </script>
+    <!-- drag and drop -->
+    <script>
+      const dragText = document.querySelector(".text-drop"),
+      form = document.querySelector(".draganddrop"),
+      dragText2 = document.querySelector(".text-drop2"),
+      btnDrag = document.getElementById("btn-line");
+
+      form.addEventListener("dragover", (event) => {
+          dragText.textContent = 'drop here';
+          form.classList.add('active');
+      });
+
+      form.addEventListener("dragleave", (event) => {
+          dragText.textContent = 'Drop and Drag your image here';
+          form.classList.remove('active');
+      });
+
+      form.addEventListener("drop", (event) => {
+          dragText.textContent = 'nama image nya (image.png)';
+          form.classList.remove('active');
+          dragText2.style.display = "none";
+          btnDrag.style.display = "flex";
+      });
+  </script>
+  <!-- end drag and drop -->
     <script>
         $(function() {
 
@@ -552,7 +333,7 @@
                   activeClass: "active"
                 },
                 layout: {
-                  display: "flex",
+                  display: "inline-block",
                   containerClass: "",
                   containerClassFail: "fail"
                 },

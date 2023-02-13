@@ -74,6 +74,25 @@ class CloudController extends Controller
         return view('cloud/files',['datafolder'=>$folder,'file'=>$file]);
     }
 
+    public function seemore(){
+        $loggedin_username = Auth::user()->id;
+        $dataus = User::with('RelationToCloud:id,user_id,folder_name')->get()->where('id',$loggedin_username);
+        foreach ($dataus as $datauser) {
+          $datausers =  $datauser->RelationToCloud->id;
+          $datacloud = Cloud::with('RelationToFolder:id,cloud_id,nama_folder')->get()->where('id', $datausers); 
+          foreach ($datacloud as $itemcloud) {
+            $item = $itemcloud->id;
+          $folder =  Folder::where('cloud_id', $item)->get();
+          $folders =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get()->pluck('id');
+         
+          $file = File::with('folder')->orderBy('id', 'DESC')->whereIn('folder_id', $folders)->get();
+         
+          }
+          
+        }; 
+        return view('cloud/seemore',['datafolder'=>$folder,'file'=>$file]);
+    }
+
     public function login() {
         return view ('dashboard/pengguna/login');
     }
