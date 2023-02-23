@@ -65,7 +65,7 @@ class TarunaBhaktiController extends Controller
 
     //kurikulum
     public function guru(){
-        return view('SmkTarunaBhakti.gurutarunabhakti');
+        return view('SmkTarunaBhakti.kurikulum.gurutarunabhakti');
     }
 
     public function sistempembelajaran(){

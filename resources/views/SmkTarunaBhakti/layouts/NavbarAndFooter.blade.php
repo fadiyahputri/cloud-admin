@@ -19,7 +19,7 @@
  <!--css-->
  <link rel="stylesheet" href="assetsweb/style.css">
  
-   
+  
    
    <!---page title-->
    <title>SMK Taruna Bhakti | @yield('title')</title>

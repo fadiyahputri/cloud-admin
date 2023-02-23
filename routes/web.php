@@ -96,7 +96,7 @@ Route::get('/files/{tipe}',[CloudController::class, 'file'])->name('files');
 route::get('/SmkTarunaBhakti',[TarunaBhaktiController::class, 'landingpage'])->name('landingpage');
 route::get('/ppdb',[TarunaBhaktiController::class, 'ppdb'])->name('ppdb');
 route::get('/berita',[TarunaBhaktiController::class, 'berita'])->name('berita');
-route::get('/GuruTarunaBhakti',[TarunaBhaktiController::class, 'guru'])->name('guru');
+
 
     //profil
 route::get('/sejarah',[TarunaBhaktiController::class, 'sejarah'])->name('sejarah');
@@ -121,6 +121,7 @@ route::get('/pancaprasetyasiswa',[TarunaBhaktiController::class, 'pancaprasetyas
   //kurikulum
 route::get('/sistempembelajaran',[TarunaBhaktiController::class, 'sistempembelajaran'])->name('sistempembelajaran');    
 route::get('/strukturkurikulum',[TarunaBhaktiController::class, 'strukturkurikulum'])->name('strukturkurikulum');  
+route::get('/GuruTarunaBhakti',[TarunaBhaktiController::class, 'guru'])->name('guru');
 
 route::get('/SertifikasiBroadcasting',[TarunaBhaktiController::class, 'SertifikasiBroadcasting'])->name('SertifikasiBroadcasting');    
 route::get('/SertifikasiNetworking',[TarunaBhaktiController::class, 'SertifikasiNetworking'])->name('SertifikasiNetworking');    

@@ -13,6 +13,8 @@
    <!-- Boxicons CDN Link -->
    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
+   {{-- aos --}}
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assetsweb/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -230,17 +232,17 @@
       <h1 style="text-align: center;">SMK TARUNA BHAKTI</h1>
       <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">SMK Taruna Bhakti Depok merupakan sekolah IT terbaik di Depok</h4>
       <div class="main-cards">
-         <div class="main-card1">
+         <div data-aos="fade-right" class="main-card1">
             <img src="assetsweb/assets/Achievement _Outline.svg" alt="">
             <h3>SEKOLAH BERAKREDITASI A</h3>
             <h5>SMK Taruna Bhakti Depok merupakan sekolah dengan akreditasi A berdasarkan pada sertifikat  02.00/203/SK/BAN-SM/XII/2018.</h5>
          </div>
-         <div class="main-card2">
+         <div data-aos="fade-up" class="main-card2">
             <img src="assetsweb/assets/Achievement _Flatline.svg" alt="">
             <h3>SEKOLAH PUSAT KEUNGGULAN</h3>
             <h5>Sekolah yang bertujuan untuk menyiapkan lulusan yang terserap di industri & menjadi Entrepreneur yang unggul dalam menyongsong Era Revolusi 4.0.</h5>
          </div>
-         <div class="main-card3">
+         <div data-aos="fade-left" class="main-card3">
             <img src="assetsweb/assets/Boss_Flatline.svg" alt="">
             <h3>SEKOLAH BERBASIS IT</h3>
             <h5>SMK Taruna Bhakti merupakan sekolah yang memanfaatkan teknologi sebagai sarana pendidikannya baik bagi pelajar maupun pengajar.</h5>
@@ -249,13 +251,13 @@
    </div>
 
    <!--program keahlian-->
-   
-      <div class="programs-page">
+   <div >
+      <div  class="programs-page">
          <h1 style="text-align: center;">PROGRAM KEAHLIAN</h1>
          <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">Pembelajaran di SMK Taruna Bhakti
             menggabungan antara teori dan praktek dengan orientasi pada kesiapan kerja lulusannya.</h4>
       </div>
-      <div class="programcardpage">
+      <div data-aos="zoom-in-up" class="programcardpage">
          <div class="program-card card1">
             <h4>Pengembangan Perangkat Lunak & Gim</h4>
             <h5>Jurusan yang berfokus pada pengembangan software dan gim</h5>
@@ -323,6 +325,9 @@
             </div>
          </div>
    </div>
+   </div>
+
+
       <div class="programcardpage-mobile">
          <div class="program-card-m card1-m" >
             <h4>Pengembangan Perangkat Lunak & Gim</h4>
@@ -394,7 +399,7 @@
 
 
    <!--portal page-->
-   <div class="portal-page">
+   <div data-aos="zoom-in-right" class="portal-page">
       <img src="assetsweb/assets/Online lesson _Monochromatic.svg" alt="">
       <div class="portal-content">
          <h1>PORTAL BELAJAR</h1>
@@ -411,7 +416,7 @@
 
          <h1> BERITA SEPUTAR <br> SMK TARUNA BHAKTI</h1>
 
-         <div class="box-container">
+         <div data-aos="zoom-in-down" class="box-container">
 
             <div class="box">
                <div class="image">
@@ -570,7 +575,7 @@
     <a href="https://www.youtube.com/watch?v=ybiBgVnj7x0" class="glightbox play-btn mb-4"></a>
     <a href="https://www.youtube.com/@SMKTarunaBhaktiDepok" class="about-btn ">Lihat Lebih Banyak</a>
   </div>
-  <div class="c-peta">
+  <div data-aos="zoom-in" data-aos-delay="100" class="c-peta">
      <div>
         <iframe class="gambar-peta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.251094273804!2d106.86859072696863!3d-6.38590042606772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ebaff005f277%3A0x9fcd41028665eea8!2sSMK%20Taruna%20Bhakti%20Depok!5e0!3m2!1sid!2sid!4v1674792933526!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <!-- <img src="assets/jurusan/Screenshot 2023-01-05 202656.jpg" alt="gambar tidak ada" class="gambar-peta"> -->
@@ -588,7 +593,7 @@
     <h4>lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem </h4>
  </div>
  <!-- partial:index.partial.html -->
- <div class="c-logo-slider" style="margin-bottom: 7vw;">
+ <div data-aos="zoom-out" class="c-logo-slider" style="margin-bottom: 7vw;">
     <div class="logo-slider">
         <div class="item"><a href="#"><img src="https://smks2kosgoropyk.com/wp-content/uploads/2021/04/SMK-Bisa-V1.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
         <div class="item"><a href="#"><img src="https://www.dicoding.com/blog/wp-content/uploads/2014/12/dicoding-header-logo.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
@@ -690,9 +695,12 @@
     </p>
     </footer>
 
- 
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+ <script>
+   AOS.init();
+ </script>
  <script>
       $('.logo-slider').slick({
           slidesToShow: 5,
