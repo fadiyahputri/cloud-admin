@@ -28,7 +28,7 @@ class FolderController extends Controller
             $item = $itemcloud->id;
           $folder =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get();
           $folder2 =  Folder::select('nama_folder','id')->where('id', $id)->get();
-          $folder3 =  Folder::select('id')->where('cloud_id', $item)->get();  
+          $folder3 =  ModelsFile::select('id')->where('id', $id)->get();  
           $pdf = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','pdf')->get()->count();
           $docx = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','docx')->get()->count();
           $pptx = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','pptx')->get()->count();

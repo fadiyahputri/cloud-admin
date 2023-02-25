@@ -20,7 +20,7 @@
     <!-- isi text artikel -->
     <div class="artikel-text" style="font-size: 1vw;">
       
-      <div class="p-artikel-ul">
+      <div class="p-artikel-ol">
         <p>
           Wakil Kepala Sekolah Bidang Hubungan Industri diangkat berdasarkan Surat Keputusan (SK) Kepala SMK Taruna Bhakti Depok. Bertanggung jawab kepada, Kepala Sekolah. Berhubungan dengan :
         </p>

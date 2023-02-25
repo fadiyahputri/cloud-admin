@@ -97,7 +97,7 @@ nav{
   }
   nav .navbar{
     height: 100%;
-    max-width: 1360px;
+    max-width: 88vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2883,45 +2883,66 @@ text-align: justify;
 /* RESPONSIVE ARTIKEL */
 
 @media only screen and (max-width: 600px){
-.artikel .artikel-kategori{
-    font-size: 3.5vw; 
-    margin-bottom: 1vw;
-}
-
-.artikel .artikel-judul{
-    font-size: 8vw;
-    margin-bottom: 2.3vw;
-}
-
-.artikel .artikel-judul .detail-judul{
-  font-size: 2vw;
-  margin-bottom: 6vw;
-}
-
-.artikel .artikel-text p{
+  .artikel .artikel-kategori{
+      font-size: 3.5vw; 
+      margin-bottom: 1vw;
+  }
+  
+  .artikel .artikel-judul{
+      font-size: 8vw;
+      margin-bottom: 2.3vw;
+  }
+  
+  .artikel .artikel-judul .detail-judul{
+    font-size: 2vw;
+    margin-bottom: 6vw;
+  }
+  
+  .artikel .artikel-text p{
     font-size: 3vw;
-}
+  }
+
+  .artikel .p-artikel-ol ol li{
+    font-size: 3vw;
+    margin-left: 2vw;
+  }
+
+  .artikel .p-artikel-ul ul li{
+    font-size: 3vw;
+    margin-left: 2vw;
+  }
+  
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px){
-.artikel .artikel-kategori{
-    font-size: 2.5vw; 
-    margin-bottom: 1vw;
-}
+  .artikel .artikel-kategori{
+      font-size: 2.5vw; 
+      margin-bottom: 1vw;
+  }
+  
+  .artikel .artikel-judul{
+      font-size: 6vw;
+      margin-bottom: 2.3vw;
+  }
 
-.artikel .artikel-judul{
-    font-size: 6vw;
-    margin-bottom: 2.3vw;
-}
+  .artikel .artikel-judul .detail-judul{
+    font-size: 1.5vw;
+    margin-bottom: 6vw;
+  }
+     
+  .artikel .artikel-text p{
+      font-size: 2.5vw;
+  }
 
-.artikel .artikel-judul .detail-judul{
-  font-size: 1.5vw;
-  margin-bottom: 6vw;
-}
-   
-.artikel .artikel-text p{
+  .artikel .p-artikel-ol ol{
     font-size: 2.5vw;
-}
+    margin-left: 2.5vw;
+  }
+
+  .artikel .p-artikel-ul ul li{
+    font-size: 2.5vw;
+    margin-left: 2.5vw;
+  }
 }
 
 /* RESPONSIVE ARTEKEL SELESAI */

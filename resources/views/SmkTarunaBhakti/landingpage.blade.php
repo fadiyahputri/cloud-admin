@@ -593,7 +593,7 @@
     <h4>lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem </h4>
  </div>
  <!-- partial:index.partial.html -->
- <div data-aos="zoom-out" class="c-logo-slider" style="margin-bottom: 7vw;">
+ <div  class="c-logo-slider" style="margin-bottom: 7vw;">
     <div class="logo-slider">
         <div class="item"><a href="#"><img src="https://smks2kosgoropyk.com/wp-content/uploads/2021/04/SMK-Bisa-V1.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
         <div class="item"><a href="#"><img src="https://www.dicoding.com/blog/wp-content/uploads/2014/12/dicoding-header-logo.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
@@ -732,7 +732,6 @@
     breakpoint: 480,
     settings: {
       slidesToShow: 2,
-      arrows:false,
       slidesToScroll: 1
     }
   }

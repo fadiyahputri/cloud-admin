@@ -35,7 +35,7 @@ class GuruController extends Controller
             'username'=>$request->username,
             'level'=>$request->level,
 
-            'password'=>$request->password
+            'password'=>Hash::make($request->password),
         ]);
         $data = DB::table('users')->orderBy('id', 'DESC')->limit(1)->get()->pluck('id')->first();
         
