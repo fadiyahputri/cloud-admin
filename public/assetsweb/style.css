@@ -9,6 +9,7 @@
 
 
 
+
 /* navbar */
     /* nav top start */
 .nav-top {
@@ -1042,13 +1043,13 @@ nav{
 }
 
 .card1 h4 {
-    font-size: 15px;
+    font-size: 0.9765625vw;
 }
 
 .card1 h5 {
     margin-top: 10px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.78125vw;
 }
 
 .card1 img {
@@ -1057,8 +1058,8 @@ nav{
 }
 
 .card2 {
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 0.9765625vw;
+    padding: 0.9765625vw;
     width: 11.5vw;
     height: 14.5vw;
     box-shadow: -5px -5px 7px #00000050, 5px 5px 7px #00000050;
@@ -1067,13 +1068,13 @@ nav{
 }
 
 .card2 h4 {
-    font-size: 13px;
+    font-size: 0.8463541666666666vw;
 }
 
 .card2 h5 {
-    margin-top: 15px;
+    margin-top: 0.9765625vw;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.78125vw;
 }
 
 .card2 img {
@@ -1083,8 +1084,8 @@ nav{
 }
 
 .card3 {
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 0.9765625vw;
+    padding: 0.9765625vw;
     width: 11.5vw;
     height: 14.5vw;
     box-shadow: -5px -5px 7px #00000050, 5px 5px 7px #00000050;
@@ -1093,13 +1094,13 @@ nav{
 }
 
 .card3 h4 {
-    font-size: 15px;
+    font-size: 0.9765625vw;
 }
 
 .card3 h5 {
     margin-top: 10px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.78125vw;
 }
 
 .card3 img {
@@ -1108,8 +1109,8 @@ nav{
 }
 
 .card4 {
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 0.9765625vw;
+    padding: 0.9765625vw;
     width: 11.5vw;
     height: 14.5vw;
     box-shadow: -5px -5px 7px #00000050, 5px 5px 7px #00000050;
@@ -1118,13 +1119,13 @@ nav{
 }
 
 .card4 h4 {
-    font-size: 15px;
+    font-size: 0.9765625vw;
 }
 
 .card4 h5 {
     margin-top: 10px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.78125vw;
 }
 
 .card4 img {
@@ -1133,8 +1134,8 @@ nav{
 }
 
 .card5 {
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 0.9765625vw;
+    padding: 0.9765625vw;
     width: 11.5vw;
     height: 14.5vw;
     box-shadow: -5px -5px 7px #00000050, 5px 5px 7px #00000050;
@@ -1143,13 +1144,13 @@ nav{
 }
 
 .card5 h4 {
-    font-size: 15px;
+    font-size: 0.9765625vw;
 }
 
 .card5 h5 {
-    margin-top: 15px;
+    margin-top: 0.9765625vw;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.78125vw;
 }
 
 .card5 img {

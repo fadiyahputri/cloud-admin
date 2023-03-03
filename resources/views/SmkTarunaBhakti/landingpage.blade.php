@@ -228,21 +228,21 @@
 </div>
 
     <!--seputar smk-->
-    <div class="main-page">
-      <h1 style="text-align: center;">SMK TARUNA BHAKTI</h1>
-      <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">SMK Taruna Bhakti Depok merupakan sekolah IT terbaik di Depok</h4>
+    <div class="main-page"  style="overflow-x: hidden;">
+      <h1 style="text-align: center;" data-aos="zoom-in" data-aos-duration="1000">SMK TARUNA BHAKTI</h1>
+      <h4 style="text-align: center; font-weight: 400; margin-top: 5px;" data-aos="zoom-in" data-aos-duration="1000">SMK Taruna Bhakti Depok merupakan sekolah IT terbaik di Depok</h4>
       <div class="main-cards">
-         <div data-aos="fade-right" class="main-card1">
+         <div data-aos="fade-right" data-aos-duration="1000" class="main-card1">
             <img src="assetsweb/assets/Achievement _Outline.svg" alt="">
             <h3>SEKOLAH BERAKREDITASI A</h3>
             <h5>SMK Taruna Bhakti Depok merupakan sekolah dengan akreditasi A berdasarkan pada sertifikat  02.00/203/SK/BAN-SM/XII/2018.</h5>
          </div>
-         <div data-aos="fade-up" class="main-card2">
+         <div data-aos="fade-up" data-aos-duration="1000" class="main-card2">
             <img src="assetsweb/assets/Achievement _Flatline.svg" alt="">
             <h3>SEKOLAH PUSAT KEUNGGULAN</h3>
             <h5>Sekolah yang bertujuan untuk menyiapkan lulusan yang terserap di industri & menjadi Entrepreneur yang unggul dalam menyongsong Era Revolusi 4.0.</h5>
          </div>
-         <div data-aos="fade-left" class="main-card3">
+         <div data-aos="fade-left" data-aos-duration="1000" class="main-card3">
             <img src="assetsweb/assets/Boss_Flatline.svg" alt="">
             <h3>SEKOLAH BERBASIS IT</h3>
             <h5>SMK Taruna Bhakti merupakan sekolah yang memanfaatkan teknologi sebagai sarana pendidikannya baik bagi pelajar maupun pengajar.</h5>
@@ -252,74 +252,74 @@
 
    <!--program keahlian-->
    <div >
-      <div  class="programs-page">
+      <div  class="programs-page" data-aos="fade-up" data-aos-duration="1000">
          <h1 style="text-align: center;">PROGRAM KEAHLIAN</h1>
          <h4 style="text-align: center; font-weight: 400; margin-top: 5px;">Pembelajaran di SMK Taruna Bhakti
             menggabungan antara teori dan praktek dengan orientasi pada kesiapan kerja lulusannya.</h4>
       </div>
-      <div data-aos="zoom-in-up" class="programcardpage">
-         <div class="program-card card1">
+      <div class="programcardpage">
+         <div class="program-card card1" data-aos="fade-up" data-aos-duration="1400">
             <h4>Pengembangan Perangkat Lunak & Gim</h4>
             <h5>Jurusan yang berfokus pada pengembangan software dan gim</h5>
             <img src="assetsweb/assets/jurusan/rpl.png" alt="">
             <div class="ig-info">
               <iconify-icon class="insta-icon" icon="mdi:instagram"
-              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+              style="font-size: 2vw; margin-left: 0.52vw;"></iconify-icon>
            <span>
-              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              <iconify-icon icon="mdi:information-outline" style="font-size: 2vw; margin-left: 0.52vw;">
               </iconify-icon>
            </span>
             </div>
            
          </div>
-         <div class="program-card card2">
+         <div class="program-card card2" data-aos="fade-up" data-aos-duration="1800">
             <h4>Teknik Jaringan Komputer & Telekomunikasi</h4>
             <h5>Jurusan dengan sarana praktik yang sesuai dengan standar industri.</h5>
             <img src="assetsweb/assets/jurusan/tkj.png" alt="">
             <div class="ig-info">
               <iconify-icon class="insta-icon" icon="mdi:instagram"
-              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+              style="font-size: 2vw; margin-left: 0.52vw;"></iconify-icon>
            <span>
-              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              <iconify-icon icon="mdi:information-outline" style="font-size: 2vw; margin-left: 0.52vw;">
               </iconify-icon>
            </span>
             </div>
          </div>
-         <div class="program-card card3">
+         <div class="program-card card3" data-aos="fade-up" data-aos-duration="2200">
             <h4>Teknik Elektronika & Industri</h4>
             <h5>Jurusan dengan laboratoriam dan alat peraktik sangat lengkap.</h5>
             <img src="assetsweb/assets/jurusan/tei.png" alt="">
             <div class="ig-info">
               <iconify-icon class="insta-icon" icon="mdi:instagram"
-              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+              style="font-size: 2vw; margin-left: 0.52vw;"></iconify-icon>
            <span>
-              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              <iconify-icon icon="mdi:information-outline" style="font-size: 2vw; margin-left: 0.52vw;">
               </iconify-icon>
            </span>
             </div>
          </div>
-         <div class="program-card card4">
+         <div class="program-card card4" data-aos="fade-up" data-aos-duration="2600">
             <h4>Broadcasting & Perfilman</h4>
             <h5>Jurusan yang mempelajari seni audio & visual dan banyak aspek lainnya. </h5>
             <img src="assetsweb/assets/jurusan/bc.png" alt="">
             <div class="ig-info">
               <iconify-icon class="insta-icon" icon="mdi:instagram"
-              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+              style="font-size: 2vw; margin-left: 0.52vw;"></iconify-icon>
            <span>
-              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              <iconify-icon icon="mdi:information-outline" style="font-size: 2vw; margin-left: 0.52vw;">
               </iconify-icon>
            </span>
             </div>
          </div>
-         <div class="program-card card5">
+         <div class="program-card card5" data-aos="fade-up" data-aos-duration="3000">
             <h4>Animasi</h4>
             <h5>Program keahlian yang mempelajari penguasaan konten dibidang Multimedia</h5>
             <img src="assetsweb/assets/jurusan/ani.png" alt="">
             <div class="ig-info">
               <iconify-icon class="insta-icon" icon="mdi:instagram"
-              style="font-size: 32px; margin-left: 8px;"></iconify-icon>
+              style="font-size: 2vw; margin-left: 0.52vw;"></iconify-icon>
            <span>
-              <iconify-icon icon="mdi:information-outline" style="font-size: 32px; margin-left: 8px;">
+              <iconify-icon icon="mdi:information-outline" style="font-size: 2vw; margin-left: 0.52vw;">
               </iconify-icon>
            </span>
             </div>
@@ -328,7 +328,7 @@
    </div>
 
 
-      <div class="programcardpage-mobile">
+   <div class="programcardpage-mobile" data-aos="zoom-in" data-aos-duration="1000">
          <div class="program-card-m card1-m" >
             <h4>Pengembangan Perangkat Lunak & Gim</h4>
             <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dignissimos.</h5>
@@ -399,9 +399,9 @@
 
 
    <!--portal page-->
-   <div data-aos="zoom-in-right" class="portal-page">
-      <img src="assetsweb/assets/Online lesson _Monochromatic.svg" alt="">
-      <div class="portal-content">
+   <div class="portal-page"  style="overflow-x: hidden;">
+      <img src="assetsweb/assets/Online lesson _Monochromatic.svg" alt="" data-aos="fade-right" data-aos-duration="1000">
+      <div class="portal-content" data-aos="fade-left" data-aos-duration="1000">
          <h1>PORTAL BELAJAR</h1>
          <h4>Model pengembangan pembelajaran berbasis web yang dapat digunakan <br class="br-portal-page">
             adalah model pengembangan web-based learning environment</h4>
@@ -410,13 +410,13 @@
    </div>
 
    <!--berita tb-->
-   <div class="berita">
+   <div class="berita" data-aos="zoom-in-down" data-aos-duration="1000">
 
       <div class="container">
 
          <h1> BERITA SEPUTAR <br> SMK TARUNA BHAKTI</h1>
 
-         <div data-aos="zoom-in-down" class="box-container">
+         <div class="box-container">
 
             <div class="box">
                <div class="image">
@@ -568,14 +568,14 @@
 
 
 <section id="vidio-peta">
-  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="500">
     <h1 class="judul-vidio ">VIDEO <span>SEPUTAR<br> 
       SMK</span> TARUNA BHAKTI</h1>
     <p class="mb-4 pb-0"> Kenali sekolah SMK Taruna Bhakti melalui Video kami</p>
     <a href="https://www.youtube.com/watch?v=ybiBgVnj7x0" class="glightbox play-btn mb-4"></a>
     <a href="https://www.youtube.com/@SMKTarunaBhaktiDepok" class="about-btn ">Lihat Lebih Banyak</a>
   </div>
-  <div data-aos="zoom-in" data-aos-delay="100" class="c-peta">
+  <div data-aos="fade-up" data-aos-duration="2000" class="c-peta">
      <div>
         <iframe class="gambar-peta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.251094273804!2d106.86859072696863!3d-6.38590042606772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ebaff005f277%3A0x9fcd41028665eea8!2sSMK%20Taruna%20Bhakti%20Depok!5e0!3m2!1sid!2sid!4v1674792933526!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <!-- <img src="assets/jurusan/Screenshot 2023-01-05 202656.jpg" alt="gambar tidak ada" class="gambar-peta"> -->
@@ -588,12 +588,12 @@
 </section><!-- End Hero Section -->
 
   <!-- PARTNER KOLABORASI -->
-  <div class="judul-kolaborasi">
+ <div class="judul-kolaborasi" data-aos="zoom-in" data-aos-duration="1000">
     <h1>PARTNER KOLABORASI</h1>
     <h4>lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem </h4>
  </div>
  <!-- partial:index.partial.html -->
- <div  class="c-logo-slider" style="margin-bottom: 7vw;">
+<div class="c-logo-slider" data-aos="zoom-in" data-aos-duration="1000" style="margin-bottom: 7vw;">
     <div class="logo-slider">
         <div class="item"><a href="#"><img src="https://smks2kosgoropyk.com/wp-content/uploads/2021/04/SMK-Bisa-V1.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
         <div class="item"><a href="#"><img src="https://www.dicoding.com/blog/wp-content/uploads/2014/12/dicoding-header-logo.png" alt="gambar tidak ditemukan" width="130" height="70"></a></div>
@@ -732,7 +732,8 @@
     breakpoint: 480,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      arrows:false
     }
   }
   // You can unslick at a given breakpoint now by adding:
