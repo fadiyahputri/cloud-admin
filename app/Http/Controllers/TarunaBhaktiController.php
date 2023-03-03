@@ -87,5 +87,19 @@ class TarunaBhaktiController extends Controller
     public function SertifikasiProgramming(){
         return view('SmkTarunaBhakti.kurikulum.Sertifikat.rpl');
     }
+
+    //fasilitas
+    public function fasilitaspendukung(){
+        return view('SmkTarunaBhakti.fasilitas.fasilitaspendukung');
+    }
+    public function ruangpembelajaranumum(){
+        return view('SmkTarunaBhakti.fasilitas.ruangpembelajaranumum');
+    }
+    public function ruangpembelajarankhusus(){
+        return view('SmkTarunaBhakti.fasilitas.ruangpembelajarankhusus');
+    }
+    public function Prasaranasekolah(){
+        return view('SmkTarunaBhakti.fasilitas.Prasaranasekolah');
+    }
     
 }

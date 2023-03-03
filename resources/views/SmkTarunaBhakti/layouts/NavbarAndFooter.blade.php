@@ -19,6 +19,7 @@
  <!--css-->
  <link rel="stylesheet" href="assetsweb/style.css">
  
+ 
   
    
    <!---page title-->
@@ -29,149 +30,149 @@
   @yield('style')
 </head>
 
-<body style="perspective: 1px;">
+<body>
 
    <!--navbar-->
 
    <div class="nav-top">
-      <ul class="social-media">
-         <li><a href="#">
-               <iconify-icon icon="mdi:instagram" style="font-size: 2.5vh"></iconify-icon>
-            </a></li>
-         <li><a href="#">
-               <iconify-icon icon="ic:baseline-facebook" style="font-size: 2.5vh"></iconify-icon>
-            </a></li>
-         <li><a href="#">
-               <iconify-icon icon="mingcute:youtube-fill" style="font-size: 2.5vh"></iconify-icon>
-            </a></li>
-         <li><a href="#">
-               <iconify-icon icon="ic:baseline-tiktok" style="font-size: 2.5vh"></iconify-icon>
-            </a></li>
-      </ul>
-      <ul class="alamat">
-         <li><a href="">
-               <iconify-icon icon="material-symbols:location-on" style="font-size: 3vh; margin-right: 0.5vh;">
-               </iconify-icon> Jl. Pekapuran, RT.02/RW.06, Depok, Jawa Barat 16953
-            </a></li>
-         <li><a href="">
-               <iconify-icon icon="mdi:email" style="font-size: 3vh; margin-right: 0.5vh;"></iconify-icon>
-               taruna@smktarunabhakti.net
-            </a></li>
-         <li><a href="">
-               <iconify-icon icon="material-symbols:call-sharp" style="font-size: 3vh; margin-right: 0.5vh;">
-               </iconify-icon> (021) 8744810
-            </a></li>
-      </ul>
-   </div>
-   <nav>
-      <div class="navbar">
-        <i class='bx bx-menu'></i>
-        <a href="{{asset('/SmkTarunaBhakti')}}" class="logo-tb" >
-          <img src="assetsweb/assets/logo-removebg-preview.png" alt="">
-          <p class="j-logo">SMK Taruna Bhakti <br><span>Our quality asks to be different</span></p>
-       </a>
-        <div class="nav-links">
-          <div class="sidebar-logo">
-            <span class="logo-name">SMKTB</span>
-            <i class='bx bx-x' ></i>
-          </div>
-          <ul class="links">
-            <li>
-              <div class="c-nav">
-                <iconify-icon icon="fa6-solid:school-flag" class="Profil" ></iconify-icon>
-                <a class="textprofil">Profil</a>
-                <i class='bx bxs-chevron-down profil-arrow arrow'></i>
-              </div>
-           
-              <ul class="profil-sub-menu sub-menu">
-                <li><a class="ww" href="{{asset('/sejarah')}}">Sejarah</a></li>
-                <li><a  class="ww" href="{{asset('/identitassekolah')}}">Identitas Sekolah</a></li>
-                <li><a  class="ww" href="{{asset('/visimisi')}}">Visi dan Misi</a></li>
-                <li><a  class="ww" href="{{asset('/tujuan')}}">Tujuan SMK Taruna Bhakti</a></li>
-                <li class="more">
-                  <span ><a class="ww" id="mutu">Mutu</a>
-                  <i  class='bx bxs-chevron-right arrow mutu-arrow' id="arrow"></i>
-                </span>
-                  <ul class="more-sub-menu">
-                    <li><a href="{{asset('/kebijakanmutu')}}">Kebijakan Mutu SMK Taruna Bhakti</a></li>
-                    <li><a href="{{asset('/analisisjabatan')}}">Analisi Jabatan Tenaga Kerja Pendidik (GURU)</a></li>
-                    <li><a href="{{asset('/analisisjabatanwakilhubungan')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Industri</a></li>
-                    <li><a href="{{asset('/analisisjabatanwakitlkurikulum')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Kurikulum</a></li>
-                    <li><a href="{{asset('/analisisjabatanwakilkelas')}}">Analisis Jabatan Wali Kelas</a></li>
-                  </ul>
-                </li>
-                <li><a class="ww" href="{{asset('/hubunganindustri')}}">Hubungan Industri</a></li>
-              </ul>
-            </li>
-           
-            <li>
-              <div class="c-nav">
-                <iconify-icon icon="ion:school-sharp" class="Kesiswaan"></iconify-icon>
-                <a class="Kesiswaantext">Kesiswaan</a>
-                <i class='bx bxs-chevron-down Kesiswaan-arrow arrow'></i>
+    <ul class="social-media">
+       <li><a href="#">
+             <iconify-icon icon="mdi:instagram" style="font-size: 2.5vh"></iconify-icon>
+          </a></li>
+       <li><a href="#">
+             <iconify-icon icon="ic:baseline-facebook" style="font-size: 2.5vh"></iconify-icon>
+          </a></li>
+       <li><a href="#">
+             <iconify-icon icon="mingcute:youtube-fill" style="font-size: 2.5vh"></iconify-icon>
+          </a></li>
+       <li><a href="#">
+             <iconify-icon icon="ic:baseline-tiktok" style="font-size: 2.5vh"></iconify-icon>
+          </a></li>
+    </ul>
+    <ul class="alamat">
+       <li><a href="">
+             <iconify-icon icon="material-symbols:location-on" style="font-size: 3vh; margin-right: 0.5vh;">
+             </iconify-icon> Jl. Pekapuran, RT.02/RW.06, Depok, Jawa Barat 16953
+          </a></li>
+       <li><a href="">
+             <iconify-icon icon="mdi:email" style="font-size: 3vh; margin-right: 0.5vh;"></iconify-icon>
+             taruna@smktarunabhakti.net
+          </a></li>
+       <li><a href="">
+             <iconify-icon icon="material-symbols:call-sharp" style="font-size: 3vh; margin-right: 0.5vh;">
+             </iconify-icon> (021) 8744810
+          </a></li>
+    </ul>
+ </div>
+ <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <a href="{{asset('/SmkTarunaBhakti')}}" class="logo-tb" >
+        <img src="assetsweb/assets/logo-removebg-preview.png" alt="">
+        <p class="j-logo">SMK Taruna Bhakti <br><span>Our quality asks to be different</span></p>
+     </a>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">SMKTB</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li>
+            <div class="c-nav">
+              <iconify-icon icon="fa6-solid:school-flag" class="Profil" ></iconify-icon>
+              <a class="textprofil">Profil</a>
+              <i class='bx bxs-chevron-down profil-arrow arrow'></i>
             </div>
-      
-              <ul class="Kesiswaan-sub-menu sub-menu">
-                <li><a class="ww" href="{{asset('/datapoinpelanggaran')}}">Data Poin Pelanggaran dan Tata Tertib</a></li>
-                <li><a class="ww" href="{{asset('/marssmktarunabhakti')}}">Mars SMK Taruna Bhakti</a></li>
-                <li><a class="ww" href="{{asset('/hymnesmktarunabhakti')}}">Hymne SMK Taruna Bhakti</a></li>
-                <li><a class="ww" href="{{asset('/pancaprasetyasiswa')}}">Panca Prasetya Siswa SMK Taruna Bhakti</a></li>
-              </ul>
-            </li>
-            <li>
-              <div class="c-nav">
-                <iconify-icon icon="ic:baseline-library-books" class="kurikulum"></iconify-icon>
-                <a  class="textkurikulum">kurikulum</a>
-                <i class='bx bxs-chevron-down kurikulum-arrow arrow'></i>
-              </div>
          
-            <ul class="htmlCss-sub-menu1 sub-menu1">
-              <li><a class="ww" href="{{asset('/GuruTarunaBhakti')}}">Guru SMK Taruna Bhakti</a></li>
-              <li><a  class="ww" href="{{asset('/strukturkurikulum')}}">Struktur Kurikulum SMK Taruna Bhakti</a></li>
-              <li><a  class="ww" href="{{asset('/sistempembelajaran')}}">Sistem Pembelajaran</a></li>
+            <ul class="profil-sub-menu sub-menu">
+              <li><a class="ww" href="{{asset('/sejarah')}}">Sejarah</a></li>
+              <li><a  class="ww" href="{{asset('/identitassekolah')}}">Identitas Sekolah</a></li>
+              <li><a  class="ww" href="{{asset('/visimisi')}}">Visi dan Misi</a></li>
+              <li><a  class="ww" href="{{asset('/tujuan')}}">Tujuan SMK Taruna Bhakti</a></li>
               <li class="more">
-                <span ><a class="ww" id="Sertifikasi" >Sertifikasi Internasional</a>
-                <i  class='bx bxs-chevron-right arrow Sertifikasi-arrow' id="arrow"></i>
+                <span ><a class="ww" id="mutu">Mutu</a>
+                <i  class='bx bxs-chevron-right arrow mutu-arrow' id="arrow"></i>
               </span>
-                <ul class="more-sub-menu1">
-                  <li><a href="{{asset('/SertifikasiBroadcasting')}}">Sertifikasi internasional Bidang Broadcasting</a></li>
-                  <li><a href="{{asset('/SertifikasiNetworking')}}">Sertifikasi Internasional bidang Networking</a></li>
-                  <li><a href="{{asset('/SertifikasiMultimedia')}}">Sertifikasi Internasional Bidang Multimedia</a></li>
-                  <li><a href="{{asset('/SertifikasiProgramming')}}">Sertifikasi Internasional Bidang Programming</a></li>
+                <ul class="more-sub-menu">
+                  <li><a href="{{asset('/kebijakanmutu')}}">Kebijakan Mutu SMK Taruna Bhakti</a></li>
+                  <li><a href="{{asset('/analisisjabatan')}}">Analisi Jabatan Tenaga Kerja Pendidik (GURU)</a></li>
+                  <li><a href="{{asset('/analisisjabatanwakilhubungan')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Industri</a></li>
+                  <li><a href="{{asset('/analisisjabatanwakitlkurikulum')}}">Analisis Jabatan Wakil Kepala Sekolah Bidang Hubungan Kurikulum</a></li>
+                  <li><a href="{{asset('/analisisjabatanwakilkelas')}}">Analisis Jabatan Wali Kelas</a></li>
                 </ul>
               </li>
+              <li><a class="ww" href="{{asset('/hubunganindustri')}}">Hubungan Industri</a></li>
             </ul>
           </li>
-          
-            <li>
-              <div class="c-nav">
-                <iconify-icon icon="teenyicons:building-solid" class="Fasilitas"></iconify-icon>
-                  <a class="Fasilitastext">Fasilitas</a>
-                  <i class='bx bxs-chevron-down Fasilitas-arrow arrow'></i>
-              </div>
-  
-              <ul class="Kesiswaan-sub-menu1 sub-menu2">
-                <li><a class="ww" href="fasilitas.html   ">Sarana dan Prasarana Sekolah</a></li>
-                <li><a class="ww" href="#">Ruang Pembelajaran Umum</a></li>
-                <li><a class="ww" href="#">Ruang Pembelajaran Khusus</a></li>
-                <li><a class="ww" href="#">Fasilitas Pendukung</a></li>
+         
+          <li>
+            <div class="c-nav">
+              <iconify-icon icon="ion:school-sharp" class="Kesiswaan"></iconify-icon>
+              <a class="Kesiswaantext">Kesiswaan</a>
+              <i class='bx bxs-chevron-down Kesiswaan-arrow arrow'></i>
+          </div>
+    
+            <ul class="Kesiswaan-sub-menu sub-menu">
+              <li><a class="ww" href="{{asset('/datapoinpelanggaran')}}">Data Poin Pelanggaran dan Tata Tertib</a></li>
+              <li><a class="ww" href="{{asset('/marssmktarunabhakti')}}">Mars SMK Taruna Bhakti</a></li>
+              <li><a class="ww" href="{{asset('/hymnesmktarunabhakti')}}">Hymne SMK Taruna Bhakti</a></li>
+              <li><a class="ww" href="{{asset('/pancaprasetyasiswa')}}">Panca Prasetya Siswa SMK Taruna Bhakti</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="c-nav">
+              <iconify-icon icon="ic:baseline-library-books" class="kurikulum"></iconify-icon>
+              <a  class="textkurikulum">kurikulum</a>
+              <i class='bx bxs-chevron-down kurikulum-arrow arrow'></i>
+            </div>
+       
+          <ul class="htmlCss-sub-menu1 sub-menu1">
+            <li><a class="ww" href="{{asset('/GuruTarunaBhakti')}}">Guru SMK Taruna Bhakti</a></li>
+            <li><a  class="ww" href="{{asset('/strukturkurikulum')}}">Struktur Kurikulum SMK Taruna Bhakti</a></li>
+            <li><a  class="ww" href="{{asset('/sistempembelajaran')}}">Sistem Pembelajaran</a></li>
+            <li class="more">
+              <span ><a class="ww" id="Sertifikasi" >Sertifikasi Internasional</a>
+              <i  class='bx bxs-chevron-right arrow Sertifikasi-arrow' id="arrow"></i>
+            </span>
+              <ul class="more-sub-menu1">
+                <li><a href="{{asset('/SertifikasiBroadcasting')}}">Sertifikasi internasional Bidang Broadcasting</a></li>
+                <li><a href="{{asset('/SertifikasiNetworking')}}">Sertifikasi Internasional bidang Networking</a></li>
+                <li><a href="{{asset('/SertifikasiMultimedia')}}">Sertifikasi Internasional Bidang Multimedia</a></li>
+                <li><a href="{{asset('/SertifikasiProgramming')}}">Sertifikasi Internasional Bidang Programming</a></li>
               </ul>
             </li>
           </ul>
-        </div>
-        <div class="s-ppdb">
-          
-          <div class="search-box" >
-            <i class='bx bx-search'></i>
-            <div class="input-box">
-              <input type="text" placeholder="Search...">
+        </li>
+        
+          <li>
+            <div class="c-nav">
+              <iconify-icon icon="teenyicons:building-solid" class="Fasilitas"></iconify-icon>
+                <a class="Fasilitastext">Fasilitas</a>
+                <i class='bx bxs-chevron-down Fasilitas-arrow arrow'></i>
             </div>
-          </div>
-          <a class="ppdb" href="{{asset('/ppdb')}}">PPDB</a>
-        </div>
-  
+ 
+            <ul class="Kesiswaan-sub-menu1 sub-menu2">
+              <li><a class="ww" href="{{asset('/Prasaranasekolah')}}">Sarana dan Prasarana Sekolah</a></li>
+              <li><a class="ww" href="{{asset('/ruangpembelajaranumum')}}">Ruang Pembelajaran Umum</a></li>
+              <li><a class="ww" href="{{asset('/ruangpembelajarankhusus')}}">Ruang Pembelajaran Khusus</a></li>
+              <li><a class="ww" href="{{asset('/fasilitaspendukung')}}">Fasilitas Pendukung</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+      <div class="s-ppdb">
+        
+        <div class="search-box" >
+          <i class='bx bx-search'></i>
+          <div class="input-box">
+            <input type="text" placeholder="Search...">
+          </div>
+        </div>
+        <a class="ppdb" href="{{asset('/ppdb')}}">PPDB</a>
+      </div>
+ 
+    </div>
+ </nav>
 
    <div class="hero-img">
       <div class="gambar"></div>

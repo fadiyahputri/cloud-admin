@@ -201,10 +201,10 @@
            </div>
 
            <ul class="Kesiswaan-sub-menu1 sub-menu2">
-             <li><a class="ww" href="fasilitas.html   ">Sarana dan Prasarana Sekolah</a></li>
-             <li><a class="ww" href="#">Ruang Pembelajaran Umum</a></li>
-             <li><a class="ww" href="#">Ruang Pembelajaran Khusus</a></li>
-             <li><a class="ww" href="#">Fasilitas Pendukung</a></li>
+             <li><a class="ww" href="{{asset('/Prasaranasekolah')}}">Sarana dan Prasarana Sekolah</a></li>
+             <li><a class="ww" href="{{asset('/ruangpembelajaranumum')}}">Ruang Pembelajaran Umum</a></li>
+             <li><a class="ww" href="{{asset('/ruangpembelajarankhusus')}}">Ruang Pembelajaran Khusus</a></li>
+             <li><a class="ww" href="{{asset('/fasilitaspendukung')}}">Fasilitas Pendukung</a></li>
            </ul>
          </li>
        </ul>
@@ -221,14 +221,14 @@
      </div>
 
    </div>
- </nav>
+</nav>
 
 <div class="hero-img">
    <div class="gambar"></div>
 </div>
 
     <!--seputar smk-->
-    <div class="main-page"  style="overflow-x: hidden;">
+    <div class="main-page"  style="overflow: hidden;">
       <h1 style="text-align: center;" data-aos="zoom-in" data-aos-duration="1000">SMK TARUNA BHAKTI</h1>
       <h4 style="text-align: center; font-weight: 400; margin-top: 5px;" data-aos="zoom-in" data-aos-duration="1000">SMK Taruna Bhakti Depok merupakan sekolah IT terbaik di Depok</h4>
       <div class="main-cards">
