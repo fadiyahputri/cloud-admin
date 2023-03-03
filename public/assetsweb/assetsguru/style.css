@@ -1148,21 +1148,21 @@ nav .navbar .links li:hover .Kesiswaan-sub-menu {
   bottom: 50px;
 }
 
-h3 {
+.title-guru {
   position: relative;
-  bottom: 61.7px;
+  bottom: 50px;
 }
 
 h5 {
   position: relative;
-  bottom: 68px;
+  bottom: 55px;
 }
 
 .span-button {
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 65px;
+  bottom: 46.9px;
 }
 
 .guru-jurusan {
@@ -1264,21 +1264,21 @@ button {
     bottom: 30px;
   }
 
-  h3 {
+  .title-guru {
     position: relative;
-    bottom: 45.5px;
+    bottom: 30.5px;
   }
 
   h5 {
     position: relative;
-    bottom: 50px;
+    bottom: 37px;
   }
 
   .span-button {
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 50px;
+    bottom: 34px;
   }
 
   .guru-jurusan {
@@ -1373,21 +1373,21 @@ button {
     bottom: 36px;
   }
 
-  h3 {
+  .title-guru {
     position: relative;
-    bottom: 45.5px;
+    bottom: 32.5px;
   }
 
   h5 {
     position: relative;
-    bottom: 50px;
+    bottom: 38.7px;
   }
 
   .span-button {
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 50px;
+    bottom: 34px;
   }
 
   .guru-jurusan {
@@ -1481,21 +1481,21 @@ button {
     bottom: 37px;
   }
 
-  h3 {
+  .title-guru {
     position: relative;
-    bottom: 50px;
+    bottom: 34.5px;
   }
 
   h5 {
     position: relative;
-    bottom: 58px;
+    bottom: 41px;
   }
 
   .span-button {
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 58.5px;
+    bottom: 38.5px;
   }
 
   .guru-jurusan {
