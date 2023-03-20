@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Landing Page Control</title>
     <!-- icon -->
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     <!-- css -->
@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
 </head>
 <body onload="muncul()">
@@ -34,19 +35,19 @@
             <div id="sidebar">
                 <ul>
                     <li >
-                        <a href="index.html">
+                        <a href="/admin">
                           <iconify-icon class="box-icon" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
                           <p class="sec">Dashboard</p>
                         </a>
                     </li>
                     <li >
-                        <a href="data-guru.html">
+                        <a href="/dataguru">
                           <iconify-icon class="box-icon" icon="uil:users-alt" width="23" height="23"></iconify-icon>
                             <p class="sec">Data Guru</p>
                         </a>
                     </li>
                     <li >
-                        <a href="landingpage.html">
+                        <a href="/landing">
                           <iconify-icon class="box-icon active" icon="quill:paper" width="23" height="23"></iconify-icon>
                             <p class="sec active">Landing Page</p>
                         </a>
@@ -318,20 +319,46 @@
                             <div class="label-bg"></div>
                           </div>
                         </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Domino's Pizza</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
+                      </div>                
+              {{-- BERITA --}}
+              @foreach ($berita as $b)
+              <div class="portfolio icon" data-cat="icon">
+                <div class="portfolio-wrapper">
+                  <div style="position: absolute; background: black; height: 2px; width: 100%; margin-top: 10%;"></div>
+                  <div style="width: 70%; display: flex; justify-content: center; align-items: center; padding: 0.5rem;">
+                    <div class="image-landingpage">
+                      <img src="{{ asset('/assets/images_berita/'.$b->gambar) }}" alt="">
+                    </div>
+                  </div>
+                  <div style="position: relative; padding: 1rem 1.5rem 0 0; display: block;">
+                    <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 6%;">
+                      <span class="tittle-landingpage">{{$b->judul}}</span>
+                      <iconify-icon icon="carbon:overflow-menu-horizontal" style="height: 1.5rem; display: flex; justify-content: center; align-items: center; border-radius: 0.5rem; color: white; background: #2C3E50;" width="40" height="40"></iconify-icon>
+                    </div>
+                    <div style="height: 20vh; background: green;">
+                      <span class="description-landingpage">{!!  Str::limit($b->isiberita, 100)  !!}</span>
+                    </div>
+                    <div class="button-go" style="">
+                    <a href="/tambahberita" style="display: flex; justify-content: right;">
+                      <button class="btn-go">
+                        nambah 
+                        <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
+                      </button>
+                    </a>
+                    <a href="/editberita/{{$b->id}}" style="display: flex; justify-content: right;">
+                      <button class="btn-go">
+                        edit
+                        <iconify-icon icon="material-symbols:arrow-right-alt-rounded" style="color: white;" width="20" height="20"></iconify-icon>
+                      </button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+                        
+                     
+                      
                 
                       <div class="portfolio web" data-cat="web">
                         <div class="portfolio-wrapper">
@@ -346,19 +373,6 @@
                         </div>
                       </div>
                 
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Instagram</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
                       <div class="portfolio web" data-cat="web">
                         <div class="portfolio-wrapper">
                           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Color_icon_green.svg/250px-Color_icon_green.svg.png" alt="" />
@@ -366,32 +380,6 @@
                             <div class="label-text">
                               <a class="text-title">Student Guide</a>
                               <span class="text-category">Web design</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Scoccer</a>
-                              <span class="text-category">Icon</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">3D Map</a>
-                              <span class="text-category">Icon</span>
                             </div>
                             <div class="label-bg"></div>
                           </div>
@@ -431,19 +419,6 @@
                             <div class="label-text">
                               <a class="text-title">Bookworm</a>
                               <span class="text-category">Logo</span>
-                            </div>
-                            <div class="label-bg"></div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="portfolio icon" data-cat="icon">
-                        <div class="portfolio-wrapper">
-                          <img src="http://www.dailyartfixx.com/wp-content/uploads/2009/05/250px-color_icon_yellow.png" alt="" />
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">Sandwich</a>
-                              <span class="text-category">Icon</span>
                             </div>
                             <div class="label-bg"></div>
                           </div>

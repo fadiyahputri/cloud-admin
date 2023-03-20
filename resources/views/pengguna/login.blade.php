@@ -11,39 +11,60 @@
 <body>
     <div class="content">
         <!-- bagian kiri -->
-        <form action="{{route('postlogin')}}" class="left-side" method="POST" class="pt-3">
-            {{ csrf_field() }}
+        <div class="left-side">
+
+        <div>
             <div class="text-login">
                 <img src="assets/imgcloud/logo-tb.png" alt="logo-starbhak" class="img-logo">
-                <h4>Login</h4>
-                <hr>
+                <h4 class="login-text">Login</h4>
+                <hr class="garis-1">
             </div>
                 <div class="input-userpw">
-                    <div class="input-user">
-                        <input oninput="border()" style="{{ session()->get('border') }}" type="text"  name="username" id="exampleInputEmail1" class="form__input" autocomplete="off" placeholder=" " >
-                        <div id="mess" style="display: {{ session()->get('display') }} ;">
-                            <iconify-icon onmouseover="error()" onmouseout="error2()" id="seru" icon="tabler:exclamation-mark" width="18" height="18" style="color: red"></iconify-icon>
-                            <div id="message" class="message">{{ session()->get('message') }} 
-                                <div class="boxEr"></div>
+                    <form action="{{route('postlogin')}}" method="POST" class="pt-3">
+                        {{ csrf_field() }}
+                        <div class="input-user">
+                            <input oninput="border()" style="{{ session()->get('border') }}" type="text"  name="username" id="exampleInputEmail1" class="form__input" autocomplete="off" placeholder=" " >
+                            <div id="mess" style="display: {{ session()->get('display') }};">
+                                <iconify-icon onmouseover="error()" onmouseout="error2()" id="seru" icon="gg:danger" width="22" height="22" style="color: red; margin-left: -10%;"></iconify-icon>
+                                <div id="message" class="message">{{ session()->get('message') }} 
+                                    <div class="boxEr"></div>
+                                </div>
                             </div>
+                            <label for="username" class="form__label">username</label>
                         </div>
-                        <label for="username" class="form__label">username</label>
+                        <div class="input-pw">
+                            <input oninput="border2()" style="{{ session()->get('border') }}" type="password" name="password" id="exampleInputPassword1" class="form__input" autocomplete="off" placeholder=" ">
+                            <label for="password" class="form__label">password</label>
+                            <iconify-icon class="eye" id="eye-off" icon="mdi:eye-off" width="55" height="20" onclick="pass()"></iconify-icon>
+                            <iconify-icon class="eye" id="eye-on" icon="ic:baseline-remove-red-eye" width="55" height="20" onclick="pass()" style="display: none;"></iconify-icon>
+                            <button  type="submit" class="btn-login">Login</button>
+                        </div>
+                    </form>
+                    <div class="group-or">
+                        <hr style="width: 100%">
+                        <span class="text-or">or</span>
+                        <hr style="width: 100%">
                     </div>
-                    <div class="input-pw">
-                        <input oninput="border2()" style="{{ session()->get('border') }}" type="password" name="password" id="exampleInputPassword1" class="form__input" autocomplete="off" placeholder=" ">
-                        <label for="password" class="form__label">password</label>
-                        <iconify-icon class="eye" id="eye-off" icon="mdi:eye-off" width="55" height="20" onclick="pass()"></iconify-icon>
-                        <iconify-icon class="eye" id="eye-on" icon="ic:baseline-remove-red-eye" width="55" height="20" onclick="pass()" style="display: none;"></iconify-icon>
-                        <button type="submit" class="btn-login">Login</button>
-                    </div>
+                    <a href="/auth/google/redirect"> 
+                        <button class="btn-google">
+                            <img src="assets/imgcloud/google logo.png" class="google-logo" alt="" width="30" height="30" style="margin-right: 1%">
+                            Login with Google
+                        </button>
+                    </a>
                 </div>
-        </form>
+        </div>
+        <div style="width: 0%; height: max-content; padding: 0 6%;">
+        </div>
+    </div>
+
+        
     </div>
     {{-- <a href="/auth/google/redirect"> 
-        <button class="google">
-            GOOGLE
-        </button>
-    </a> --}}
+            <button class="btn-google">
+                <img src="assets/imgcloud/google logo.png" class="google-logo" alt="" width="30" height="30" style="margin-right: 1%">
+                Login with Google
+            </button>
+        </a> --}}
     {{-- show pw --}}
     <script>
         var show ;

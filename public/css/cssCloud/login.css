@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,6 +13,10 @@ body {
     width: 100%;
     height: 100vh;
     background-image: url('../../assets/imgcloud/gelombang 1.png');
+}
+
+a {
+    text-decoration: none;
 }
 
 .content {
@@ -29,6 +34,10 @@ body {
 
 .left-side {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-logo {
@@ -39,20 +48,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 2% 2%;
+    margin-bottom: 2%;
 }
 
 .input-userpw {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin-left: 10%;
+    padding: 0 10%;
 }
 
 .input-user,
 .input-pw {
     position: relative;
     margin-top: 15%;
+}
 
+.input-pw {
+    margin-top: 30%;
 }
 
 .logo-input-user {
@@ -62,23 +75,24 @@ body {
     background-color: #169FCF;
 }
 
-h4 {
-    font-size: 21px;
+.login-text {
+    font-size: 1.2rem;
 }
 
-hr {
-    width: 13vh;
-    height: 2px;
+.garis-1 {
+    width: 20%;
+    height: 3px;
     background-color: black;
 }
 
-button {
+.btn-login {
     background-color: #169FCF;
     border: none;
-    width: 47ch;
+    width: 100%;
     height: 32px;
     color: whitesmoke;
-    border-radius: 8px;
+    font-weight: 500;
+    border-radius: 0.5rem;
     margin-top: 15%;
     cursor: pointer;
     -webkit-transition: 0.25;
@@ -93,22 +107,46 @@ button {
     transform: translateY(-0.252m);
 }
 
+.btn-google {
+    width: 100%;
+    height: 40px;
+    border: none;
+    color: black;
+    font-weight: 500;   
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-transition: 0.25;
+    transition: 0.25s;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 10px, rgba(0, 0, 0, 0.07) 0px 5px 16px;
+}
+
+.btn-google:hover,
+.btn-google:focus{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 9px, rgba(0, 0, 0, 0.07) 0px 8px 10px;
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.252m);
+}
+
 .img-sekolah {
     width: 90%;
     height: 76.3vh;
     border-radius: 30px;
 }
 
-p {
-    color: red;
-    font-size: 14px;
+.group-or {
+    display: flex; 
+    align-items: center; 
+    justify-content: center
 }
 
 .form__input {
     position: absolute;
     top: 0;
     left: 0;
-    width: 78%;
+    width: 100%;
     height: 0.5vh;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
@@ -147,39 +185,37 @@ p {
     position: absolute;
     right: 15.5%;
     top: 15px;
-    
-
-}
-
-#seru{
-   
-    border: 2px solid;
-    border-radius: 50%;
- 
 }
 
 .message{
-
-    width: 300px;
+    width: max-content;
     height: 30px;
     background-color: #e74c3c;
-    top: 10px;
-    left: 10px;
-    z-index: 100;
-    position: relative;
+    top: 25px;
+    padding: 0 1vw;
+    left: -188px;
+    z-index: 1000;
+    position: absolute;
     border-radius: 5px;
-    display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     color: #fceae8;
-    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
     font-weight: 500;
     opacity: 90%;
     display: none;
-    
-    
 }
+
+#seru {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    left: 50px;
+    bottom: 5px;
+}
+
 .message:hover{
     cursor: default;
 }
@@ -188,14 +224,12 @@ p {
     width: 15px;
     height: 15px;
     position: absolute;
+    z-index: -100;
     left: 90.8%;
     bottom: 65%;
     background-color: #e74c3c;
     transform: rotate(45deg);
-    
 }
-
-
 
 .form__input:focus ~ .form__label,
 .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
@@ -206,11 +240,6 @@ p {
     font-weight: 500;
 }
 
-#exampleInputPassword1 {
-    width: 71.5%;
-    padding: 1.25rem 3.10rem 1.25rem 1.25rem; 
-}
-
 .eye {
     position: absolute;
     display: flex;
@@ -218,54 +247,129 @@ p {
     align-items: center;
     border-radius: 0.5rem;
     top: 1%;
-    right: 13.1%;
+    right: 1%;
     background-color: rgb(252, 252, 252);
     width: 10%;
     height: 41%;
     cursor: pointer;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 399px) {
+.text-or {
+    margin: 4% 5%; 
+    font-size: 0.9rem;
+}
+
+/* @media only screen and (min-height: 0px) and (max-height: 1000px) {
+    .content {
+        height: 2000vw;
+    }
+} */
+
+@media only screen and (min-height: 894px) and (max-height: 898px) {
+    .content {
+        height: 80vw;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 308px) {
     body {
-        background-image: url('../../assets/imgcloud/gelombang-removebg-preview.png');
+        width: 110%;
+        height: 110vh;
+        background-image: url('../../assets/imgcloud/gelombang 3.png');
     }
 
     .content {
-        width: 76%;
-        height: 120vw;
+        width: 60%;
+        height: 90vw;
         background-image: none;
-        display: flex;
         justify-content: center;
+        padding: 1rem;
     }
 
     .form__input {
-        width: 57%;
-    }
-
-    #exampleInputPassword1 {
-        width: 48%;
+        font-size: 0.4rem;
+        width: 60%;
+        padding: 0.7rem;
     }
 
     .img-logo {
-        width: 17%;
+        width: 20%;
     }
 
     .form__label {
-        font-size: 0.80rem;
+        font-size: 0.4rem;
+        left: 0.3rem;
+        top: 0.4rem;
     }
 
     .form__input:focus ~ .form__label,
     .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
-    font-size: 0.75rem;
+        font-size: 0.3rem;
+        top: -0.2rem;
+        left: 0.4rem;
     }
 
-    button {
-        margin-top: 25%;
-        width: 72%;
+    #seru {
+        width: 7px;
+        height: 7px;
+        left: -50px;
+        bottom: 8px;
+    }
+
+    .mess {
+        width: 10px;
+    }
+
+    .message{
+        top: 6px;
+        left: -123px;
+        font-size: 0.3rem;  
+        width:90px;
+        height:15px;
+        border-radius:3px
+    }
+
+    .boxEr{
+        width:10px;
+        height:10px;
+        left:80%;
+        bottom:60%;
+    }
+
+    .btn-login {
+        margin-top: 19%;
+        width: 60%;
+        height: 16px;
+        font-size: 0.4rem;  
+    }
+
+    .btn-google {
+        width: 60%;
+        border-radius: 0.4rem;
+        height: 18px;
+        font-size: 0.4rem;
+    }
+
+    .google-logo {
+        width: 10px;
+        height: 10px;
+    }
+
+    .group-or {
+        width: 60%;
+    }
+
+    .text-or {
+        font-size: 0.4rem;
     }
 
     .input-userpw {
-        margin-left: 23%;
+        margin: 0% 14%;
+        width: 100%;
+    }
+
+    .input-user {
+        margin-top: 6%;
     }
 
     .input-pw {
@@ -273,45 +377,160 @@ p {
     }
 
     .eye {
-        right: 33%;
+        top: 5%;
+        right: 45%;
+        width: 8px;
+        height: 20px;
+        border-radius: 0.1rem;
     }
 
-    h4 {
-        font-size: 1rem;
+    .login-text {
+        font-size: 0.4rem;
     }
 
-    hr {
+    .garis-1 {
         width: 9vh;
+        height: 1px;
     }
-       #seru{
-        right: 33.5%;
-    }
-    
 }
 
-@media only screen and (min-width: 400px) and (max-width: 599px) {
+@media only screen and (min-width: 309px) and (max-width: 409px) {
+    body {
+        width: 110%;
+        height: 120vh;
+        background-image: url('../../assets/imgcloud/gelombang 3.png');
+    }
+
+    .content {
+        width: 76%;
+        height: 120vw;
+        background-image: none;
+        justify-content: center;
+    }
+
+    .form__input {
+        width: 65%;
+        font-size: 0.6rem;
+        padding: 1rem;
+    }
+
+    .img-logo {
+        width: 17%;
+    }
+
+    .form__label {
+        font-size: 0.6rem;
+    }
+
+    .form__input:focus ~ .form__label,
+    .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+        font-size: 0.5rem;
+        top: -0.2rem;
+    }
+
+    .btn-login {
+        margin-top: 19%;
+        width: 65%;
+        height: 25px;
+        font-size: 0.5rem;  
+    }
+
+    .boxEr{
+        width:10px;
+        height:10px;
+        left:85%;
+        bottom:60%;
+    }
+
+    .btn-google {
+        width: 65%;
+        height: 30px;
+        font-size: 0.5rem;
+    }
+
+    .google-logo {
+        width: 15px;
+        height: 15px;
+    }
+
+    .group-or {
+        width: 65%;
+        font-size: 0.5rem;
+    }
+
+    .text-or {
+        font-size: 0.6rem;
+    }
+
+    .input-userpw {
+        margin: 0% 14%;
+        width: 100%;
+    }
+
+    .input-pw {
+        margin-top: 33%;
+    }
+
+    .eye {
+        top: 5%;
+        right: 39%;
+        width: 13px;
+        height: 25px;
+        border-radius: 0.1rem;
+    }
+
+    .login-text {
+        font-size: 0.8rem;
+    }
+
+    .garis-1 {
+        width: 9vh;
+    }
+
+    #seru {
+        width: 12px;
+        height: 12px;
+        left: -55px;
+        bottom: 5px;
+    }
+    
+    #message {
+        top: 15px;
+        left: -159px;
+        font-size: 0.4rem;  
+        padding: 0 3vw;
+        height:15px;
+        border-radius:3px;
+    }
+}
+
+@media only screen and (min-width: 410px) and (max-width: 649px) {  
     body {
         background-image: url('../../assets/imgcloud/gelombang-removebg-preview.png');
     }
 
     .content {
         width: 76%;
-        height: 85vw;
+        height: 99vw;
         background-image: none;
-        display: flex;
         justify-content: center;
+        align-items: center;
     }
 
-    .form__input {
-        width: 57%;
-    }
-
-    #exampleInputPassword1 {
-        width: 49%;
+    .input-userpw {
+        width: 80%;
+        margin-left: 10%;
     }
 
     .img-logo {
         width: 17%;
+    }
+
+    #seru {
+        width: 15px;
+        height: 15px;
+        left: 28px;
+        bottom: 5px;
     }
 
     .form__label {
@@ -323,31 +542,33 @@ p {
     font-size: 0.75rem;
     }
 
-    button {
-        margin-top: 16%;
-        width: 67%;
-    }
-
-    .input-userpw {
-        margin-left: 23%;
+    .btn-login {
+        margin-top: 20%;
     }
 
     .input-pw {
-        margin-top: 17%;
+        margin-top: 33%;
     }
 
-    .eye {
-        right: 33%;
-    }
-
-    hr {
+    .garis-1 {
         width: 11vh;
+    }
+
+    .form__input {
+        font-size: 0.8rem;
+    }
+
+    #message {
+        width: 230px;
+        left: -180px;
+        top: 20px;
+        font-size: 0.7rem;
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 799px) {
+@media only screen and (min-width: 650px) and (max-width: 799px) {
     body {
-        background-image: url('../../assets/imgcloud/gelombang-removebg-preview.png');
+        background-image: url('../../assets/imgcloud/gelombang 3.png');
     }
 
     .content {
@@ -358,39 +579,27 @@ p {
         justify-content: center;
     }
 
-    .form__input {
-        width: 71%;
+    .input-userpw {
+        padding: 0 15%;
     }
 
-    #exampleInputPassword1 {
-        width: 64%;
+    .btn-login {
+        margin-top: 16%;
+    }
+
+    .input-pw {
+        margin-top: 32%;
     }
 
     .img-logo {
         width: 18%;
     }
 
-    button {
-        width: 81%;
+    #message {
+        left: -275px;
+        font-size: 0.7rem;
+        left: -126px;
     }
-
-    .input-userpw {
-        margin-left: 18%;
-    }
-
-    .input-user,
-    .input-pw {
-        margin-top: 15%;
-    }
-
-    .eye {
-        right: 19%;
-    }
-
-    hr {
-        width: 11vh;
-    }
-    
 }
 
 @media only screen and (min-width: 800px) and (max-width: 999px) {
@@ -406,35 +615,14 @@ p {
         justify-content: center;
     }
 
-    .form__input {
-        width: 82%;
-    }
-
-    #exampleInputPassword1 {
-        width: 76%;
-    }
-
     .img-logo {
         width: 19%;
     }
 
-    button {
-        width: 90%;
+    #message {
+        font-size: 0.8rem;
+        left: -152px;
     }
-
-    .input-userpw {
-        margin-left: 5%;
-    }
-
-    .input-user,
-    .input-pw {
-        margin-top: 15%;
-    }
-
-    .eye {
-        right: 9%;
-    }
-    
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1199px) {
@@ -450,35 +638,18 @@ p {
         justify-content: center;
     }
 
-    .form__input {
-        width: 92%;
-    }
-
-    #exampleInputPassword1 {
-        width: 86%;
-    }
-
     .img-logo {
         width: 19%;
     }
 
-    button {
-        width: 100%;
+    #seru {
+        right: 0.5%;
     }
 
-    .input-userpw {
-        margin-left: 0%;
+    #message {
+        font-size: 0.8rem;
+        left: -156px;
     }
-
-    .input-user,
-    .input-pw {
-        margin-top: 14%;
-    }
-
-    .eye {
-        right: 0%;
-    }
- 
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -498,37 +669,8 @@ p {
         width: 19%;
     }
 
-    .form__input {
-        width: 92%;
-    }
-
-    #exampleInputPassword1 {
-        width: 86%;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 13%;
-    }
-
-    .input-userpw {
-        margin-left: 0%;
-    }
-
-    .input-user,
-    .input-pw {
-        margin-top: 14%;
-    }
-
-    .eye {
-        right: 0%;
-    }
-    #seru {
-        right: 2.5%;
-        border: 1.5px solid;
-    }
-
-    #mess{
-        right: 3%;
+    #message {
+        font-size: 0.8rem;
+        left: -158px;
     }
 }

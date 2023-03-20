@@ -71,12 +71,12 @@ class LoginController extends Controller
             $user->save();
             
             //validasi email yang ingin disecure
-            if($user->email  =$userdata->email == 'mahesaalfian03@gmail.com')
+            if($user->email  =$userdata->email == 'starbhak1@gmail.com')
             {
                 Auth::login($user);
                 return redirect('/admin');
             }
-            elseif($user->email  =$userdata->email !== 'mahesaalfian03@gmail.com')
+            elseif($user->email  =$userdata->email !== 'starbhak1@gmail.com')
             {
                 $user->latest()->first()->delete();
                 return redirect('/login')->with('success','Ga bisa bang jangan aneh" deh lu');
@@ -86,12 +86,12 @@ class LoginController extends Controller
         elseif($user)
         {
             //validasi email lagi
-            if($user->email  =$userdata->email == 'mahesaalfian03@gmail.com')
+            if($user->email  =$userdata->email == 'starbhak1@gmail.com')
             {
                 Auth::login($user);
                 return redirect('/admin');
             }
-            elseif($user->email  =$userdata->email !== 'mahesaalfian03@gmail.com')
+            elseif($user->email  =$userdata->email !== 'starbhak1@gmail.com')
             {
                 $user->latest()->first()->delete();
                 return redirect('/login')->with('success','Ga bisa bang jangan aneh" deh lu');

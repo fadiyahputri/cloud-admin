@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CloudController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FolderController;
 use App\Http\Controllers\MatpelController;
 use App\Http\Controllers\TarunaBhaktiController;
@@ -24,10 +25,11 @@ use App\Http\Controllers\TarunaBhaktiController;
 
 
 
+Route::get('/', [TarunaBhaktiController::class, 'landingpage']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::group(['middleware' => ['auth','admin:admin,user']], function(){
-    Route::get('/', [GuruController::class, 'index']);
+    // Route::get('/', [GuruController::class, 'index']);
 
     Route::get('/tambahguru', [CloudController::class, 'tambahguru']);
     
@@ -47,8 +49,16 @@ Route::get('/clod/last/delete/{id}',[FileController::class,'destroylast'])->name
 Route::get('/clod/seemore', [CloudController::class, 'seemore']);
 
 
-// form landingpage
-Route::get('/tambahberita', [AdminController::class, 'addberita']);
+// form landingpage berita
+Route::get('/tambahberita', [BeritaController::class, 'create']);
+Route::get('/editberita/{id}', [BeritaController::class, 'edit']);
+Route::get('/detailberita/{id}', [BeritaController::class, 'show']);
+Route::post('/tambahberita/store', [BeritaController::class, 'store']);
+Route::put('/editberita/update/{id}', [BeritaController::class, 'update']);
+Route::get('/hapusberita/{id}', [BeritaController::class, 'destroy']);
+
+//form partner 
+Route::get('/tambahpartner', [PartnerController::class,'create']);
 
 
 //login api

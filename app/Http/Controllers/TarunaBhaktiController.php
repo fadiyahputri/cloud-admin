@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class TarunaBhaktiController extends Controller
 {   //utama
     public function landingpage(){
-        return view('SmkTarunaBhakti.landingpage');
+        $berita = Berita::all();
+        return view('SmkTarunaBhakti.landingpage', compact(['berita']));
     }
     public function ppdb(){
         return view('SmkTarunaBhakti.ppdb');
     }
     public function berita(){
-        return view('SmkTarunaBhakti.berita');
+        $berita = Berita::all();
+        return view('SmkTarunaBhakti.berita', compact(['berita']));
     }
    
 

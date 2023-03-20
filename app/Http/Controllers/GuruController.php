@@ -55,8 +55,7 @@ class GuruController extends Controller
         if($request->hasfile('gambar')){
             $nm = $request->gambar;
             $namaFile = $nm->getClientOriginalName();
-            $nm->move(public_path().'/assets/images/profile-picture/gambar_guru/', $namaFile);
-
+            $nm->move(public_path().'/assets/images_guru/profile-picture/gambar_guru/', $namaFile);
             Guru::create([
                 'gambar' => $namaFile,
                 'nama' => $request->name,
@@ -111,7 +110,7 @@ class GuruController extends Controller
         ];
         
         if($request->hasfile('gambar')){
-        $request->gambar->move(public_path().'/assets/images/profile-picture/gambar_guru/', $gambarAwal);
+        $request->gambar->move(public_path().'/assets/images_guru/profile-picture/gambar_guru/', $gambarAwal);
         }
 
         $guru->update($data);

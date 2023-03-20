@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Guru</title>
     <!-- icon -->
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     <!-- css -->
@@ -290,12 +290,12 @@ bars.forEach(bar => {
         modal.find('#inptalamat').text(alamat)
         modal.find('#inptusername').text(username)
         if(gambar.length > 0 && gambar.val != ''){
-            modal.find('#inptgambar').attr("src",'/assets/images/profile-picture/gambar_guru/'+gambar)     
+            modal.find('#inptgambar').attr("src",'/assets/images_guru/profile-picture/gambar_guru/'+gambar)     
         }else{
             if(jenis_kelamin=="Laki-laki"){
-                modal.find('#inptgambar').attr("src",'/assets/images/profile-picture/gambar_guru/default-boy.jpg')
+                modal.find('#inptgambar').attr("src",'/assets/images_guru/profile-picture/gambar_guru/default/default-boy.jpg')
             }else{
-                modal.find('#inptgambar').attr("src",'/assets/images/profile-picture/gambar_guru/default-women.jpg')
+                modal.find('#inptgambar').attr("src",'/assets/images_guru/profile-picture/gambar_guru/default/default-women.jpg')
             }   
         }
         

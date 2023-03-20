@@ -417,6 +417,25 @@
          <h1> BERITA SEPUTAR <br> SMK TARUNA BHAKTI</h1>
 
          <div class="box-container">
+            @foreach ($berita as $b)
+            <div class="box">
+               <div class="image">
+                  <img
+                     src="{{ asset('/assets/images_berita/'.$b->gambar) }}"
+                     alt="">
+               </div>
+               <div class="content">
+                  <h3>{{$b->judul}}</h3>
+                  <div class="brt-bottom">
+                     <span> {{ \Carbon\Carbon::parse($b->created_at)->format('M d, Y')}}</span>
+                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                              icon="material-symbols:arrow-forward-ios-rounded"
+                            >
+                           </iconify-icon></a></span>
+                  </div>
+               </div>
+            </div>
+            @endforeach
 
             <div class="box">
                <div class="image">
