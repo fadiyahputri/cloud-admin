@@ -31,7 +31,7 @@
                         <div class="rec-input">
                             <label class="form-label">jenis kelamin</label>
                             <br>
-                            <select name="jenis_kelamin" id="gender">
+                            <select class="inputans" name="jenis_kelamin" id="gender">
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Prempuan">Prempuan</option>
                             </select>
@@ -52,6 +52,19 @@
                         <div class="rec-input">
                             <label class="form-label">New password</label>
                             <input name="password" type="password" id="password" class="inputan">
+                            </div>
+                            <div class="rec-input">
+                                <div class="draganddrop">
+                                    <iconify-icon icon="mdi:image-multiple" style="color: #2C3E50;" width="73" height="73"></iconify-icon>
+                                    <span class="text-drop">Drop and Drag your image here</span>
+                                    <span class="text-drop2">Support : JPEG, JPG, PNG</span>
+                                    {{-- <div id="btn-line">
+                                        <button class="btn-drag" type="submit">preview</button>
+                                        <span class="text-drop" style="margin: 0 2%; font-size: 0.8rem;">OR</span>
+                                        <button class="btn-drag" type="submit">cancel</button>
+                                    </div> --}}
+                                    <input name="gambar" type="file" id="gambar" accept="image/png, image/jpg, image/jpeg">
+                                </div>
                             </div>
                         </form>
                     </div>

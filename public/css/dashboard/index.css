@@ -318,7 +318,7 @@ nav{
   font-size: 0.7rem;
 }
 
-//css landing
+/* //css landing */
 
 .btn-landing {
   border: none; 
@@ -473,6 +473,12 @@ nav{
   align-items: center;
 }
 
+.center-side {
+  width: 105%;
+  padding: 1.8rem 1.8rem 0 1.8rem; 
+  display: flex; 
+}
+
 .isi-berita {
   padding: 2rem;
 }
@@ -564,9 +570,10 @@ nav{
     height: 349px;
     background: #fff;
     border-radius: 10px;
-    //box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    /* //box-shadow: 0 15px 40px rgba(0,0,0,0.12); */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
+
   .wrapper header{
     display: flex;
     align-items: center;
@@ -708,6 +715,54 @@ nav{
   }
 
 /* css data guru */
+.draganddrop {
+  height: 36vh;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #7A7A7A;
+  background: #F4F4F4;
+  border-radius: 1rem;
+}
+
+.draganddrop.active {
+  border: 2px dashed #2C3E50;
+}
+
+.text-drop {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6C7383;
+  margin-top: 2%;
+}
+
+.text-drop2 {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: #6C7383;
+}
+
+.btn-drag {
+  width: fit-content;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  background: #2C3E50;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  z-index: 2;
+}
+
+input[type=file] {
+  position: absolute;
+  opacity: 0%;
+  width: 90%;
+  height: 48%;
+  cursor: pointer;
+}
+
 .btn-add-guru {
   height: 2vw;
   border: none; 
@@ -808,6 +863,15 @@ border: 1px solid #7A7A7A;
 background-color: #F4F4F4;
 }
 
+.inputans {
+width: 100%;
+height: 5vh;
+padding: 0.5rem;
+border-radius: 0.5rem;
+border: 1px solid #7A7A7A;
+background-color: #F4F4F4;
+}
+
 input[type=text]:focus {
 box-shadow: 0 5px 5px -7px #333;
 border: 1px solid #2C3E50;
@@ -902,6 +966,13 @@ opacity: 0.9;
 
 .desk-judul {
   font-size: 0.9rem;
+}
+
+.btn-line {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
 }
 
 /* end css data guru */

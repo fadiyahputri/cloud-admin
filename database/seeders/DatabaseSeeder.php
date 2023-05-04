@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
     );
     DB::table('guru')->insert([
         'nama' => 'kemal',
+        'gambar' => 'anonymous.png',
+        'icon' => 'smk',
         'nip'=> '123213',
         'matpel' => 'admin',
         'jenis_kelamin'=> 'laki-laki',

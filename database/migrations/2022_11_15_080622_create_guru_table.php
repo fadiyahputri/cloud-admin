@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("nama");
             $table->string("nip");
             $table->string("matpel");
+            $table->string("icon");
             $table->string("jenis_kelamin");
             $table->string("alamat");
             $table->bigInteger('user_id')->unsigned();

@@ -23,14 +23,24 @@
                             <input name="nip" type="number" min="0" class="inputan">
                         </div>
                         <div class="rec-input">
-                            <label class="form-label">Mata Pelajaran</label>
-                            
-                            <input name="matpel" type="" class="inputan">
-                            <input type="text" name="level" value="user" style="display: none" id="">
+                            <p class="form-label">Mata Pelajaran</p>
+                            <select  class="inputans" name="matpel" id="gender">
+                                <option value="">Pilih</option>
+                                <option value="TKJ:tkj">TKJ</option>
+                                <option value="PPLG:pplg">PPLG</option>
+                                <option value="Animasi:animasi">Animasi</option>
+                                <option value="BRF:brf">Broadcasting</option>
+                                <option value="TEI:tei">Teknik Electro</option>
+                                <option value='Agama:smk'>Agama</option>
+                                <option value="Bahasa Indonesia:smk">Bahasa Indonesia</option>
+                                <option value="Bahasa Inggris:smk"></option>
+                            </select>
                         </div>
+                        <input type="text" name="level" value="user" style="display: none" id="">
                         <div class="rec-input">
                             <p class="form-label">Jenis Kelamin</p>
-                            <select name="jenis_kelamin" id="gender">
+                            <select class="inputans" name="jenis_kelamin" id="gender">
+                                <option value="">Pilih</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Prempuan">Prempuan</option>
                             </select>
@@ -56,11 +66,11 @@
                                 <iconify-icon icon="mdi:image-multiple" style="color: #2C3E50;" width="73" height="73"></iconify-icon>
                                 <span class="text-drop">Drop and Drag your image here</span>
                                 <span class="text-drop2">Support : JPEG, JPG, PNG</span>
-                                <div id="btn-line">
+                                {{-- <div id="btn-line">
                                     <button class="btn-drag" type="submit">preview</button>
-                                    <span class="text-drop" style="margin: 0 4%; font-size: 0.8rem;">OR</span>
+                                    <span class="text-drop" style="margin: 0 2%; font-size: 0.8rem;">OR</span>
                                     <button class="btn-drag" type="submit">cancel</button>
-                                </div>
+                                </div> --}}
                                 <input name="gambar" type="file" id="gambar" accept="image/png, image/jpg, image/jpeg">
                             </div>
                         </div>

@@ -187,12 +187,12 @@
               <nav class="categories">
                 <ul class="portfolio_filter">
                   <li><a href="" class="active" data-filter="*">Semua</a></li>
-                  <li><a href="" data-filter=".Umum">Umum</a></li>
-                  <li><a href="" data-filter=".Animasi">Animasi</a></li>
-                  <li><a href="" data-filter=".BRF">BRF</a></li>
-                  <li><a href="" data-filter=".PPLG">PPLG</a></li>
+                  <li><a href="" data-filter=".smk">Umum</a></li>
+                  <li><a href="" data-filter=".animasi">Animasi</a></li>
+                  <li><a href="" data-filter=".brf">BRF</a></li>
+                  <li><a href="" data-filter=".pplg">PPLG</a></li>
                   <li><a href="" data-filter=".TEI">TEI</a></li>
-                  <li><a href="" data-filter=".TJKT">TJKT</a></li>
+                  <li><a href="" data-filter=".tkj">TJKT</a></li>
                 </ul>
               </nav>
             </div>
@@ -200,16 +200,18 @@
 
             <!-- portfolio_container -->
             <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
+              @foreach ($guru as $guru)
               <!-- single work -->
-              <div class="col-md-4 col-sm-6 PPLG">
+              <div class="col-md-4 col-sm-6 {{$guru->icon}}">
                 <div class="card card1">
-                  <img class="main-img" src="assetsweb/assetsguru/assets-guru/anggota-guru/anonymous.png" alt="">
-                  <img class="jurusan-rpl" src="assetsweb/assetsguru/assets-guru/rpl-overlay.png" alt="">
-                  <h4 class="title-guru">Erraldo Daniel S.</h4>
-                  <h5>Guru RPL</h5>
-                  <span class="span-button"><button class="guru">Guru</button><button class="guru-jurusan">RPL</button></span>
+                  <img class="main-img" src="assets\images_guru\profile-picture\gambar_guru\{{$guru->gambar}}" alt="">
+                  <img class="jurusan-rpl" src="assetsweb/assetsguru/assets-guru/{{$guru->icon}}.png" alt="">
+                  <h4 class="title-guru">{{$guru->nama}}</h4>
+                  <h5>Guru {{$guru->matpel}}</h5>
+                  <span class="span-button"><button class="guru">Guru</button><button class="guru-jurusan">{{$guru->matpel}}</button></span>
                 </div>
               </div>
+              @endforeach
               <!-- end single work -->
 
               <!-- single work -->

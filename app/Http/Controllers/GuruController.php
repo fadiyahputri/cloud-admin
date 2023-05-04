@@ -53,6 +53,7 @@ class GuruController extends Controller
             ]
         );
         if($request->hasfile('gambar')){
+            $d = explode(':',$request['matpel']);
             $nm = $request->gambar;
             $namaFile = $nm->getClientOriginalName();
             $nm->move(public_path().'/assets/images_guru/profile-picture/gambar_guru/', $namaFile);
@@ -60,7 +61,8 @@ class GuruController extends Controller
                 'gambar' => $namaFile,
                 'nama' => $request->name,
                 'nip'=> $request->nip,
-                'matpel' => $request->matpel,
+                'matpel' => $d[0],
+                'icon' => $d[1],
                 'jenis_kelamin'=> $request->jenis_kelamin,
                 'alamat' => $request->alamat,
                 'user_id'=> $data
@@ -69,12 +71,15 @@ class GuruController extends Controller
         }
         else
         {
+            $d = explode(':',$request['matpel']);
             Guru::create([
                 'nama' => $request->name,
                 'nip'=> $request->nip,
                 'matpel' => $request->matpel,
                 'jenis_kelamin'=> $request->jenis_kelamin,
                 'alamat' => $request->alamat,
+                'matpel' => $d[0],
+                'icon' => $d[1],
                 'user_id'=> $data
             ]);
         }

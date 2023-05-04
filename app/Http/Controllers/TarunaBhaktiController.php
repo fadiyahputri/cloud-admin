@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Guru;
 use Illuminate\Http\Request;
 
 class TarunaBhaktiController extends Controller
@@ -14,8 +15,8 @@ class TarunaBhaktiController extends Controller
     public function ppdb(){
         return view('SmkTarunaBhakti.ppdb');
     }
-    public function berita(){
-        $berita = Berita::all();
+    public function berita($id){
+        $berita = Berita::where("id",$id)->get( );
         return view('SmkTarunaBhakti.berita', compact(['berita']));
     }
    
@@ -68,7 +69,8 @@ class TarunaBhaktiController extends Controller
 
     //kurikulum
     public function guru(){
-        return view('SmkTarunaBhakti.kurikulum.gurutarunabhakti');
+        $guru = Guru::all();
+        return view('SmkTarunaBhakti.kurikulum.gurutarunabhakti',["guru" => $guru]);
     }
 
     public function sistempembelajaran(){

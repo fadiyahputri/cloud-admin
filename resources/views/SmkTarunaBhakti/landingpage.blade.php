@@ -428,7 +428,7 @@
                   <h3>{{$b->judul}}</h3>
                   <div class="brt-bottom">
                      <span> {{ \Carbon\Carbon::parse($b->created_at)->format('M d, Y')}}</span>
-                     <span><a href="#">Selengkapnya <iconify-icon class="icon-berita"
+                     <span><a href="/berita/{{$b->id}}">Selengkapnya <iconify-icon class="icon-berita"
                               icon="material-symbols:arrow-forward-ios-rounded"
                             >
                            </iconify-icon></a></span>

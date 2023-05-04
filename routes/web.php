@@ -51,6 +51,7 @@ Route::get('/clod/seemore', [CloudController::class, 'seemore']);
 
 // form sementara landingpage
 Route::get('/tambahkepalasekolah', [AdminController::class, 'tambahkepsek']);
+Route::post('/tambahkepsek/store', [AdminController::class, 'tambahkepsekStore']);
 
 // form landingpage berita
 Route::get('/tambahberita', [BeritaController::class, 'create']);
@@ -116,7 +117,7 @@ Route::get('/files/{tipe}',[CloudController::class, 'file'])->name('files');
 // UNTUK WEB SEKOLAH START
 route::get('/SmkTarunaBhakti',[TarunaBhaktiController::class, 'landingpage'])->name('landingpage');
 route::get('/ppdb',[TarunaBhaktiController::class, 'ppdb'])->name('ppdb');
-route::get('/berita',[TarunaBhaktiController::class, 'berita'])->name('berita');
+route::get('/berita/{id}',[TarunaBhaktiController::class, 'berita'])->name('berita');
 
 
     //profil

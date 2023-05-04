@@ -94,9 +94,9 @@
   <div class="card-detail">
     <div style="display: flex; flex-direction: column">
       <span class="nama-detail">{{$b->judul}}</span>
-      <span class="deskripsi-detail">artinya apa bang messi ?</span>
+      <span class="deskripsi-detail"></span>
     </div>
-    <span class="tgl-detail">03/05/2023</span>
+    <span class="tgl-detail">{{$b->created_at}}</span>
     <div style="display: flex">
       <a href="/editberita/{{$b->id}}" class="btn-action-kategori">
           <iconify-icon icon="material-symbols:edit" style="color: white; margin-right: 5%" width="12"></iconify-icon>

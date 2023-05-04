@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('berita', function (Blueprint $table) {
+        Schema::create('kolaborasi', function (Blueprint $table) {
             $table->id();
-            $table->string("judul");
-            $table->string("slug");
-            $table->string("gambar")->nullable();
-            $table->mediumText("isiberita");
+            $table->string("img");
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('berita');
+        Schema::dropIfExists('kolaborasi');
     }
 };

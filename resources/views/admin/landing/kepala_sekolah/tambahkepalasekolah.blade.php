@@ -40,24 +40,31 @@
         <span class="title-table">tambah Kepala sekolah</span>
     </div>
     <span class="text-child">Pastikan isi form dengan benar dan lengkap !</span>
-    <form action="/tambahberita/store" method="POST" enctype="multipart/form-data" autocomplete="off">
+    <form action="/tambahkepsek/store" method="POST" enctype="multipart/form-data" autocomplete="off">
       @csrf
       <div id="content-berita">
+        <div class="center-side">
+            <div class="rec-input">
+                <label class="form-label">Nama Kepala Sekolah</label>
+                <input type="text" id="nama" name="name" class="inputan">
+            </div>
+        </div>
         <div style="display: flex;">
             <div class="left-side">
                 <div class="rec-input">
-                    <label class="form-label">Nama Kepala Sekolah</label>
-                    <input type="text" id="judul" name="judul" class="inputan">
+                    <label class="form-label">Periode Awal</label>
+                    <input type="datetime" id="periodeAwal" name="periodeAwal" class="inputan">
                 </div>
             </div>
             <div style="width: 0.1rem; height: 9.2vw; background-color: #D9D9D9;"></div>
             <div class="right-side">
                 <div class="rec-input">
-                    <label class="form-label">Periode</label>
-                    <input type="datetime" id="periode" name="periode" class="inputan">
+                    <label class="form-label">Periode Akhir</label>
+                    <input type="datetime" id="periodeAkhir" name="periodeAkhir" class="inputan">
                 </div>
             </div>
         </div>
+        
         <div class="btn-landingpage">
             
           <a href="/landing/kepala_sekolah">

@@ -17,7 +17,7 @@
 
 
  <!--css-->
- <link rel="stylesheet" href="assetsweb/style.css">
+ <link rel="stylesheet" href="{{asset("assetsweb/style.css")}}">
  
  
   

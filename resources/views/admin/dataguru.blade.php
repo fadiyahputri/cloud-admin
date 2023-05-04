@@ -88,4 +88,242 @@
         </table>
     </div>
 </div>
+{{-- modal --}}
+    <!-- modal add-->
+    @include('admin/modalAdd')
+    <!-- end modal add -->
+
+    <!-- modal edit -->
+   @include('admin/modalEdit')
+    <!-- end modal edit -->
+
+    <!-- modal detail -->
+    @include('admin/modalView')
+    <!-- end modal detail -->
+
+    <!-- modal hapus -->
+    @include('admin/modalHapus')
+    <!-- end modal hapus -->
+{{-- end modal --}}
+<script>
+    const buttons = document.querySelectorAll('.btn'),
+    formPages = document.getElementById('form-add'),
+    bars = document.querySelectorAll('.bar-circle')   
+
+let pageStates = {
+oldPageNum: null,
+currentPage: null,
+}
+
+const pageTransform = () => {
+formPages.forEach(page => {        
+    page.style.transform = `translateX(-${(pageStates.currentPage) * 100}%)`
+})
+}
+
+const handleClasses = () => {     
+
+bars.forEach(bar => {
+    bar.classList.remove('active')
+})
+
+if(bars[pageStates.currentPage]) {
+    for(let i = 0; i < pageStates.currentPage + 1; i++) {
+        bars[i].classList.add('active')
+    }
+} else {
+    bars.forEach(bar => {
+        bar.classList.add('active')
+        bar.classList.add('done')
+    })
+}
+}
+
+const indexFinder = (el) => {    
+let i = 0;
+for(; el = el.previousElementSibling; i++);
+return i;
+}
+
+const pageHandler = (e) => {
+e.preventDefault()
+
+const navData = e.currentTarget.getAttribute('data-nav')
+pageStates.oldPageNum = indexFinder(e.currentTarget.parentElement)
+
+if(navData == "prev") {
+    pageStates.currentPage = pageStates.oldPageNum - 1
+} else {
+    pageStates.currentPage = pageStates.oldPageNum + 1
+}    
+
+pageTransform()
+handleClasses()
+}
+
+
+const barHandler = (e) => {
+e.preventDefault()
+pageStates.currentPage = indexFinder(e.currentTarget)
+
+pageTransform()
+handleClasses()
+}
+
+buttons.forEach(button => {
+button.addEventListener('click', pageHandler)
+})
+
+bars.forEach(bar => {
+bar.addEventListener('click', barHandler)
+})
+
+</script>
+<script>
+    jQuery(function ($) {
+        $(".sidebar-dropdown > a").click(function() {
+            $(".sidebar-submenu").slideUp(300);
+            if ($(this).parent().hasClass("active")) {
+                $(".sidebar-dropdown").removeClass("active");
+                $(this).parent().removeClass("active");
+                $('#nav').css('border', 'none');
+                $('#arrow1').css('transform', 'rotate(0deg)');
+
+              
+                
+                
+            } else {
+                $(".sidebar-dropdown").removeClass("active");
+                $(this).next(".sidebar-submenu").slideDown(300);
+                $(this).parent().addClass("active");
+                $('#nav').css('border', '1px solid #c0c0c0');
+                $('#arrow1').css('transform', 'rotate(90deg)');
+                
+            }
+        });
+    
+        $("#close-sidebar").click(function() {
+            $(".page-wrapper").removeClass("toggled");
+        });
+    
+        $("#show-sidebar").click(function() {
+            $(".page-wrapper").addClass("toggled");
+        });
+    });
+
+    $('#something').click(function() {
+location.reload();
+});
+    function search2(){
+        document.getElementById('icon-search').style.display='none'
+        var input = document.getElementById('input-search').value
+        if(input.length < 1){
+            document.getElementById('icon-search').style.display='block'
+        }else if(input,length > 1){
+            document.getElementById('icon-search').style.display='none'
+        }
+    }
+    function btn1(){
+        document.getElementById('slider').style.marginLeft = '0'
+        document.getElementById("idenAdd").classList.add("active")
+        document.getElementById("akunAdd").classList.remove("active")
+    }
+    function btn2(){
+        document.getElementById('slider').style.marginLeft = '-122%'
+        document.getElementById("idenAdd").classList.remove("active")
+        document.getElementById("akunAdd").classList.add("active") 
+    }
+    function btnedit1(){
+        document.getElementById('slideredit').style.marginLeft = '0'
+        document.getElementById("idendit").classList.add("active")
+        document.getElementById("akunedit").classList.remove("active")
+    }
+    function btnedit2(){
+        document.getElementById('slideredit').style.marginLeft = '-122%'
+        document.getElementById("idendit").classList.remove("active")
+        document.getElementById("akunedit").classList.add("active") 
+    }
+</script>
+{{-- modal --}}
+<script>
+$('#detailguru').on('show.bs.modal',function(event){
+    var button = $(event.relatedTarget)
+    var nama = button.data('nama')
+    var nip = button.data('nip')
+    var matpel = button.data('matpel')
+    var jenis_kelamin = button.data('jenis_kelamin')
+    var alamat = button.data('alamat')
+    var username = button.data('username')
+    var gambar = button.data('gambar')
+
+    var modal = $(this)
+    modal.find('#inptnama').text(nama)
+    modal.find('#inptnip').text(nip)
+    modal.find('#inptmatpel').text(matpel)
+    modal.find('#inptgender').text(jenis_kelamin)
+    modal.find('#inptalamat').text(alamat)
+    modal.find('#inptusername').text(username)
+    if(gambar.length > 0 && gambar.val != ''){
+        modal.find('#inptgambar').attr("src",'/assets/images_guru/profile-picture/gambar_guru/'+gambar)     
+    }else{
+        if(jenis_kelamin=="Laki-laki"){
+            modal.find('#inptgambar').attr("src",'/assets/images_guru/profile-picture/gambar_guru/default/default-boy.jpg')
+        }else{
+            modal.find('#inptgambar').attr("src",'/assets/images_guru/profile-picture/gambar_guru/default/default-women.jpg')
+        }   
+    }
+    
+    }) 
+
+    $('#editguru').on('show.bs.modal',function(event){
+    var button = $(event.relatedTarget)
+    var nama = button.data('nama')
+    var nip = button.data('nip')
+    var matpel = button.data('matpel')
+    var jenis_kelamin = button.data('jenis_kelamin')
+    var alamat = button.data('alamat')
+    var username = button.data('username')
+    var password = button.data('password')
+    var id = button.data('id')
+    var userid = button.data('userid')
+    var gambar = button.data('gambar')
+
+    var modal = $(this)
+    modal.find('#name').val(nama)
+    modal.find('#nipedit').val(nip)
+    modal.find('#matpeledit').val(matpel)
+    modal.find('#jenis_kelamin').val(jenis_kelamin)
+    modal.find('#alamat').val(alamat)
+    modal.find('#username').val(username)
+    modal.find('#password').val(password)
+    modal.find('#id').val(id)
+    modal.find('#userid').val(userid)
+    modal.find('#gambar').val(gambar)
+    }) 
+
+    $('#hapus').on('show.bs.modal',function(event){
+    var button = $(event.relatedTarget)
+    var nama = button.data('nama')
+    var nip = button.data('nip')
+    var matpel = button.data('matpel')
+    var jenis_kelamin = button.data('jenis_kelamin')
+    var alamat = button.data('alamat')
+    var username = button.data('username')
+    var password = button.data('password')
+    var id = button.data('id')
+    var userid = button.data('userid')
+
+    var modal = $(this)
+    modal.find('#name').val(nama)
+    modal.find('#nipedit').val(nip)
+    modal.find('#matpeledit').val(matpel)
+    modal.find('#gender').val(jenis_kelamin)
+    modal.find('#alamat').val(alamat)
+    modal.find('#username').val(username)
+    modal.find('#password').val(password)
+    modal.find('#id').val(id)
+    modal.find('#userid').val(userid)
+    }) 
+</script>
+{{-- end modal --}}
 @endsection

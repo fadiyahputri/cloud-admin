@@ -54,12 +54,14 @@
     </div>      
   
       
+    @foreach ($kepsek as $k)
+        
     
   <div class="detail-dari-child">
     <div class="card-detail">
       <div style="display: flex; flex-direction: column">
-        <span class="nama-detail">pasi pasi paga</span>
-        <span class="deskripsi-detail">artinya apa bang messi ?</span>
+        <span class="nama-detail">{{$k->name}}</span>
+        <span class="deskripsi-detail">Periode {{$k->periodeAwal}} - {{$k->periodeAkhir}}</span>
       </div>
       <span class="tgl-detail">03/05/2023</span>
       <div style="display: flex">
@@ -71,6 +73,7 @@
     </div>
   
   </div>
+  @endforeach
     
         </div>
     
