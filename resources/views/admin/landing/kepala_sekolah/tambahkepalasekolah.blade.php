@@ -37,9 +37,7 @@
       <iconify-icon class="box-icon active" style="color: white;" icon="quill:paper" width="25" height="23"></iconify-icon>
         <p class="title-table">Landing page</p>
         <span class="panah"> >  </span> 
-        <span class="title-table">tambah record</span>
-        <span class="panah"> >  </span> 
-        <span class="title-table">berita</span>
+        <span class="title-table">tambah Kepala sekolah</span>
     </div>
     <span class="text-child">Pastikan isi form dengan benar dan lengkap !</span>
     <form action="/tambahberita/store" method="POST" enctype="multipart/form-data" autocomplete="off">
@@ -48,33 +46,28 @@
         <div style="display: flex;">
             <div class="left-side">
                 <div class="rec-input">
-                    <label class="form-label">Judul Berita</label>
+                    <label class="form-label">Nama Kepala Sekolah</label>
                     <input type="text" id="judul" name="judul" class="inputan">
                 </div>
             </div>
             <div style="width: 0.1rem; height: 9.2vw; background-color: #D9D9D9;"></div>
             <div class="right-side">
                 <div class="rec-input">
-                    <label class="form-label">Gambar Berita</label>
-                    <input type="file" name="gambar" id="gambar">
+                    <label class="form-label">Periode</label>
+                    <input type="datetime" id="periode" name="periode" class="inputan">
                 </div>
             </div>
         </div>
-        
-        <div style="padding: 10px 30px 0px 30px;">
-          <textarea name="isiberita" id="isiberita">
-          </textarea>
-        </div>
         <div class="btn-landingpage">
             
-          <a href="/landing/berita">
+          <a href="/landing/kepala_sekolah">
             <button class="btn-form">
                 Cancel
                 <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>
             </button>
           </a>
 
-          <a href="/tambahberita/store">
+          <a href="/tambahkepalasekolah/store">
             <button class="btn-form">
                 Submit
                 <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>

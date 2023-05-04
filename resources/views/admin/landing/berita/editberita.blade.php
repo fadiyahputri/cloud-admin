@@ -1,122 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Berita</title>
-    <!-- icon -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-    <!-- css -->
-    <link rel="stylesheet" href="/css/dashboard/landing.css">
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+@extends('admin.default')
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+@section('css')
+<link rel="stylesheet" href="../css/dashboard/index.css">
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+@endsection
 
-</head>
-<body onload="muncul()">
-    <div id="container">
-      <nav>
-        <div style="width: 30%; display: flex; align-items: center;">
-            <div class="logo"></div>
-            <span class="tittle">starbhak</span>
-            <span class="tittle2">dashboard</span>
-        </div>
-        <div style="width: 14%; display: flex; align-items: center;">
-            <span id="welcome">welcome, admin</span>
-            <div class="line"></div>
-            <iconify-icon icon="tabler:logout" class="logout" style="color: white;" width="30" height="30"></iconify-icon>
-        </div>
-    </nav>
-        <div id="menu">
-            <div id="sidebar">
-                <ul>
-                    <li >
-                        <a class="list-sidebar" href="/admin">
-                            <iconify-icon class="box-icon" icon="radix-icons:dashboard" width="23" height="23"></iconify-icon>
-                        <div style="width: 70%;">
-                            <p class="sec">Dashboard</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li >
-                        <a class="list-sidebar" href="/dataguru">
-                            <iconify-icon class="box-icon" icon="uil:users-alt" width="23" height="23"></iconify-icon>
-                        <div style="width: 70%;">
-                            <p class="sec">Data Guru</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li >
-                        <a class="list-sidebar" href="/landing">
-                            <iconify-icon class="box-icon active" style="color: white;" icon="quill:paper" width="25" height="23"></iconify-icon>
-                        <div style="width: 70%;">
-                            <p class="sec active">Landing Page</p>
-                        </div>
-                        </a>
-                    </li>
-                </ul>
+@section('sidebar')
+<div id="sidebar">
+    <ul>
+        <li >
+            <a href="/admin">
+              <iconify-icon class="box-icon" icon="radix-icons:dashboard" width="18" height="18"></iconify-icon>
+              <p class="sec">Dashboard</p>
+            </a>
+        </li>
+        <li >
+            <a href="/dataguru">
+              <iconify-icon class="box-icon" icon="uil:users-alt" width="18" height="18"></iconify-icon>
+                <p class="sec">Data Guru</p>
+            </a>
+        </li>
+        <li >
+            <a href="/landing">
+              <iconify-icon class="box-icon active" icon="quill:paper" width="18" height="18"></iconify-icon>
+                <p class="sec active">Landing Page</p>
+            </a>
+        </li>
+    </ul>
+</div>
+@endsection
+
+@section('content')
+<div id="content">
+    <div style=" display: flex; align-items: center; margin-bottom: 1%;">
+      <iconify-icon class="box-icon active" style="color: white;" icon="quill:paper" width="25" height="23"></iconify-icon>
+        <p class="title-table">Landing page</p>
+        <span style="font-weight: 700; padding-left: 1%; font-size: 1.5rem;"> >  </span> 
+        <span class="title-table">tambah record</span>
+        <span style="font-weight: 700; padding-left: 1%; font-size: 1.5rem;"> >  </span> 
+        <span class="title-table">berita</span>
+    </div>
+    <span class="text-child">Pastikan isi form dengan benar dan lengkap !</span>
+    <form action="/tambahberita/store" method="POST" enctype="multipart/form-data" autocomplete="off">
+      @csrf
+      <div id="content-berita">
+        <div style="display: flex;">
+            <div class="left-side">
+                <div class="rec-input">
+                    <label class="form-label">Judul Berita</label>
+                    <input type="text" id="judul" name="judul" class="inputan">
+                </div>
             </div>
-            <div id="content">
-                    <div style=" display: flex; align-items: center; margin-bottom: 1%;">
-                      <iconify-icon class="box-icon active" style="color: white;" icon="quill:paper" width="25" height="23"></iconify-icon>
-                        <p class="title-table">Landing page</p>
-                        <span style="font-weight: 700; padding-left: 1%; font-size: 1.5rem;"> >  </span> 
-                        <span class="title-table">tambah record</span>
-                        <span style="font-weight: 700; padding-left: 1%; font-size: 1.5rem;"> >  </span> 
-                        <span class="title-table">berita</span>
-                    </div>
-                    <span class="text-child">Pastikan isi form dengan benar dan lengkap !</span>
-                    <form action="/editberita/update/{{$berita->id}}" method="POST" enctype="multipart/form-data" autocomplete="off">
-                      @method('put')
-                        @csrf
-                      <div id="content-berita">
-                        <div style="display: flex;">
-                            <div class="left-side">
-                                <div class="rec-input">
-                                    <label class="form-label">Judul Berita</label>
-                                    <input type="text" id="judul" name="judul" class="inputan" value="{{$berita->judul}}">
-                                </div>
-                            </div>
-                            <div style="width: 0.1rem; height: 9.2vw; background-color: #D9D9D9;"></div>
-                            <div class="right-side">
-                                <div class="rec-input">
-                                    <label class="form-label">Gambar Berita</label>
-                                    <input type="file" name="gambarberita" id="gambarberita">
-                                </div>
-                            </div>
-                        </div>
-                        <div style="padding: 10px 30px 0px 30px;">
-                          <textarea name="isiberita" id="isiberita">
-                            {!! $berita->isiberita !!}
-                          </textarea>
-                        </div>
-                        <div class="btn-landingpage">
-                          <a href="/landing">
-                            <button class="btn-form">
-                                Cancel
-                                <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>
-                            </button>
-                          </a>
-                          <a href="/editberita/update/{{$berita->id}}">
-                            <button class="btn-form">
-                                Submit
-                                <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>
-                            </button>
-                          </a>
-
-                        </div>
-                    </form>
+            <div style="width: 0.1rem; height: 9.2vw; background-color: #D9D9D9;"></div>
+            <div class="right-side">
+                <div class="rec-input">
+                    <label class="form-label">Gambar Berita</label>
+                    <input type="file" name="gambar" id="gambar">
                 </div>
             </div>
         </div>
-    </div>
+        
+        <div style="padding: 10px 30px 0px 30px;">
+          <textarea name="isiberita" id="isiberita">
+          </textarea>
+        </div>
+        <div class="btn-landingpage">
+            
+          <a href="/landing">
+            <button class="btn-form">
+                Cancel
+                <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>
+            </button>
+          </a>
+
+          <a href="/tambahberita/store">
+            <button class="btn-form">
+                Submit
+                <iconify-icon icon="ph:x-circle-bold" style="color: white; margin-left: 5%;"></iconify-icon>
+            </button>
+          </a>
+
+        </div>
+    </form>
+</div>
+</div>
+@endsection
+
+@section('script')
     {{-- CKEDITOR --}}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
     <script>
       ClassicEditor
           .create( document.querySelector( '#isiberita' ) )
@@ -215,64 +190,5 @@
       });
   </script>
   <!-- end drag and drop -->
-    <script>
-        jQuery(function ($) {
-            $(".sidebar-dropdown > a").click(function() {
-                $(".sidebar-submenu").slideUp(300);
-                if ($(this).parent().hasClass("active")) {
-                    $(".sidebar-dropdown").removeClass("active");
-                    $(this).parent().removeClass("active");
-                    $('#nav').css('border', 'none');
-                    $('#arrow1').css('transform', 'rotate(0deg)');
-                } else {
-                    $(".sidebar-dropdown").removeClass("active");
-                    $(this).next(".sidebar-submenu").slideDown(300);
-                    $(this).parent().addClass("active");
-                    $('#nav').css('border', '1px solid #c0c0c0');
-                    $('#arrow1').css('transform', 'rotate(90deg)');
-                    
-                }
-            });
-            $("#close-sidebar").click(function() {
-                $(".page-wrapper").removeClass("toggled");
-            });
-            $("#show-sidebar").click(function() {
-                $(".page-wrapper").addClass("toggled");
-            });
-        });
-
-        $('#something').click(function() {
-    location.reload();
-    });
-        function search2(){
-            document.getElementById('icon-search').style.display='none'
-            var input = document.getElementById('input-search').value
-            if(input.length < 1){
-                document.getElementById('icon-search').style.display='block'
-            }else if(input,length > 1){
-                document.getElementById('icon-search').style.display='none'
-            }
-        }
-        function btn1(){
-            document.getElementById('slider').style.marginLeft = '0'
-            document.getElementById("idenAdd").classList.add("active")
-            document.getElementById("akunAdd").classList.remove("active")
-        }
-        function btn2(){
-            document.getElementById('slider').style.marginLeft = '-122%'
-            document.getElementById("idenAdd").classList.remove("active")
-            document.getElementById("akunAdd").classList.add("active") 
-        }
-        function btnedit1(){
-            document.getElementById('slideredit').style.marginLeft = '0'
-            document.getElementById("idendit").classList.add("active")
-            document.getElementById("akunedit").classList.remove("active")
-        }
-        function btnedit2(){
-            document.getElementById('slideredit').style.marginLeft = '-122%'
-            document.getElementById("idendit").classList.remove("active")
-            document.getElementById("akunedit").classList.add("active") 
-        }
-    </script>
-</body>
-</html>
+@endsection
+   

@@ -49,6 +49,9 @@ Route::get('/clod/last/delete/{id}',[FileController::class,'destroylast'])->name
 Route::get('/clod/seemore', [CloudController::class, 'seemore']);
 
 
+// form sementara landingpage
+Route::get('/tambahkepalasekolah', [AdminController::class, 'tambahkepsek']);
+
 // form landingpage berita
 Route::get('/tambahberita', [BeritaController::class, 'create']);
 Route::get('/editberita/{id}', [BeritaController::class, 'edit']);
@@ -56,6 +59,8 @@ Route::get('/detailberita/{id}', [BeritaController::class, 'show']);
 Route::post('/tambahberita/store', [BeritaController::class, 'store']);
 Route::put('/editberita/update/{id}', [BeritaController::class, 'update']);
 Route::get('/hapusberita/{id}', [BeritaController::class, 'destroy']);
+
+
 
 //form partner 
 Route::get('/tambahpartner', [PartnerController::class,'create']);
@@ -69,6 +74,12 @@ Route::get('/auth/google/callback', [LoginController::class, 'googlecallaback'])
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/dataguru', [AdminController::class, 'guru']);
 Route::get('/landing', [AdminController::class, 'landing']);
+
+Route::get('/landing/berita', [AdminController::class, 'berita']);
+Route::get('/landing/kepala_sekolah', [AdminController::class, 'kepala_sekolah']);
+Route::get('/landing/kolaborasi', [AdminController::class, 'kolaborasi']);
+Route::get('/landing/visi_misi', [AdminController::class, 'visi_misi']);
+
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 
