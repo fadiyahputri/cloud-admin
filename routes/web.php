@@ -44,6 +44,8 @@ Route::get('/cloud', [CloudController::class, 'cloudDashboard']);
 
 Route::get('/clod', [CloudController::class, 'cloud']);
 
+Route::get('/clod/folder1', [CloudController::class, 'folder1']);
+
 Route::get('/clod/last/delete/{id}',[FileController::class,'destroylast'])->name('hpslast');
 
 Route::get('/clod/seemore', [CloudController::class, 'seemore']);

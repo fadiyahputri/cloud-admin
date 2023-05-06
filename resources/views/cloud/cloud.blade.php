@@ -202,34 +202,131 @@ css/cssCloud/cloud.css
                 {{-- end sort --}}
                 {{-- last update --}}
                 <div class="lastUpload">
-                    <div class="flex items-center">
-                        <p class="textLastUpload">Last Upload</p>
-                    <a href="/clod/seemore" class="seeMore">
+                    <div class="flex items-center" style="justify-content: space-between">
+                        <p class="textLastUpload">My Files</p>
+                    <a style="display: none" href="/clod/seemore" class="seeMore">
                         <p class="seeMoreText">see more</p>
                         <iconify-icon class="seeMoreIcon" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon>
                     </a> 
                     </div>
                     <div id="last-update">
-                        @foreach ($last as $last)
+                      
+                        {{-- folder/file --}}
                         <div  class="lastUploadFile">
-                            <a class="sentuh" href="{{ URL::asset('foldercloud/'.  $last->folder->cloud->folder_name.'/'.$last->folder->nama_folder.'/'. $last  ->file ) }}" target="_blank">
+                            <a class="sentuh" href="#" target="_blank">
                             <div class="box-last">
-                                <img src="assets/imgcloud/{{$last->tipe_file}}.png" class="logoFile" alt="logo file">                   
+                                <img src="assets/images/folder.png" class="logoFile" alt="logo file">                   
                                  <div class="fileText">
-                                    <p class="fileText1">{{$last->file}}</p>
-                                    <p class="fileText2">{{$last->created_at}}</p>
+                                    <p class="fileText1">Permendikbud 81A Implementasi K13 </p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>20 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">5Gb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"> </p> 
                                 </div>
                                 
                             </div>
                             </a>
                             <div class="titik3 btn-group dropstart">
-                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="20" height="20"></iconify-icon>
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                    <li><a class="dropdown-item" href="{{route('hpslast',['id'=>$last])}}">Hapus File</a></li>
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
                                   </ul>
                             </div>
                         </div>
-                        @endforeach
+
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="assets/imgcloud/logopdf.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">FMPPs 03 (Penyusunan Kurikulum).pdf</p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>1 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">412Kb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"><iconify-icon icon="mdi:tick"></iconify-icon></p>
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">Ringkasan retensi data tahun ajaran 2023 </p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>1 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">233Kb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"><iconify-icon icon="mdi:check-all" style="color: #006fb4;"></iconify-icon></p>
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                        
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">Ringkasan retensi data tahun ajaran 2023 </p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>1 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">214Kb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"><iconify-icon class="centangdua" icon="mdi:tick-all"></iconify-icon></p>
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                        {{-- folder/ file end --}}
+                       
+                       
+                        
                     </div>
                 </div>
                 

@@ -56,6 +56,10 @@ class CloudController extends Controller
         return view('cloud/folder');
     }
 
+    public function folder1(){
+        return view('cloud/folder1');
+    }
+
     public function file($tipe){
         $loggedin_username = Auth::user()->id;
         $dataus = User::with('RelationToCloud:id,user_id,folder_name')->get()->where('id',$loggedin_username);

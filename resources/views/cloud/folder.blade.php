@@ -107,77 +107,140 @@
         {{-- navbar end --}}
         {{-- file --}}
         <div class="file">
-        <p class="fileLocation">File @foreach ($datafolder2 as $item){{$item->nama_folder}}
-            
-        @endforeach</p>
             {{-- sort by --}}
-            <div class="sortBy">
-                <a href="{{route('file', ['tipe' => 'docx','id'=>$ids])}}"  class="recWord">
-                    <div class="wordContent">
-                        <img src="{{URL::asset('assets/imgcloud/logoword.png')}}" class="wordLogo" alt="logo word">                   
-                        <div class="groupWordText">
-                            <p class="wordText1">Word</p>
-                            <p class="wordText2">{{$docx}} files</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{route('file', ['tipe' => 'xlsx','id'=>$ids])}}"  class="recExcel">
-                    <div class="excelContent">
-                        <img src="{{URL::asset('assets/imgcloud/logoexcel.png')}}" class="excelLogo" alt="logo excel">                   
-                        <div class="groupExcelText">
-                            <p class="excelText1">Excel</p>
-                            <p class="excelText2">{{$xlsx}} files</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{route('file', ['tipe' => 'pptx','id'=>$ids])}}"  class="recPpt">
-                    <div class="pptContent">
-                        <img src="{{URL::asset('assets/imgcloud/logoppt.png')}}" class="pptLogo" alt="logo ppt">                   
-                        <div class="groupPptText">
-                            <p class="pptText1">PowerPoint</p>
-                            <p class="pptText2">{{$pptx}} files</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{route('file', ['tipe' => 'pdf','id'=>$ids])}}"  class="recPdf">
-                    <div class="pdfContent">
-                        <img src="{{URL::asset('assets/imgcloud/logopdf.png')}}" class="pdfLogo" alt="logo pdf">                   
-                        <div class="groupPdfText">
-                            <p class="pdfText1">PDF</p>
-                            <p class="pdfText2">{{$pdf}} files</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
+           
                 {{-- end sort --}}
-           
+                {{-- last update --}}
+                <div class="lastUpload">
+                    <div>
+                        <p  class="textLastUpload">Permendikbud 81A Implementasi K13</p>
+                
+                    </div>
+                    <div id="last-update">
+                      
+                        {{-- folder/file --}}
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="../assets/images/folder.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">Semester 1 K13 </p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>20 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">5Gb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"> </p> 
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="../assets/imgcloud/logopdf.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">FMPPs 03 (Penyusunan Kurikulum).pdf</p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>1 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">412Kb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"><iconify-icon icon="mdi:tick"></iconify-icon></p>
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="../assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">Ringkasan retensi data tahun ajaran 2023 </p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>1 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">233Kb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"><iconify-icon icon="mdi:check-all" style="color: #006fb4;"></iconify-icon></p>
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                        
+                        <div  class="lastUploadFile">
+                            <a class="sentuh" href="#" target="_blank">
+                            <div class="box-last">
+                                <img src="../assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
+                                 <div class="fileText">
+                                    <p class="fileText1">Ringkasan retensi data tahun ajaran 2023 </p>
+                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
+                                </div>
+                                <div class="fileitems">
+                                    <p>1 items </p>
+                                </div>
+                                <div class="filesize">
+                                    <p class="fileText2">214Kb</p>
+                                </div>
+                                <div class="filecentang">
+                                    <p class="fileText2"><iconify-icon class="centangdua" icon="mdi:tick-all"></iconify-icon></p>
+                                </div>
+                                
+                            </div>
+                            </a>
+                            <div class="titik3 btn-group dropstart">
+                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                        {{-- folder/ file end --}}
+                       
+                       
+                        
+                    </div>
+                </div>
+                
+                {{-- end last update --}}
             </div>
            
         </div>
-    </div>
-      <!-- Modal -->
-    {{-- folder --}}
-<div class="modal fade" id="folderBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">Folder baru</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form action="/clod/folder/store" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="modal-body">
-                    <input style="width: 100%;padding: 1% 5%;height: 3vw;" type="text" name="nama_folder" class="nama-folder" placeholder="nama folder">
-                    <input style="display: none;" name="name" type="text" value="">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn-modal" data-bs-dismiss="modal">Batal</button>
-                <button type="submit" class="btn-modal" style="color: #006fb4;">Simpan</button>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
   {{-- file --}}
 <div class="modal fade" id="fileBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
