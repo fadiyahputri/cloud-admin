@@ -27,7 +27,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if($user->level == 'user'){
-                return redirect()->intended('/clod');
+                return redirect()->intended('/cloud');
             }else if($user->level == 'admin'){
                 return redirect()->intended('/admin');
             }
@@ -40,6 +40,8 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
+   
 
     //LOGIN API
 

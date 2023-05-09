@@ -34,8 +34,9 @@ css/cssCloud/cloud.css
                                 <ul>
                                     @foreach ($datafolder as $itemfolder)
                                     <li>
-                                        <a href="{{ route('folder', ['id'=> $itemfolder->id]) }}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
+                                        <a href="{{ route('folder', ['id'=> $itemfolder->id, 'name'=> $itemfolder->nama_folder, 'layer' =>$itemfolder->layer + 1,"induk" =>$itemfolder->nama_folder ]) }}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
                                     </li>
+                                    
                                      @endforeach                            
                                 </ul>
                               </div>
@@ -79,6 +80,7 @@ css/cssCloud/cloud.css
             @csrf
             <div class="modal-body">
                     <input type="text" name="nama_folder" class="nama-folder" placeholder="nama folder">
+                    <input type="text" name="layer" value="1" id="" style="display: none;">
                     <input style="display: none;" name="name" type="text" value="@foreach ($data2 as $item)
                         {{$item->id}}
                     @endforeach">
@@ -212,19 +214,20 @@ css/cssCloud/cloud.css
                     <div id="last-update">
                       
                         {{-- folder/file --}}
+                        @foreach ($datafolder as $item)
                         <div  class="lastUploadFile">
-                            <a class="sentuh" href="#" target="_blank">
+                            <a class="sentuh" href="{{route('folder', ['id'=> $item->id, 'name'=> $item->nama_folder, "layer" =>$item->layer + 1, "induk" => $item->nama_folder])}}">
                             <div class="box-last">
                                 <img src="assets/images/folder.png" class="logoFile" alt="logo file">                   
                                  <div class="fileText">
-                                    <p class="fileText1">Permendikbud 81A Implementasi K13 </p>
+                                    <p class="fileText1">{{$item->nama_folder}} </p>
                                     <p class="fileText2">23 Feb 2023, 05:46:58</p>
                                 </div>
                                 <div class="fileitems">
-                                    <p>20 items </p>
+                                    {{-- <p>20 items </p> --}}
                                 </div>
                                 <div class="filesize">
-                                    <p class="fileText2">5Gb</p>
+                                    {{-- <p class="fileText2">5Gb</p> --}}
                                 </div>
                                 <div class="filecentang">
                                     <p class="fileText2"> </p> 
@@ -239,8 +242,10 @@ css/cssCloud/cloud.css
                                   </ul>
                             </div>
                         </div>
-
-                        <div  class="lastUploadFile">
+                        @endforeach
+                      
+                         
+                       {{--     <div  class="lastUploadFile">
                             <a class="sentuh" href="#" target="_blank">
                             <div class="box-last">
                                 <img src="assets/imgcloud/logopdf.png" class="logoFile" alt="logo file">                   
@@ -266,9 +271,9 @@ css/cssCloud/cloud.css
                                     <li><a class="dropdown-item" href="#">Hapus File</a></li>
                                   </ul>
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div  class="lastUploadFile">
+                        {{-- <div  class="lastUploadFile">
                             <a class="sentuh" href="#" target="_blank">
                             <div class="box-last">
                                 <img src="assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
@@ -295,8 +300,8 @@ css/cssCloud/cloud.css
                                   </ul>
                             </div>
                         </div>
-                        
-                        <div  class="lastUploadFile">
+                         --}}
+                        {{-- <div  class="lastUploadFile">
                             <a class="sentuh" href="#" target="_blank">
                             <div class="box-last">
                                 <img src="assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
@@ -322,7 +327,7 @@ css/cssCloud/cloud.css
                                     <li><a class="dropdown-item" href="#">Hapus File</a></li>
                                   </ul>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- folder/ file end --}}
                        
                        

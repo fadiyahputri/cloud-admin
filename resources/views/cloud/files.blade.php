@@ -24,7 +24,7 @@
         {{-- content side bar --}}
         <div class="page-wrapper chiller-theme toggled">
             <div class="pageWrapper2" >
-                <a style="background-color:#169FCF;color: white" id="dashboard" href="{{url('/clod')}}">
+                <a style="background-color:#169FCF;color: white" id="dashboard" href="{{url('/cloud')}}">
                     <iconify-icon class="dashboardLogo" icon="mdi:file-document-multiple" width="21" height="21"></iconify-icon>
                     <p class="dashboardText">Dashboard</p>
                  </a>
@@ -35,11 +35,11 @@
                               <span style="color: #6C7383;" class="folderText">Folder</span><iconify-icon style="color: #6C7383;" id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon  id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
                               <div class="sidebar-submenu">
                                 <ul>
-                                  @foreach ($datafolder as $itemfolder)
-                                    <li>
-                                        <a href="{{route('folder', $itemfolder->id)}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
-                                    </li>
-                                     @endforeach  
+                                  @foreach ($foldersidebar as $itemfolder)
+                                  <li>
+                                      <a href="{{route('folder', ['id'=> $itemfolder->id, 'name'=> $itemfolder->nama_folder,'layer' =>$itemfolder->layer + 1, "induk" => $itemfolder->nama_folder])}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
+                                  </li>
+                                   @endforeach  
                                 </ul>
                               </div>
                             </li>   
@@ -105,7 +105,7 @@
         {{-- navbar end --}}
         {{-- file --}}
         <div class="file" style="align-content: center;justify-content: center">
-        <p class="fileLocation">File Folder </p>
+        {{-- <p class="fileLocation">File Folder </p> --}}
             {{-- sort by --}}
             <div class="row sortBy">
                 @foreach ($file as $file)

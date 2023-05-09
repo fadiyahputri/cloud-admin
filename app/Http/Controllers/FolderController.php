@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\File;
 class FolderController extends Controller
 {
 
-    public function index($id)
+    public function index($id,$layer,$induk)
     {
               // $file = File::all();
-        
+     
         // $dokumenFile = File::select('tipe_file')->get();
         $loggedin_username = Auth::user()->id;
         $dataus = User::with('RelationToCloud:id,user_id,folder_name')->get()->where('id',$loggedin_username);
@@ -26,7 +26,8 @@ class FolderController extends Controller
           $datacloud = Cloud::with('RelationToFolder:id,cloud_id,nama_folder')->get()->where('id', $datausers); 
           foreach ($datacloud as $itemcloud) {
             $item = $itemcloud->id;
-          $folder =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get();
+          $folder =  Folder::select('nama_folder','id',"layer")->where('cloud_id', $item)->where("layer", $layer)->where("induk", $induk)->get();
+          $foldersidebar =  Folder::select('nama_folder','id',"layer")->where('cloud_id', $item)->where("layer", 1)->get();
           $folder2 =  Folder::select('nama_folder','id')->where('id', $id)->get();
           $folder3 =  ModelsFile::select('id')->where('id', $id)->get();  
           $pdf = ModelsFile::with('folder')->whereIn('folder_id', $folder3)->where('tipe_file','pdf')->get()->count();
@@ -39,7 +40,7 @@ class FolderController extends Controller
         };
         $file = ModelsFile::with('folder')->where('folder_id',$id)->get();
        
-        return view('cloud.folder', ['datafolder'=>$folder,'ids'=>$id,'datafolder2'=>$folder2,'file'=> $file,'pdf'=>$pdf,'docx'=>$docx,'pptx'=>$pptx,'xlsx'=>$xlsx]);
+        return view('cloud.folder', ['datafolder'=>$folder,'ids'=>$id,'datafolder2'=>$folder2,'file'=> $file,'pdf'=>$pdf,'docx'=>$docx,'pptx'=>$pptx,'xlsx'=>$xlsx, "foldersidebar" => $foldersidebar, "layer" =>$layer, "data2" => $datacloud]);
     }
 
     public function create()
@@ -54,6 +55,8 @@ class FolderController extends Controller
         Folder::create([
             'cloud_id'=>$request->name,
          'nama_folder'=>$request->nama_folder,
+         'layer'=>$request->layer,
+         'induk'=>$request->induk,
         ]);
         $nama = Cloud::select('folder_name')->where('id',$request->name)->get()->pluck('folder_name')->first();
         $mahes = $request->nama_folder;
@@ -61,7 +64,7 @@ class FolderController extends Controller
         if(!File::isDirectory($path)){
             File::makeDirectory($path, 0777, true, true);
         }
-        return redirect('/clod');
+        return back();
     }
 
     public function show($id)

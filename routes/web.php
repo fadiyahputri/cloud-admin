@@ -28,7 +28,7 @@ use App\Http\Controllers\TarunaBhaktiController;
 Route::get('/', [TarunaBhaktiController::class, 'landingpage']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
-Route::group(['middleware' => ['auth','admin:admin,user']], function(){
+Route::group(['middleware' => ['auth','admin:admin']], function(){
     // Route::get('/', [GuruController::class, 'index']);
 
     Route::get('/tambahguru', [CloudController::class, 'tambahguru']);
@@ -37,18 +37,25 @@ Route::group(['middleware' => ['auth','admin:admin,user']], function(){
     
     Route::get('/matpel', [CloudController::class, 'matpel']);
 
-    Route::get('/cloud', [CloudController::class, 'cloudDashboard']);    
+    Route::get('/admin', [AdminController::class, 'index']);
+       
+});
+Route::group(['middleware' => ['auth','user:user']], function(){
+    // Route::get('/', [GuruController::class, 'index']);
+
+    Route::get('/cloud', [CloudController::class, 'cloud']);
+
+       
 });
 
-Route::get('/cloud', [CloudController::class, 'cloudDashboard']);   
+  
 
-Route::get('/clod', [CloudController::class, 'cloud']);
 
-Route::get('/clod/folder1', [CloudController::class, 'folder1']);
 
-Route::get('/clod/last/delete/{id}',[FileController::class,'destroylast'])->name('hpslast');
 
-Route::get('/clod/seemore', [CloudController::class, 'seemore']);
+
+
+
 
 
 // form sementara landingpage
@@ -106,11 +113,15 @@ Route::get('/matpel/delete/{id}',[MatpelController::class,'destroy']);
 // UNTUK FILE
 Route::get('/folder/file/{id}/{tipe}',[FileController::class, 'index'])->name('file');
 Route::get('/folder/file/create/{id}',[FileController::class, 'create'])->name('createfolder');
+
 Route::post('/folder/file/store',[FileController::class, 'store']);
-Route::get('/folder/file/delete/{id}',[FileController::class,'destroy']);
+Route::get('/hapus/file/{id}',[FileController::class, 'delet'])->name("hpsfile");
+
+
+
 
 // UNTUK FOLDER
-Route::get('/folder/{id}',[FolderController::class, 'index'])->name('folder');
+Route::get('/folder/{id}/{layer}/{induk}/{name}',[FolderController::class, 'index'])->name('folder');
 Route::get('/clod/folder/create', [FolderController::class, 'create']);
 Route::post('/clod/folder/store', [FolderController::class, 'store']);
 

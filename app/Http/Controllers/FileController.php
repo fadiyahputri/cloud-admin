@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 
 class FileController extends Controller
 {
+   
     public function index($id,$tipe)
     {
         $loggedin_username = Auth::user()->id;
@@ -29,8 +30,9 @@ class FileController extends Controller
         $file = File::where('folder_id',$id)->where('tipe_file',$tipe)->get();
         $fols = Folder::where('id',$id)->get();
        
-        
-        return view('cloud/file',['datafolder'=>$folder,'file'=>$file,'folder'=>$fols,'tipe'=>$tipe,'ids'=>$id]);
+        $foldersidebar =  Folder::select('nama_folder','id',"layer")->where('cloud_id', $item)->where("layer", 1)->get();
+
+        return view('cloud/file',['datafolder'=>$folder,'file'=>$file,'folder'=>$fols,'tipe'=>$tipe,'ids'=>$id, "foldersidebar"=> $foldersidebar]);
     }
 
     public function createFolder()
@@ -77,7 +79,7 @@ class FileController extends Controller
             $data->folder_id = $folder_id;
             $data->save();
 
-            return redirect()->route('folder',$folder_id);
+            return back();
     }
 
     public function edit($id)
@@ -103,21 +105,25 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroylast($id)
+    public function delet($id)
     {
+        
         $hapus = File::with('folder')->where('id',$id)->get();
         foreach ($hapus as $hapus) {
            
         
+            $f = File::findOrFail($id);
 
+   
         $file = public_path('foldercloud/'.  $hapus->folder->cloud->folder_name.'/'.$hapus->folder->nama_folder.'/'. $hapus->file );
         
          if (file_exists($file)){
             @unlink($file);
-         }
-
-         $hapus->delete();
-         return redirect('/clod');
+        //  }
+ 
+         $f->delete();
+         return back();
         }
     }
+}
 }

@@ -23,7 +23,7 @@
         {{-- content side bar --}}
         <div class="page-wrapper chiller-theme toggled">
             <div class="pageWrapper2" >
-                <a id="dashboard" href="{{url('/clod')}}">
+                <a id="dashboard" href="{{url('/cloud')}}">
                     <iconify-icon class="dashboardLogo" icon="mdi:file-document-multiple" width="21" height="21"></iconify-icon>
                     <p class="dashboardText">Dashboard</p>
                  </a>
@@ -34,9 +34,9 @@
                               <span class="folderText">Folder</span><iconify-icon id="arrow1"  class="arrow1" icon="material-symbols:keyboard-arrow-right" width="20" height="20"></iconify-icon><iconify-icon id="arrow2" class="arrow2"  icon="material-symbols:keyboard-arrow-down-rounded" width="20" height="20"></iconify-icon></a>
                               <div class="sidebar-submenu">
                                 <ul >
-                                    @foreach ($datafolder as $itemfolder)
+                                    @foreach ($foldersidebar as $itemfolder)
                                     <li>
-                                        <a href="{{route('folder', $itemfolder->id)}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
+                                        <a href="{{route('folder', ['id'=> $itemfolder->id, 'name'=> $itemfolder->nama_folder,'layer' =>$itemfolder->layer + 1, "induk" => $itemfolder->nama_folder])}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
                                     </li>
                                      @endforeach  
                                 </ul>
@@ -113,31 +113,34 @@
                 {{-- last update --}}
                 <div class="lastUpload">
                     <div>
-                        <p  class="textLastUpload">Permendikbud 81A Implementasi K13</p>
+                        <p class="textLastUpload">File @foreach ($datafolder2 as $item2){{$item2->nama_folder}}
+            
+                            @endforeach</p>
                 
                     </div>
                     <div id="last-update">
                       
                         {{-- folder/file --}}
+                        @foreach ($datafolder as $item)
                         <div  class="lastUploadFile">
-                            <a class="sentuh" href="#" target="_blank">
-                            <div class="box-last">
-                                <img src="../assets/images/folder.png" class="logoFile" alt="logo file">                   
+                            <a class="sentuh" href="{{route('folder', ['id'=> $item->id, 'name'=> $item->nama_folder, "layer" =>$item->layer + 1, "induk" => $item->nama_folder])}}" >
+                                <div class="box-last">
+                              <img src="{{asset('../assets/images/folder.png')}}" class="logoFile" alt="logo file">                   
                                  <div class="fileText">
-                                    <p class="fileText1">Semester 1 K13 </p>
+                                    <p class="fileText1">{{$item->nama_folder}} </p>
                                     <p class="fileText2">23 Feb 2023, 05:46:58</p>
                                 </div>
                                 <div class="fileitems">
-                                    <p>20 items </p>
+                                    {{-- <p>20 items </p> --}}
                                 </div>
                                 <div class="filesize">
-                                    <p class="fileText2">5Gb</p>
+                                    {{-- <p class="fileText2">5Gb</p> --}}
                                 </div>
                                 <div class="filecentang">
                                     <p class="fileText2"> </p> 
                                 </div>
                                 
-                            </div>
+                                </div>
                             </a>
                             <div class="titik3 btn-group dropstart">
                                 <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
@@ -146,13 +149,15 @@
                                   </ul>
                             </div>
                         </div>
+                        @endforeach
 
+                        @foreach ($file as $file)
                         <div  class="lastUploadFile">
-                            <a class="sentuh" href="#" target="_blank">
+                            <a class="sentuh" href="{{ URL::asset('foldercloud/'.  $file->folder->cloud->folder_name.'/'.$file->folder->nama_folder.'/'. $file->file ) }}" target="_blank">
                             <div class="box-last">
-                                <img src="../assets/imgcloud/logopdf.png" class="logoFile" alt="logo file">                   
+                                <img src="{{URL::asset('assets/imgcloud/'.$file->tipe_file.'.png')}}" class="logoFile" alt="logo file">                   
                                  <div class="fileText">
-                                    <p class="fileText1">FMPPs 03 (Penyusunan Kurikulum).pdf</p>
+                                    <p class="fileText1">{{$file->file}}</p>
                                     <p class="fileText2">23 Feb 2023, 05:46:58</p>
                                 </div>
                                 <div class="fileitems">
@@ -170,66 +175,15 @@
                             <div class="titik3 btn-group dropstart">
                                 <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
+                                    <li><a class="dropdown-item" href="{{route("hpsfile", ['id'=>$file->id])}}">Hapus File</a></li>
                                   </ul>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="#" target="_blank">
-                            <div class="box-last">
-                                <img src="../assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Ringkasan retensi data tahun ajaran 2023 </p>
-                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
-                                </div>
-                                <div class="fileitems">
-                                    <p>1 items </p>
-                                </div>
-                                <div class="filesize">
-                                    <p class="fileText2">233Kb</p>
-                                </div>
-                                <div class="filecentang">
-                                    <p class="fileText2"><iconify-icon icon="mdi:check-all" style="color: #006fb4;"></iconify-icon></p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <div class="titik3 btn-group dropstart">
-                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
-                                  </ul>
-                            </div>
-                        </div>
+                       
                         
-                        <div  class="lastUploadFile">
-                            <a class="sentuh" href="#" target="_blank">
-                            <div class="box-last">
-                                <img src="../assets/imgcloud/xlsx.png" class="logoFile" alt="logo file">                   
-                                 <div class="fileText">
-                                    <p class="fileText1">Ringkasan retensi data tahun ajaran 2023 </p>
-                                    <p class="fileText2">23 Feb 2023, 05:46:58</p>
-                                </div>
-                                <div class="fileitems">
-                                    <p>1 items </p>
-                                </div>
-                                <div class="filesize">
-                                    <p class="fileText2">214Kb</p>
-                                </div>
-                                <div class="filecentang">
-                                    <p class="fileText2"><iconify-icon class="centangdua" icon="mdi:tick-all"></iconify-icon></p>
-                                </div>
-                                
-                            </div>
-                            </a>
-                            <div class="titik3 btn-group dropstart">
-                                <iconify-icon  type="button" data-bs-toggle="dropdown" aria-expanded="false" id="" icon="carbon:overflow-menu-vertical" width="25" height="25"></iconify-icon>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                    <li><a class="dropdown-item" href="#">Hapus File</a></li>
-                                  </ul>
-                            </div>
-                        </div>
+                   
                         {{-- folder/ file end --}}
                        
                        
@@ -241,6 +195,33 @@
             </div>
            
         </div>
+            {{-- folder --}}
+<div class="modal fade" id="folderBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">Folder baru</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/clod/folder/store" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                    <input style="width: 100%;padding: 1% 5%;height: 3vw;" type="text" name="nama_folder" class="nama-folder" placeholder="nama folder">
+                    <input style="display: none ;" name="layer" type="text" value="{{$layer}}">
+                    <input style="display: none;" name="name" type="text" value="@foreach ($data2 as $itemss)
+                    {{$itemss->id}}
+                @endforeach">
+                <input style="display: none;" type="text" value="{{$item2->nama_folder}}" name="induk">
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn-modal" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn-modal" style="color: #006fb4;">Simpan</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   {{-- file --}}
 <div class="modal fade" id="fileBaru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

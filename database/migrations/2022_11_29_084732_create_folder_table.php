@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('cloud_id')->unsigned();
             $table->string('nama_folder');
+            $table->string('layer');
+            $table->string('induk')->nullable();
             $table->timestamps();
         });
     }

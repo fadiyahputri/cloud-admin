@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 
 class CloudController extends Controller
 {
+    public function __construct()
+  {
+      $this->middleware('auth');
+  } 
+
     public function index() {
         return view ('dashboard/index');
     }
@@ -36,7 +41,7 @@ class CloudController extends Controller
           $datacloud = Cloud::with('RelationToFolder:id,cloud_id,nama_folder')->get()->where('id', $datausers); 
           foreach ($datacloud as $itemcloud) {
             $item = $itemcloud->id;
-          $folder =  Folder::where('cloud_id', $item)->get();
+          $folder =  Folder::where('cloud_id', $item)->where("layer", 1)->get();
           $las =  Folder::select('id')->where('cloud_id', $item)->get();
           $last = File::with('folder')->whereIn('folder_id', $las)->orderBy('created_at', 'DESC')->limit(3)->get();
           $pdf = File::with('folder')->whereIn('folder_id', $las)->where('tipe_file','pdf')->get()->count();
@@ -72,10 +77,10 @@ class CloudController extends Controller
           $folders =  Folder::select('nama_folder','id')->where('cloud_id', $item)->get()->pluck('id');
          
           $file = File::with('folder')->whereIn('folder_id', $folders)->where('tipe_file',$tipe)->get();
-          
+          $foldersidebar =  Folder::select('nama_folder','id',"layer")->where('cloud_id', $item)->where("layer", 1)->get();
           }
         }
-        return view('cloud/files',['datafolder'=>$folder,'file'=>$file]);
+        return view('cloud/files',['datafolder'=>$folder,'file'=>$file,"foldersidebar"=> $foldersidebar]);
     }
 
     public function seemore(){

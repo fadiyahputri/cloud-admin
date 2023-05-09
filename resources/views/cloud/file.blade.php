@@ -35,7 +35,7 @@
                                 <ul >
                                   @foreach ($datafolder as $itemfolder)
                                     <li>
-                                        <a href="{{route('folder', $itemfolder->id)}}"><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
+                                        <a href=""><iconify-icon icon="material-symbols:menu-book-outline-sharp" width="22" height="22"></iconify-icon><p>{{$itemfolder->nama_folder}}</p></a>
                                     </li>
                                      @endforeach  
                                 </ul>

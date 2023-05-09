@@ -26,18 +26,42 @@ class DatabaseSeeder extends Seeder
             'name'=> 'admin',
             'username'=>'admin',
             'level'=>'admin',
-            'password' => Hash::make(12345)
+            'password' => Hash::make("admin")
+        ]
+    );
+        DB::table('users')->insert([
+            'name'=> 'user',
+            'username'=>'user',
+            'level'=>'user',
+            'password' => Hash::make("user")
         ]
     );
     DB::table('guru')->insert([
-        'nama' => 'kemal',
+        'nama' => 'admin',
         'gambar' => 'anonymous.png',
         'icon' => 'smk',
-        'nip'=> '123213',
+        'nip'=> 'admin',
         'matpel' => 'admin',
         'jenis_kelamin'=> 'laki-laki',
         'alamat' => 'sumur bandung',
         'user_id'=> 1
-    ]);
+    ]
+);
+DB::table('guru')->insert([
+    'nama' => 'user',
+    'gambar' => 'anonymous.png',
+    'icon' => 'smk',
+    'nip'=> '123213',
+    'matpel' => 'admin',
+    'jenis_kelamin'=> 'laki-laki',
+    'alamat' => 'sumur bandung',
+    'user_id'=> 2
+]
+);   
+ DB::table('cloud')->insert([
+    'user_id' => 2,
+    'folder_name' => 'user',
+]
+);
     }
 }
